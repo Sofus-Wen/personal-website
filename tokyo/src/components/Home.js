@@ -40,11 +40,11 @@ const Home = () => {
             </div>
             <div className="details ml-[80px]">
               <h3 className="name text-[55px] font-extrabold uppercase mb-[14px]">
-                Adriano <span>Smith</span>
+                Sofus <span>Wenoee</span>
               </h3>
               <p className="job font-montserrat font-medium max-w-[450px] mb-[25px]">
-                I am a WordPress Developer at heart and create features that are
-                best suited for the job at hand.
+                I'm a ambitous student and I'm following my curiosity
+                towards reshaping how we see AI in education.
               </p>
               <div className="social w-full float-left">
                 <ul className="m-0 list-none">
