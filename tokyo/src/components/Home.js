@@ -2,23 +2,25 @@ import SectionContainer from "./SectionContainer";
 const socialIcon = [
   {
     id: 1,
+    iconName: "icon-twitter-squared",
+    link: "https://twitter.com/sofuswenoee",
     iconName: "icon-facebook-squared",
     link: "https://www.facebook.com/",
   },
   {
     id: 2,
-    iconName: "icon-twitter-squared",
-    link: "https://twitter.com/",
+    iconName: "icon-linkedin-squared",
+    link: "https://www.linkedin.com/in/sofuswenoee",
   },
   {
     id: 3,
-    iconName: "icon-behance-squared",
-    link: "https://www.behance.net/",
+    iconName: "icon-medium-squared",
+    link: "https://www.facebook.com/",
   },
   {
     id: 4,
     iconName: "icon-linkedin-squared",
-    link: "https://www.linkedin.com/",
+    link: "https://www.linkedin.com/in/sofuswenoee",
   },
 ];
 const Home = () => {
