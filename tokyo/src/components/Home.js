@@ -4,8 +4,6 @@ const socialIcon = [
     id: 1,
     iconName: "icon-twitter-squared",
     link: "https://twitter.com/sofuswenoee",
-    iconName: "icon-facebook-squared",
-    link: "https://www.facebook.com/",
   },
   {
     id: 2,
@@ -14,15 +12,15 @@ const socialIcon = [
   },
   {
     id: 3,
-    iconName: "icon-medium-squared",
+    iconName: "fa-brands fa-medium",
     link: "https://www.facebook.com/",
   },
-  {
+  /**{
     id: 4,
-    iconName: "icon-linkedin-squared",
-    link: "https://www.linkedin.com/in/sofuswenoee",
+    iconName: "icon-facebook-squared",
+    link: "https://www.facebook.com/",
   },
-];
+];**/
 const Home = () => {
   return (
     <SectionContainer name={"home"}>
