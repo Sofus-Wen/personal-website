@@ -2,8 +2,8 @@ import SectionContainer from "./SectionContainer";
 const socialIcon = [
   {
     id: 1,
-    iconName: "icon-twitter-squared",
-    link: "https://twitter.com/sofuswenoee",
+    iconName: "icon-medium",
+    link: "https://medium.com/@sofuswenoee",
   },
   {
     id: 2,
@@ -11,9 +11,9 @@ const socialIcon = [
     link: "https://www.linkedin.com/in/sofuswenoee",
   },
   {
-    id: 3,  // Make sure the id is unique
-    iconName: "icon-medium",  // This is the class name for the Medium icon
-    link: "https://medium.com/@sofuswenoee",  // Replace with your Medium profile URL
+    id: 3,
+    iconName: "icon-twitter-squared",
+    link: "https://twitter.com/sofuswenoee",
   },
 ];
 const Home = () => {
