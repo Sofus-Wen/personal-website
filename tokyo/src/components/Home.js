@@ -15,11 +15,6 @@ const socialIcon = [
     iconName: "icon-linkedin-squared",
     link: "https://www.facebook.com/",
   },
-  /**{
-    id: 4,
-    iconName: "icon-facebook-squared",
-    link: "https://www.facebook.com/",
-  },**/
 ];
 const Home = () => {
   return (
