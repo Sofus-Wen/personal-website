@@ -12,15 +12,15 @@ const socialIcon = [
   },
   {
     id: 3,
-    iconName: "fa-brands fa-medium",
+    iconName: "icon-linkedin-squared",
     link: "https://www.facebook.com/",
   },
   /**{
     id: 4,
     iconName: "icon-facebook-squared",
     link: "https://www.facebook.com/",
-  },
-];**/
+  },**/
+];
 const Home = () => {
   return (
     <SectionContainer name={"home"}>
