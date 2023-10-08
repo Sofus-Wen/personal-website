@@ -15,6 +15,11 @@ const socialIcon = [
     iconName: "icon-linkedin-squared",
     link: "https://www.facebook.com/",
   },
+  {
+    id: 4,  // Make sure the id is unique
+    iconName: "icon-medium",  // This is the class name for the Medium icon
+    link: "https://medium.com/@sofuswenoee",  // Replace with your Medium profile URL
+  },
 ];
 const Home = () => {
   return (
