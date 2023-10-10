@@ -16,7 +16,7 @@ const Sidebar = () => {
               alt="image"
             />
             <h3 className="font-poppins font-black text-[31px] tracking-[5px]">
-              TOKYO
+              SOFUS
             </h3>
           </a>
         </div>
