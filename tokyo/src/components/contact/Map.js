@@ -7,7 +7,7 @@ const Map = () => {
             width="100%"
             height={355}
             id="gmap_canvas"
-            src="https://www.google.com/maps/place/Fures%C3%B8/"
+            src="https://www.google.com/maps/place/Fures%C3%B8&t=&z=13&ie=UTF8&iwloc=&output=embed"
             frameBorder={0}
             scrolling="no"
             marginHeight={0}
