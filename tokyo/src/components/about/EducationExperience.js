@@ -1,8 +1,8 @@
 const experiencesData = [
   {
     id: 1,
-    date: "2018 - Now",
-    designation: "Exclusive Author",
+    date: "2023 - Now",
+    designation: "TKS - The Knowledge Society",
     company: "Envato Market",
   },
   {
