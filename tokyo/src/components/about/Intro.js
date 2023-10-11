@@ -52,9 +52,9 @@ const Intro = () => {
                 <span>
                   <a
                     className="text-[#767676] transition-all duration-300 hover:text-black"
-                    href="mailto:tokyo@gmail.com"
+                    href="mailto:sofuswenoee@gmail.com"
                   >
-                    tokyo@gmail.com
+                    sofuswenoee@gmail.com
                   </a>
                 </span>
               </li>
