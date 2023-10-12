@@ -11,9 +11,9 @@ const Intro = () => {
       </div>
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
         <p className="mb-[11px]">
-          Hi, my name is Adriano Smith and I began using WordPress when it first
-          began. I’ve spent most of my waking hours for the last ten years
-          designing, programming and operating WordPress sites.
+          Welcome to my little corner of the internet! I'm 17, and like you, I'm on this wild journey of turning curiosity into amazing projects. You ready? Let's jump into it!\n\n
+          At this point in my journey, I'm fully focused on seamlessly integrating AI with the realm of education. Picture transforming the learning experience into something as captivating and fulfilling as discovering breathtaking landscapes in your dreamlike destination – that's my mission right now. And you know what? I've ventured into coding, sparked my own business ventures, and now I'm confidently following my curiosity as I thoroughly explore the incredible possibilities of AI.\n\
+          In the midst of this exciting journey, I'm actively immersing myself in the timeless wisdom of philosophy. This is about synergizing the finest from two realms – cutting-edge technology and age-old wisdom – to craft something genuinely valuable and timeless.\n\n
         </p>
         <p>
           One of my specialties is taking an idea from scratch and creating a
