@@ -11,9 +11,9 @@ const Intro = () => {
       </div>
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
         <p className="mb-[11px]">
-          Welcome to my little corner of the internet! I'm 17, and like you, I'm on this wild journey of turning curiosity into amazing projects. You ready? Let's jump into it!\n\n
-          At this point in my journey, I'm fully focused on seamlessly integrating AI with the realm of education. Picture transforming the learning experience into something as captivating and fulfilling as discovering breathtaking landscapes in your dreamlike destination – that's my mission right now. And you know what? I've ventured into coding, sparked my own business ventures, and now I'm confidently following my curiosity as I thoroughly explore the incredible possibilities of AI.\n\
-          In the midst of this exciting journey, I'm actively immersing myself in the timeless wisdom of philosophy. This is about synergizing the finest from two realms – cutting-edge technology and age-old wisdom – to craft something genuinely valuable and timeless.\n\n
+          Welcome to my little corner of the internet! I'm 17, and like you, I'm on this wild journey of turning curiosity into amazing projects. You ready? Let's jump into it!
+          At this point in my journey, I'm fully focused on seamlessly integrating AI with the realm of education. Picture transforming the learning experience into something as captivating and fulfilling as discovering breathtaking landscapes in your dreamlike destination – that's my mission right now. And you know what? I've ventured into coding, sparked my own business ventures, and now I'm confidently following my curiosity as I thoroughly explore the incredible possibilities of AI.
+          In the midst of this exciting journey, I'm actively immersing myself in the timeless wisdom of philosophy. This is about synergizing the finest from two realms – cutting-edge technology and age-old wisdom – to craft something genuinely valuable and timeless.
         </p>
         <p>
           One of my specialties is taking an idea from scratch and creating a
@@ -23,7 +23,7 @@ const Intro = () => {
           little-to-no maintenance while running on their own for years.
         </p>
       </div>
-      <div className="tokyo_tm_short_info w-full h-auto clear-both float-left flex border-solid border-[#DFDFDF] border-b pb-[30px] mb-[40px]">
+      {/*<div className="tokyo_tm_short_info w-full h-auto clear-both float-left flex border-solid border-[#DFDFDF] border-b pb-[30px] mb-[40px]">
         <div className="left w-1/2 pr-[50px]">
           <div className="tokyo_tm_info w-full h-auto clear-both float-left">
             <ul className="m-0 list-none">
@@ -115,7 +115,7 @@ const Intro = () => {
         <a href="assets/img/cv/1.jpg" download>
           <span>Download CV</span>
         </a>
-      </div>
+      </div>*/}
     </Fragment>
   );
 };
