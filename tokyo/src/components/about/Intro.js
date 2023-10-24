@@ -6,7 +6,7 @@ const Intro = () => {
         <img className="min-w-full" src="assets/img/slider/1.jpg" alt="image" />
       </div>
       <div className="about_title w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[20px] mb-[30px]">
-        <h3 className="text-[22px] font-bold">Sofus Wenøe</h3>
+        <h3 className="text-[22px] font-bold">Sofus Wenoee</h3>
         <span>Web Developer</span>
       </div>
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
@@ -20,7 +20,7 @@ const Intro = () => {
           breathtaking landscapes in your dreamlike destination – that's my mission right now. And you know what?
           I've ventured into coding, sparked my own business ventures, and now I'm confidently following my
           curiosity as I thoroughly explore the incredible possibilities of AI.
-          
+
           In the midst of this exciting journey, I'm actively immersing myself in the timeless wisdom of philosophy.
           This is about synergizing the finest from two realms – cutting-edge technology and age-old wisdom – to
           craft something genuinely valuable and timeless.

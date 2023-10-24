@@ -23,7 +23,7 @@ export default function Document() {
         <link rel="stylesheet" href="assets/css/plugins.css" />
         <link rel="stylesheet" href="assets/css/custom.css" />
         <link rel="stylesheet" href="assets/css/main.css" />
-        <title>Tokyo</title>
+        <title>Sofus Wenoee</title>
       </Head>
       <body>
         <Main />
