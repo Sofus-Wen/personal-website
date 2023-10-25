@@ -11,7 +11,7 @@ const Sidebar = () => {
           {/* You can use image or text as logo. data-type values are: "image" and "text" */}
           <a href="#">
             <img
-              className="max-w-[150px]"
+              className="max-w-[250px]"
               src="assets/img/logo/dark.png"
               alt="image"
             />
