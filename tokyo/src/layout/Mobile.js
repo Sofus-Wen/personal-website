@@ -13,7 +13,7 @@ const Mobile = () => {
             {/* You can use image or text as logo. data-type values are "image" and "text" */}
             <a href="#">
               <img
-                className="max-w-[100px] max-h-[40px]"
+                className="max-w-[150px] max-h-[40px]"
                 src="assets/img/logo/dark.png"
                 alt="image"
               />
