@@ -11,19 +11,19 @@ const Intro = () => {
       </div>
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
         <p className="mb-[11px]">
-          Welcome to my little corner of the internet! I'm 17, and like you, I'm on this wild journey of turning<br>
-          curiosity into amazing projects.<br>
-          You ready? Let's jump into it!<br>
+          Welcome to my little corner of the internet! I'm 17, and like you, I'm on this wild journey of turning</p><br>
+          <p>curiosity into amazing projects.<br></p>
+          <p>You ready? Let's jump into it!<br></p>
 <br>
-          At this point in my journey, I'm fully focused on seamlessly integrating AI with the realm of education.<br>
-          Picture transforming the learning experience into something as captivating and fulfilling as discovering<br>
-          breathtaking landscapes in your dreamlike destination – that's my mission right now. And you know what?<br>
-          I've ventured into coding, sparked my own business ventures, and now I'm confidently following my<br>
-          curiosity as I thoroughly explore the incredible possibilities of AI.<br>
+          <p>At this point in my journey, I'm fully focused on seamlessly integrating AI with the realm of education.</p><br>
+          <p>Picture transforming the learning experience into something as captivating and fulfilling as discovering</p><br>
+          <p>breathtaking landscapes in your dreamlike destination – that's my mission right now. And you know what?</p><br>
+          <p>I've ventured into coding, sparked my own business ventures, and now I'm confidently following my</p><br>
+          <p>curiosity as I thoroughly explore the incredible possibilities of AI.</p><br>
 <br>
-          In the midst of this exciting journey, I'm actively immersing myself in the timeless wisdom of philosophy.<br>
-          This is about synergizing the finest from two realms – cutting-edge technology and age-old wisdom – to<br>
-          craft something genuinely valuable and timeless.<br>
+          <p>In the midst of this exciting journey, I'm actively immersing myself in the timeless wisdom of philosophy.</p><br>
+          <p>This is about synergizing the finest from two realms – cutting-edge technology and age-old wisdom – to</p><br>
+          <p>craft something genuinely valuable and timeless.</p><br>
         </p>
         <p>
           One of my specialties is taking an idea from scratch and creating a\n
