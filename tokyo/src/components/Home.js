@@ -39,7 +39,7 @@ const Home = () => {
               </h3>
               <p className="job font-montserrat font-medium max-w-[450px] mb-[25px]">
                 I'm a ambitous student and I'm following my curiosity
-                towards reshaping how we see AI in education.
+                towards reshaping how we see AI tech in education.
               </p>
               <div className="social w-full float-left">
                 <ul className="m-0 list-none">
