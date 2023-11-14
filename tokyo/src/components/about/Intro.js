@@ -12,16 +12,16 @@ const Intro = () => {
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
         <p className="mb-[11px]">
           Welcome to my little corner of the internet! I'm 17, and like you, I'm on this wild journey of turning curiosity into amazing projects.
-        </p>
+        </p><br />
         <p>
           You ready? Let's jump into it!
-        </p>
+        </p><br />
         <p>
           At this point in my journey, I'm fully focused on seamlessly integrating AI with the realm of education. Picture transforming the learning experience into something as captivating and fulfilling as discovering breathtaking landscapes in your dreamlike destination – that's my mission right now. And you know what? I've ventured into coding, sparked my own business ventures, and now I'm confidently following my curiosity as I thoroughly explore the incredible possibilities of AI.
-        </p>
+        </p><br />
         <p>
           In the midst of this exciting journey, I'm actively immersing myself in the timeless wisdom of philosophy. This is about synergizing the finest from two realms – cutting-edge technology and age-old wisdom – to craft something genuinely valuable and timeless.
-        </p>
+        </p><br />
         <p>
           One of my specialties is taking an idea from scratch and creating a full-fledged platform. I go beyond to produce sites with a unique, outstanding, contemporary look-and-feel. With extensive knowledge of web mechanics, I’m able to optimize complex integrations to require little-to-no maintenance while running on their own for years.
         </p>
