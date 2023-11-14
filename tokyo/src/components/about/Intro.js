@@ -26,11 +26,11 @@ const Intro = () => {
           <p>craft something genuinely valuable and timeless.</p><br />
         </p>
         <p>
-          One of my specialties is taking an idea from scratch and creating a\n
-          full-fledged platform. I go beyond to produce sites with a unique,\n
-          outstanding, contemporary look-and-feel. With extensive knowledge of\n
-          web mechanics, I’m able to optimize complex integrations to require\n
-          little-to-no maintenance while running on their own for years.\n
+          One of my specialties is taking an idea from scratch and creating a<br />
+          full-fledged platform. I go beyond to produce sites with a unique,<br />
+          outstanding, contemporary look-and-feel. With extensive knowledge of<br />
+          web mechanics, I’m able to optimize complex integrations to require<br />
+          little-to-no maintenance while running on their own for years.<br />
         </p>
       </div>
       {/*<div className="tokyo_tm_short_info w-full h-auto clear-both float-left flex border-solid border-[#DFDFDF] border-b pb-[30px] mb-[40px]">
