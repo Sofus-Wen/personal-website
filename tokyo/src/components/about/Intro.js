@@ -11,26 +11,26 @@ const Intro = () => {
       </div>
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
         <p className="mb-[11px]">
-          Welcome to my little corner of the internet! I'm 17, and like you, I'm on this wild journey of turning
-          curiosity into amazing projects.
-          You ready? Let's jump into it!
-
-          At this point in my journey, I'm fully focused on seamlessly integrating AI with the realm of education.
-          Picture transforming the learning experience into something as captivating and fulfilling as discovering
-          breathtaking landscapes in your dreamlike destination – that's my mission right now. And you know what?
-          I've ventured into coding, sparked my own business ventures, and now I'm confidently following my
-          curiosity as I thoroughly explore the incredible possibilities of AI.
-
-          In the midst of this exciting journey, I'm actively immersing myself in the timeless wisdom of philosophy.
-          This is about synergizing the finest from two realms – cutting-edge technology and age-old wisdom – to
-          craft something genuinely valuable and timeless.
+          Welcome to my little corner of the internet! I'm 17, and like you, I'm on this wild journey of turning\n
+          curiosity into amazing projects.\n
+          You ready? Let's jump into it!\n
+\n
+          At this point in my journey, I'm fully focused on seamlessly integrating AI with the realm of education.\n
+          Picture transforming the learning experience into something as captivating and fulfilling as discovering\n
+          breathtaking landscapes in your dreamlike destination – that's my mission right now. And you know what?\n
+          I've ventured into coding, sparked my own business ventures, and now I'm confidently following my\n
+          curiosity as I thoroughly explore the incredible possibilities of AI.\n
+\n
+          In the midst of this exciting journey, I'm actively immersing myself in the timeless wisdom of philosophy.\n
+          This is about synergizing the finest from two realms – cutting-edge technology and age-old wisdom – to\n
+          craft something genuinely valuable and timeless.\n
         </p>
         <p>
-          One of my specialties is taking an idea from scratch and creating a
-          full-fledged platform. I go beyond to produce sites with a unique,
-          outstanding, contemporary look-and-feel. With extensive knowledge of
-          web mechanics, I’m able to optimize complex integrations to require
-          little-to-no maintenance while running on their own for years.
+          One of my specialties is taking an idea from scratch and creating a\n
+          full-fledged platform. I go beyond to produce sites with a unique,\n
+          outstanding, contemporary look-and-feel. With extensive knowledge of\n
+          web mechanics, I’m able to optimize complex integrations to require\n
+          little-to-no maintenance while running on their own for years.\n
         </p>
       </div>
       {/*<div className="tokyo_tm_short_info w-full h-auto clear-both float-left flex border-solid border-[#DFDFDF] border-b pb-[30px] mb-[40px]">
