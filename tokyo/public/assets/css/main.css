@@ -4505,6 +4505,6 @@ body.dark .loader_line:after {
 }
 
 .icon-substack:before {
-  content: "#000000"; /* Replace with the correct content code for Substack */
+  content: "\f3f3"; /* Replace with the correct content code for Substack */
   /* Add any additional styling needed */
 }
