@@ -15,6 +15,11 @@ const socialIcon = [
     iconName: "icon-twitter-squared",
     link: "https://twitter.com/sofuswenoee",
   },
+  {
+    id: 4,
+    iconName: "icon-substack",
+    link: "https://sofus.substack.com/", // Replace with your Substack link
+  },
 ];
 const Home = () => {
   return (
