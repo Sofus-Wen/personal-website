@@ -1,5 +1,4 @@
 import SectionContainer from "./SectionContainer";
-import SubstackIcon from './SubstackIcon';
 const socialIcon = [
   {
     id: 1,
@@ -15,11 +14,6 @@ const socialIcon = [
     id: 3,
     iconName: "icon-twitter-squared",
     link: "https://twitter.com/sofuswenoee",
-  },
-  {
-    id: 4,
-    iconName: SubstackIcon,
-    link: "https://sofus.substack.com/",
   },
 ];
 const Home = () => {
@@ -55,9 +49,8 @@ const Home = () => {
                         className="text-black text-[20px] transition-all duration-300 hover:text-black"
                         href={item.link}
                         target="_blank"
-                        rel="noopener noreferrer"
                       >
-                        {item.IconComponent ? <item.IconComponent /> : <i className={item.iconName} />}
+                        <i className={item.iconName} />
                       </a>
                     </li>
                   ))}
