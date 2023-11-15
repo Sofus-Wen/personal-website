@@ -18,7 +18,7 @@ const socialIcon = [
   {
     id: 4,
     iconName: "icon-substack",
-    link: "https://twitter.com/sofuswenoee",
+    link: "https://sofus.substack.com",
   },
 ];
 const Home = () => {
