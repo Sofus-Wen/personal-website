@@ -55,8 +55,9 @@ const Home = () => {
                         className="text-black text-[20px] transition-all duration-300 hover:text-black"
                         href={item.link}
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <i className={item.iconName} />
+                        {item.IconComponent ? <item.IconComponent /> : <i className={item.iconName} />}
                       </a>
                     </li>
                   ))}
