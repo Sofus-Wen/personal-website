@@ -17,7 +17,7 @@ const socialIcon = [
   },
   {
     id: 4,
-    iconName: "/tokyo/public/assets/img/svg/social/substack-icon.svg",
+    iconName: "icon-mail",
     link: "https://sofus.substack.com",
   },
 ];
