@@ -17,7 +17,7 @@ const socialIcon = [
   },
   {
     id: 4,
-    iconName: "icon-email",
+    iconName: "icon-mail",
     link: "https://sofus.substack.com",
   },
 ];
