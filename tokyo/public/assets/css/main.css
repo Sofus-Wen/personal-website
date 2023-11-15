@@ -1618,15 +1618,15 @@ body.dark .tokyo_tm_topbar {
   background-color: rgb(73 75 80 / var(--tw-bg-opacity));
 }
 
-body.dark .hamburger-inner, 
-    body.dark .hamburger-inner:after, 
+body.dark .hamburger-inner,
+    body.dark .hamburger-inner:after,
     body.dark .hamburger-inner:before {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-body.dark .hamburger.is-active .hamburger-inner, 
-    body.dark .hamburger.is-active .hamburger-inner:after, 
+body.dark .hamburger.is-active .hamburger-inner,
+    body.dark .hamburger.is-active .hamburger-inner:after,
     body.dark .hamburger.is-active .hamburger-inner:before {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -4504,3 +4504,7 @@ body.dark .loader_line:after {
   text-align: center;
 }
 
+.icon-substack:before {
+  content: "#000000"; /* Replace with the correct content code for Substack */
+  /* Add any additional styling needed */
+}
