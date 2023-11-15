@@ -4503,8 +4503,3 @@ body.dark .loader_line:after {
 .focus\:hover\:text-center:hover:focus {
   text-align: center;
 }
-
-.icon-substack:before {
-  content: "\f3f3"; /* Replace with the correct content code for Substack */
-  /* Add any additional styling needed */
-}
