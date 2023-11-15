@@ -1,4 +1,5 @@
 import SectionContainer from "./SectionContainer";
+import SubstackIcon from './SubstackIcon';
 const socialIcon = [
   {
     id: 1,
@@ -17,8 +18,8 @@ const socialIcon = [
   },
   {
     id: 4,
-    iconName: "icon-substack",
-    link: "https://sofus.substack.com/", // Replace with your Substack link
+    iconName: SubstackIcon,
+    link: "https://sofus.substack.com/",
   },
 ];
 const Home = () => {
