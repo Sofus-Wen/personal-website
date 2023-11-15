@@ -2,7 +2,7 @@ import SectionContainer from "./SectionContainer";
 const socialIcon = [
   {
     id: 1,
-    iconName: "icon-medium",
+    iconName: "icon-medium-squared",
     link: "https://medium.com/@sofuswenoee",
   },
   {
@@ -13,6 +13,11 @@ const socialIcon = [
   {
     id: 3,
     iconName: "icon-twitter-squared",
+    link: "https://twitter.com/sofuswenoee",
+  },
+  {
+    id: 4,
+    iconName: "icon-substack-squared",
     link: "https://twitter.com/sofuswenoee",
   },
 ];
