@@ -24,7 +24,7 @@ const Contact = () => {
             </div>
           </div>
           <Map />
-          <br>
+          {"\n"}
           {/* Cal.com widget */}
           <Cal
             calLink="sofuswenoee/sofus-1-on-1"
