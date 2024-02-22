@@ -24,13 +24,14 @@ const Contact = () => {
             </div>
           </div>
           <Map />
-          <ContactForm />
+          <br>
           {/* Cal.com widget */}
           <Cal
             calLink="sofuswenoee/sofus-1-on-1"
             style={{ width: "100%", height: "100%", overflow: "scroll" }}
             config={{ layout: 'month_view' }}
           />
+          <ContactForm />
         </div>
       </div>
     </SectionContainer>
