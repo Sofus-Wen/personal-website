@@ -17,12 +17,12 @@ const About = () => {
             </div>
           </div>
           <Intro />
-          {/* <Skills /> */}
-          {/* <KnowledgeInterests /> */}
-          {/* <EducationExperience /> */}
-          {/* <Testimonials /> */}
         </div>
       </div>
+      <Skills />
+      {/* <KnowledgeInterests /> */}
+      {/* <EducationExperience /> */}
+      {/* <Testimonials /> */}
     </SectionContainer>
   );
 };
