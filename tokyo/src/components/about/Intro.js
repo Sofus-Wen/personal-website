@@ -109,7 +109,7 @@ const Intro = () => {
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                  Languages Spoken:
+                  Languages:
                 </span>
                   <span>Danish, English, & Cantonese</span>
               </li>
