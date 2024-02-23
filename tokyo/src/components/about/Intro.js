@@ -7,7 +7,7 @@ const Intro = () => {
       </div>
       <div className="about_title w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[20px] mb-[30px]">
         <h3 className="text-[22px] font-bold">I want to unlock new depths of meaning for humans.</h3>
-        <span>The EdTech High School Student</span>
+        {/*<span>The EdTech High School Student</span>*/}
       </div>
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
         <p className="mb-[11px]">
