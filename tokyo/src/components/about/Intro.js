@@ -11,7 +11,9 @@ const Intro = () => {
       </div>
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
         <p className="mb-[11px]">
-        Welcome back to my little corner of the internet! For those who don’t know me, my name is Sofus & I am a 17-year-old high school student interested in AI’s transformative possibilities on our future education system.
+          Welcome back to my little corner of the internet! For those who don’t know me, my name is Sofus, and I am a 17-year-old high school student deeply fascinated by the transformative possibilities of AI on our future education system. I want to redefine the landscape of learning, making it more personalized, effective, and, above all, meaningful.
+
+          By integrating AI into education, I envision a future where learning is not a one-size-fits-all model but a tailored experience that meets individual needs, ignites passions, and unlocks the full potential of every learner.
         </p>
       </div>
       {/*<div className="tokyo_tm_short_info w-full h-auto clear-both float-left flex border-solid border-[#DFDFDF] border-b pb-[30px] mb-[40px]">
