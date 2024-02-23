@@ -1,5 +1,17 @@
 import { Fragment } from "react";
 const Intro = () => {
+  // Your birthdate
+  const birthDate = new Date('2006-06-28');
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+
+  // Subtract one year if the current month is before the birth month
+  // Or if it's the birth month but the current day is before the birth day
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
   return (
     <Fragment>
       <div className="top_author_image w-full h-auto clear-both float-left relative mb-[35px]">
@@ -25,13 +37,13 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Birthday:
                 </span>
-                <span>01.07.1990</span>
+                <span>28.06.2006</span>
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Age:
                 </span>
-                <span>32</span>
+                <span>{age}</span>
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
