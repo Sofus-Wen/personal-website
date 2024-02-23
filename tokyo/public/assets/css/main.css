@@ -1212,7 +1212,7 @@ h6 {
   }
 
   .px-100-top {
-    padding-top: 100px;
+    padding-top: 100px !important;
   }
 
   .tokyo_tm_portfolio {
