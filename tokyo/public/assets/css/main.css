@@ -1209,6 +1209,9 @@ h6 {
 
   .tokyo_tm_about {
     padding-top: 130px;
+  }
+
+  #about > div.container > div {
     padding-bottom: 0px !important;
   }
 
