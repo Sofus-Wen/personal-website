@@ -2568,6 +2568,7 @@ body.dark .loader_line:after {
 @media (min-width: 1024px) {
 .pc-width {
   width: 80% !important;
+  min-width: 80% !important;
   }
 }
 
