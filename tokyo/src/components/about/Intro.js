@@ -68,7 +68,7 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Languages Spoken:
                 </span>
-                  <span>Danish, English, and beginning Cantonese</span>
+                  <span>Danish, English, & Cantonese</span>
               </li>
               {/*<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
@@ -117,7 +117,7 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Hobbies:
                 </span>
-                  <span>Weight training, Wing Chun, writing, and exploring new technologies</span>
+                  <span>Weight training, Wing Chun, Writing, & Exploring New Technologies</span>
               </li>
               {/*<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
