@@ -2,9 +2,9 @@ import SectionContainer from "./SectionContainer";
 import SectionTitle from "./SectionTitle";
 import Intro from "./about/Intro";
 import Skills from "./about/Skills";
-// import KnowledgeInterests from "./about/KnowledgeInterests";
-// import EducationExperience from "./about/EducationExperience";
-// import Testimonials from "./about/Testimonials";
+import KnowledgeInterests from "./about/KnowledgeInterests";
+import EducationExperience from "./about/EducationExperience";
+import Testimonials from "./about/Testimonials";
 
 const About = () => {
   return (
@@ -20,9 +20,9 @@ const About = () => {
         </div>
       </div>
       <Skills />
-      {/* <KnowledgeInterests /> */}
-      {/* <EducationExperience /> */}
-      {/* <Testimonials /> */}
+      <KnowledgeInterests />
+      <EducationExperience />
+      <Testimonials />
     </SectionContainer>
   );
 };
