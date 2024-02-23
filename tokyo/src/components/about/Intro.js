@@ -75,8 +75,8 @@ const Intro = () => {
                   >
                     +45 50 48 68 69
                   </a>
-                  </li>*/}
-                </span>
+                  </li>
+                </span>*/}
             </ul>
           </div>
         </div>
