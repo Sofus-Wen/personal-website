@@ -47,9 +47,9 @@ const Intro = () => {
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                  Address:
+                  City:
                 </span>
-                <span>Ave 11, New York, USA</span>
+                <span>Værløse, Denmark(Currently: Barrie, Canada)</span>
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
@@ -64,19 +64,19 @@ const Intro = () => {
                   </a>
                 </span>
               </li>
-              <li className="m-0">
+              {/*<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Phone:
                 </span>
                 <span>
                   <a
                     className="text-[#767676] transition-all duration-300 hover:text-black"
-                    href="tel:+77 022 177 05 05"
+                    href="tel:+45 50 48 68 69"
                   >
-                    +77 022 177 05 05
+                    +45 50 48 68 69
                   </a>
+                  </li>*/}
                 </span>
-              </li>
             </ul>
           </div>
         </div>
@@ -87,32 +87,32 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Nationality:
                 </span>
-                <span>USA</span>
+                <span>Denmark</span>
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Study:
                 </span>
-                <span>Univercity of Texas</span>
+                <span>Niels Brock DIG (Currently: Georgian College)</span>
               </li>
-              <li className="m-0">
+              {/*}<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Degree:
                 </span>
                 <span>Master</span>
-              </li>
+              </li>*/}
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Interest:
                 </span>
-                <span>Playing Football</span>
+                <span>AI in Education</span>
               </li>
-              <li className="m-0">
+              {/*<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Freelance:
                 </span>
                 <span>Available</span>
-              </li>
+              </li>*/}
             </ul>
           </div>
         </div>
