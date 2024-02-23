@@ -13,7 +13,7 @@ const Intro = () => {
   }
 
   return (
-    <Fragment style="padding-bottom: 0px;">
+    <Fragment>
       <div className="top_author_image w-full h-auto clear-both float-left relative mb-[35px]">
         <img className="min-w-full pc-width" src="assets/img/slider/1.jpg" alt="image" />
       </div>
