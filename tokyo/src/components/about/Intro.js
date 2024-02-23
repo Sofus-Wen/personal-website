@@ -91,9 +91,9 @@ const Intro = () => {
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                  Languages Spoken:
+                  Study:
                 </span>
-                  <span>Danish, English, & Cantonese</span>
+                <span>Niels Brock DIG (Georgian College)</span>
               </li>
               {/*}<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
@@ -109,9 +109,9 @@ const Intro = () => {
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                  Hobbies:
+                  Languages Spoken:
                 </span>
-                  <span>Weight training, Wing Chun, Writing, & Exploring New Technologies</span>
+                  <span>Danish, English, & Cantonese</span>
               </li>
               {/*<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
