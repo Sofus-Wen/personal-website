@@ -1139,6 +1139,10 @@ h6 {
   opacity: 0;
 }
 
+.px-100-top {
+  padding-top: 100px !important;
+}
+
 /*----------------------------------------------------*/
 
 /*     MEDIA QUERIES FOR SMALL DEVICES                */
@@ -1209,10 +1213,6 @@ h6 {
 
   .tokyo_tm_about {
     padding-top: 130px;
-  }
-
-  .px-100-top {
-    padding-top: 100px !important;
   }
 
   .tokyo_tm_portfolio {
