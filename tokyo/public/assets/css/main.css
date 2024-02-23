@@ -2565,6 +2565,12 @@ body.dark .loader_line:after {
   min-width: 100%;
 }
 
+@media (min-width: 1024px) {
+.pc-width {
+  width: 80%;
+  }
+}
+
 .min-w-\[100px\] {
   min-width: 100px;
 }
