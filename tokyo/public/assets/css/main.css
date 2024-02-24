@@ -2576,6 +2576,11 @@ body.dark .loader_line:after {
   }
 }
 
+#testimonials-swiper-container {
+  display: flex;
+  justify-content: center;
+}
+
 .company-image {
   width: 80px; /* Adjust the width as needed */
   height: auto; /* This ensures the image keeps its aspect ratio */

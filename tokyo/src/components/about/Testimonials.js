@@ -29,20 +29,17 @@ const Testimonials = () => {
   return (
     <div className="tokyo_tm_testimonials w-full h-auto clear-both float-left py-[100px] px-0">
       <div className="container">
-        <div className="list w-full h-auto clear-both float-left overflow-hidden">
+        <div id="testimonials-swiper-container" className="list w-full h-auto clear-both float-left overflow-hidden">
           <Swiper
             {...sliderProps.testimonial}
-            className="m-0 list-none cursor-e-resize"
-            spaceBetween={50} // Adjust the space between slides
-            slidesPerView={5} // Adjust the number of slides per view as needed
-          >
+            spaceBetween={50}
+            slidesPerView={3}
+            loop={true}
+            centeredSlides={true}
+            className="m-0 list-none cursor-e-resize">
             {testimonialData.map((item) => (
               <SwiperSlide key={item.id} className="flex justify-center">
-                <img
-                  src={item.authorImage}
-                  alt={`Company ${item.id}`}
-                  className="company-image" // Use a class to control the size
-                />
+                <img src={item.authorImage} alt={`Company ${item.id}`} className="company-image" />
               </SwiperSlide>
             ))}
           </Swiper>
