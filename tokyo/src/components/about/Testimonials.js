@@ -33,7 +33,7 @@ const Testimonials = () => {
         <Swiper
         {...sliderProps.testimonial}
         spaceBetween={50}
-        slidesPerView={3} // Display 3 logos at a time
+        slidesPerView={2} // Display 3 logos at a time
         loop={true}
         centeredSlides={true}
         className="m-0 list-none cursor-e-resize"
