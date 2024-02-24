@@ -23,7 +23,7 @@ export default function Document() {
         <link rel="stylesheet" href="assets/css/plugins.css" />
         <link rel="stylesheet" href="assets/css/custom.css" />
         <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="icon" href="/public/assets/img/favicon/favicon.png" /> <!-- Add this line for your favicon -->
+        <link rel="icon" href="/public/assets/img/favicon/favicon.png" />
         <title>Sofus Wenoee</title>
       </Head>
       <body>
