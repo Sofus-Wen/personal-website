@@ -7,6 +7,18 @@ const experiencesData = [
   },
   {
     id: 2,
+    date: "2023",
+    designation: "Solon.AI",
+    company: "Crimson 18u18 Finalist",
+  },
+  {
+    id: 3,
+    date: "2023",
+    designation: "Speaker",
+    company: "PuzzleX",
+  },
+  {
+    id: 4,
     date: "2020 - 2022",
     designation: "Web Designer",
     company: "Taiyo Official",
