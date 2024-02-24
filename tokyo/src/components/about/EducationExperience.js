@@ -7,15 +7,15 @@ const experiencesData = [
   },
   {
     id: 2,
-    date: "2016 - 2018",
-    designation: "UX Designer",
-    company: "RGB Studio",
+    date: "2022",
+    designation: "Lead Designer & Student",
+    company: "Copenhagen Academy of FD & Society of NLP™",
   },
   {
     id: 3,
-    date: "2012 - 2016",
+    date: "2020 - 2022",
     designation: "Web Designer",
-    company: "Innovations Park",
+    company: "Taiyo Official",
   },
 ];
 const educationData = [
