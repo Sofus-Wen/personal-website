@@ -8,8 +8,8 @@ const experiencesData = [
   {
     id: 2,
     date: "2022",
-    designation: "Lead Designer & Student",
-    company: "Copenhagen Academy of FD & Society of NLP™",
+    designation: "Lead Designer",
+    company: "Copenhagen Academy of FD",
   },
   {
     id: 3,
