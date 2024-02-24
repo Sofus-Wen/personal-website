@@ -36,13 +36,7 @@ const educationData = [
     date: "2012 - 2022",
     degree: "Primary School",
     institute: "Marie Kruses School",
-  },{/*
-  {
-    id: 3,
-    date: "2008 - 2010",
-    degree: "Associate Degree",
-    institute: "Simone College",
-  },*/}
+  },
 ];
 
 const EducationExperience = () => {
