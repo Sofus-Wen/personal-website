@@ -2,8 +2,8 @@ const experiencesData = [
   {
     id: 1,
     date: "2023 - Now",
-    designation: "TKS - The Knowledge Society",
-    company: "Envato Market",
+    designation: "Innovator",
+    company: "TKS - The Knowledge Society",
   },
   {
     id: 2,
@@ -21,22 +21,22 @@ const experiencesData = [
 const educationData = [
   {
     id: 1,
-    date: "2014 - 2016",
-    degree: "Master Degree",
-    institute: "Oxford Univercity",
+    date: "2023 - Now",
+    degree: "HHX (Higher Business Degree)",
+    institute: "Niels Brock",
   },
   {
     id: 2,
-    date: "2010 - 2014",
-    degree: "Bachelor Degree",
-    institute: "Texas Univercity",
-  },
+    date: "2012 - 2022",
+    degree: "Primary School",
+    institute: "Marie Kruses School",
+  },{/*
   {
     id: 3,
     date: "2008 - 2010",
     degree: "Associate Degree",
     institute: "Simone College",
-  },
+  },*/}
 ];
 
 const EducationExperience = () => {
