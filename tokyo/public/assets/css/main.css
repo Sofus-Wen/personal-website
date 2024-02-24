@@ -2576,10 +2576,26 @@ body.dark .loader_line:after {
   }
 }
 
+/* Adjust the Swiper container to ensure it allows for vertical centering */
+#testimonials-swiper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This ensures vertical centering */
+  height: 100%; /* Ensure this is set or adjusted to allow for centering */
+}
+
+/* Style for the Swiper slides */
 #testimonials-swiper-container .swiper-slide {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* Vertically centers the content within the slide */
+  height: 100%; /* Ensure slides are full height of the Swiper container */
+}
+
+/* Additional styles for the logos */
+.company-image {
+  width: 80px; /* Adjust based on your preference */
+  /* Additional styling for logos */
 }
 
 .company-image {
