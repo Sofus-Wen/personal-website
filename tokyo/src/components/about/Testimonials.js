@@ -27,7 +27,7 @@ const testimonialData = [
 
 const Testimonials = () => {
   return (
-    <div className="tokyo_tm_testimonials w-full h-auto clear-both float-left py-[100px] px-0">
+    <div className="tokyo_tm_testimonials w-full h-auto clear-both float-left py-[30px] px-0">
       <div className="container">
         <div id="testimonials-swiper-container" className="list w-full h-auto clear-both float-left overflow-hidden">
         <Swiper
