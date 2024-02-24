@@ -12,10 +12,32 @@ const Intro = () => {
     age--;
   }
 
+    // Images for the carousel
+    const images = [
+      "assets/img/slider/1.jpg",
+      "assets/img/slider/4.jpg", // Add more images as needed
+      "assets/img/slider/5.jpg",
+    ];
+
+    // State to keep track of the current image
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    // Function to go to the next image
+    const nextImage = () => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    // Function to go to the previous image
+    const prevImage = () => {
+      setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
   return (
     <Fragment>
       <div className="top_author_image w-full h-auto clear-both float-left relative mb-[35px]">
-        <img className="min-w-full pc-width" src="assets/img/slider/1.jpg" alt="image" />
+        <img className="min-w-full pc-width" src={images[currentImageIndex]} alt="image" />
+        <button onClick={prevImage}>Prev</button> {/* Add styling as needed */}
+        <button onClick={nextImage}>Next</button> {/* Add styling as needed */}
       </div>
       <div className="about_title w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[20px] mb-[30px]">
         <h3 className="text-[22px] font-bold">I want to unlock new depths of meaning for humans.</h3>
