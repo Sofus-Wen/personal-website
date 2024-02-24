@@ -3,38 +3,23 @@ import { sliderProps } from "../../sliderProps";
 const testimonialData = [
   {
     id: 1,
-    text: "These people really know what they are doing! Great customer support availability and supperb kindness.",
     authorImage: "assets/img/companies/company1.png",
-    authorName: "Alexander Walker",
-    authorDesignation: "Graphic Designer",
   },
   {
     id: 2,
-    text: "These people really know what they are doing! Great customer support availability and supperb kindness.",
     authorImage: "assets/img/companies/company2.png",
-    authorName: "Isabelle Smith",
-    authorDesignation: "Content Manager",
   },
   {
     id: 3,
-    text: "These people really know what they are doing! Great customer support availability and supperb kindness.",
     authorImage: "assets/img/companies/company3.png",
-    authorName: "Baraka Clinton",
-    authorDesignation: "English Teacher",
   },
   {
     id: 4,
-    text: "These people really know what they are doing! Great customer support availability and supperb kindness.",
     authorImage: "assets/img/companies/company4.png",
-    authorName: "Baraka Clinton",
-    authorDesignation: "English Teacher",
   },
   {
     id: 5,
-    text: "These people really know what they are doing! Great customer support availability and supperb kindness.",
     authorImage: "assets/img/companies/company5.png",
-    authorName: "Baraka Clinton",
-    authorDesignation: "English Teacher",
   },
 ];
 const Testimonials = () => {
