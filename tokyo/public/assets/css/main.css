@@ -2576,17 +2576,15 @@ body.dark .loader_line:after {
   }
 }
 
-#testimonials-swiper-container {
+#testimonials-swiper-container .swiper-slide {
   display: flex;
   justify-content: center;
-  align-items: center; /* Ensure vertical centering */
+  align-items: center;
 }
 
 .company-image {
-  width: 80px; /* Adjust the width as needed */
-  height: auto; /* This ensures the image keeps its aspect ratio */
-  object-fit: cover; /* Adjusts the images' fit within the box (optional) */
-  filter: grayscale(100%) brightness(0.4); /* Make image dark grey */
+  width: 80px; /* Adjust based on your preference */
+  filter: grayscale(100%) brightness(0.5); /* Approach to make images dark grey */
 }
 
 .min-w-\[100px\] {
