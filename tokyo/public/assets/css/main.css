@@ -2576,6 +2576,12 @@ body.dark .loader_line:after {
   }
 }
 
+.company-image {
+  width: 80px; /* Adjust the width as needed */
+  height: auto; /* This ensures the image keeps its aspect ratio */
+  object-fit: cover; /* Adjusts the images' fit within the box (optional) */
+}
+
 .min-w-\[100px\] {
   min-width: 100px;
 }
