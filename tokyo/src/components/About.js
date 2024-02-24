@@ -19,9 +19,9 @@ const About = () => {
           <Intro />
         </div>
       </div>
-      <Skills />
-      <KnowledgeInterests />
       <EducationExperience />
+      <KnowledgeInterests />
+      <Skills />
       <Testimonials />
     </SectionContainer>
   );
