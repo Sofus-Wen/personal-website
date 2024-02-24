@@ -4,15 +4,15 @@ const experiencesData = [
     date: "2023 - Now",
     designation: "Innovator",
     company: "TKS - The Knowledge Society",
-  },
+  },{/*
   {
     id: 2,
-    date: "2022",
-    designation: "Lead Designer",
+    date: "2021 - 2022",
+    designation: "UX Designer",
     company: "Copenhagen Academy of FD",
-  },
+  },*/}
   {
-    id: 3,
+    id: 2,
     date: "2020 - 2022",
     designation: "Web Designer",
     company: "Taiyo Official",
