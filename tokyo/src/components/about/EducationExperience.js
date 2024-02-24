@@ -21,12 +21,18 @@ const experiencesData = [
 const educationData = [
   {
     id: 1,
+    date: "2024 - Now",
+    degree: "HHX (Higher Business Degree)",
+    institute: "Georgian College",
+  },
+  {
+    id: 2,
     date: "2023 - Now",
     degree: "HHX (Higher Business Degree)",
     institute: "Niels Brock",
   },
   {
-    id: 2,
+    id: 3,
     date: "2012 - 2022",
     degree: "Primary School",
     institute: "Marie Kruses School",
