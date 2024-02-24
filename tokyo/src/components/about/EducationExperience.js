@@ -8,8 +8,8 @@ const experiencesData = [
   {
     id: 2,
     date: "2023",
-    designation: "Solon.AI",
-    company: "Crimson 18u18 Finalist",
+    designation: "Finalist",
+    company: "Crimson 18u18",
   },
   {
     id: 3,
