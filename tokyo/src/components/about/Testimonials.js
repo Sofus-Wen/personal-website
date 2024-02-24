@@ -32,8 +32,8 @@ const Testimonials = () => {
         <div id="testimonials-swiper-container" className="list w-full h-auto clear-both float-left overflow-hidden">
         <Swiper
         {...sliderProps.testimonial}
-        spaceBetween={25}
-        slidesPerView={2} // Display 3 logos at a time
+        spaceBetween={30}
+        slidesPerView={3} // Display 3 logos at a time
         loop={true}
         centeredSlides={true}
         className="m-0 list-none cursor-e-resize"
