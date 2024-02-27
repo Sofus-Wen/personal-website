@@ -113,7 +113,7 @@ const Portfolio = () => {
           <div className="tokyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
             <div className="title_flex w-full h-auto clear-both flex justify-between items-end">
               <SectionTitle
-                pageName={"My Projects"}
+                pageName={"Projects"}
                 title={"My Projects"}
               />
               <div className="portfolio_filter">
