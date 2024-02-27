@@ -1,58 +1,6 @@
 import { TokyoContext } from "@/src/Context";
 import { useContext } from "react";
 import ModalContainer from "./ModalContainer";
-
-const KeyFeatures = () => (
-  <div>
-    <h2>Key Features</h2>
-    <ul>
-      <li>Textual Analysis: PANTRA employs advanced algorithms to detect linguistic cues linked to the Big Five personality dimensions.</li>
-      <li>Personality Insights: Leveraging sentiment analysis and linguistic markers, the platform estimates individual personality profiles.</li>
-      <li>Comprehensive Reports: Users receive detailed analyses that illuminate the personality characteristics inferred from their text.</li>
-    </ul>
-  </div>
-);
-
-const Foundation = () => (
-  <div>
-    <h2>Foundation</h2>
-    <p>PANTRA is inspired by the convergence of technological innovation and psychological research. The project is grounded in evidence from the study "Personality in 100,000 Words: A large-scale analysis of personality and word use among bloggers," which demonstrates a significant correlation between language use and personality traits. This foundational research underpins PANTRA's methodology.</p>
-  </div>
-);
-
-const Objectives = () => (
-  <div>
-    <h2>Objectives</h2>
-    <p>The development of PANTRA is driven by a commitment to apply artificial intelligence for enhancing understanding of human personality, with goals to:
-    <ul>
-      <li>Personalize digital experiences in education, social media, and customer engagement.</li>
-      <li>Promote self-awareness and personal growth through accessible personality insights.</li>
-      <li>Advance the field of computational psychology by linking language use to personality patterns.</li>
-    </ul>
-    </p>
-  </div>
-);
-
-const Application = () => (
-  <div>
-    <h2>Application</h2>
-    <p>PANTRA is designed for intuitive use, requiring only a text input to begin the personality assessment. It serves a diverse audience, including educators, marketing professionals, psychologists, and anyone interested in the nexus of language and personality.</p>
-  </div>
-);
-
-const Gratitude = () => (
-  <div>
-    <h2>Gratitude</h2>
-    <p>This initiative benefits from the collective knowledge and efforts of experts across psychology, computational linguistics, and artificial intelligence. Special acknowledgment is extended to Tal Yarkoni's seminal research, which significantly influences PANTRA's development.</p>
-  </div>
-);
-
-const Engagement = () => (
-  <div>
-    <h2>Engagement</h2>
-    <p>For more information on PANTRA, including inquiries about access, collaboration, or contributions, please visit my <a href="https://sofuswenoee.com">personal website</a>.</p>
-  </div>
-);
 const DetailsModal = () => {
   const { portfolioDetailsModal, setPortfolioDetailsModal } =
     useContext(TokyoContext);
@@ -85,13 +33,6 @@ const DetailsModal = () => {
               >
                 {text}
               </p>
-              <KeyFeatures />
-              <Foundation />
-              <Objectives />
-              <Application />
-              <Gratitude />
-              <Engagement />
-
             ))}
           </div>
           <div className="detailbox w-[30%] pl-[40px]">
