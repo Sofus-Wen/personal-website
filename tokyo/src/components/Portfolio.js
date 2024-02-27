@@ -327,7 +327,7 @@ const Portfolio = () => {
                   <div
                     className="entry tokyo_tm_portfolio_animation_wrap"
                     data-title="PANTRA"
-                    data-category="Natural Language Processing"
+                    data-category="Personality Analysis through Natural Text Response Assessment"
                   >
                     <a
                       className="popup_info"
