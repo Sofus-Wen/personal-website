@@ -127,7 +127,7 @@ const Portfolio = () => {
                       All
                     </a>
                   </li>
-                  <li className="mr-[25px] inline-block">
+                  {/*<li className="mr-[25px] inline-block">
                     <a
                       className="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black"
                       href="#"
@@ -171,7 +171,7 @@ const Portfolio = () => {
                     >
                       Detail
                     </a>
-                  </li>
+                  </li>*/}  
                 </ul>
               </div>
             </div>
