@@ -13,9 +13,9 @@ const detailData = [
       "PANTRA is a personality predictor based on word usage using NLP.",
       "PANTRA leverages Natural Language Processing (NLP) and psychological analysis, to offer a seamless approach to decoding the Big Five personality traits through text analysis. By examining patterns in written or conversational language, PANTRA provides insights into an individual's Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism—collectively known as the OCEAN model.",
     ],
-    client: "Alvaro Morata",
-    date: "October 22, 2022",
-    category: "Detail",
+    client: "PANTRA: Personality Analysis through Natural Text Response Assessment",
+    date: "Februar 27, 2024",
+    category: "AI NLP",
     share: [
       {
         id: 1,
@@ -40,7 +40,7 @@ const detailData = [
     ],
     bigImage: "assets/img/portfolio/1.jpg",
     images: ["assets/img/portfolio/2.jpg", "assets/img/portfolio/3.jpg"],
-  },
+  },{/*{
   {
     id: 2,
     thumbnail: "assets/img/portfolio/8.jpg",
@@ -76,8 +76,59 @@ const detailData = [
     ],
     bigImage: "assets/img/portfolio/1.jpg",
     images: ["assets/img/portfolio/2.jpg", "assets/img/portfolio/3.jpg"],
-  },
+  },*/}
 ];
+const KeyFeatures = () => (
+  <div>
+    <h2>Key Features</h2>
+    <ul>
+      <li>Textual Analysis: PANTRA employs advanced algorithms to detect linguistic cues linked to the Big Five personality dimensions.</li>
+      <li>Personality Insights: Leveraging sentiment analysis and linguistic markers, the platform estimates individual personality profiles.</li>
+      <li>Comprehensive Reports: Users receive detailed analyses that illuminate the personality characteristics inferred from their text.</li>
+    </ul>
+  </div>
+);
+
+const Foundation = () => (
+  <div>
+    <h2>Foundation</h2>
+    <p>PANTRA is inspired by the convergence of technological innovation and psychological research. The project is grounded in evidence from the study "Personality in 100,000 Words: A large-scale analysis of personality and word use among bloggers," which demonstrates a significant correlation between language use and personality traits. This foundational research underpins PANTRA's methodology.</p>
+  </div>
+);
+
+const Objectives = () => (
+  <div>
+    <h2>Objectives</h2>
+    <p>The development of PANTRA is driven by a commitment to apply artificial intelligence for enhancing understanding of human personality, with goals to:
+    <ul>
+      <li>Personalize digital experiences in education, social media, and customer engagement.</li>
+      <li>Promote self-awareness and personal growth through accessible personality insights.</li>
+      <li>Advance the field of computational psychology by linking language use to personality patterns.</li>
+    </ul>
+    </p>
+  </div>
+);
+
+const Application = () => (
+  <div>
+    <h2>Application</h2>
+    <p>PANTRA is designed for intuitive use, requiring only a text input to begin the personality assessment. It serves a diverse audience, including educators, marketing professionals, psychologists, and anyone interested in the nexus of language and personality.</p>
+  </div>
+);
+
+const Gratitude = () => (
+  <div>
+    <h2>Gratitude</h2>
+    <p>This initiative benefits from the collective knowledge and efforts of experts across psychology, computational linguistics, and artificial intelligence. Special acknowledgment is extended to Tal Yarkoni's seminal research, which significantly influences PANTRA's development.</p>
+  </div>
+);
+
+const Engagement = () => (
+  <div>
+    <h2>Engagement</h2>
+    <p>For more information on PANTRA, including inquiries about access, collaboration, or contributions, please visit my <a href="https://sofuswenoee.com">personal website</a>.</p>
+  </div>
+);
 const Portfolio = () => {
   const isotope = useRef();
   const [filterKey, setFilterKey] = useState("*");
@@ -275,8 +326,8 @@ const Portfolio = () => {
                 <div className="inner w-full h-auto clear-both float-left overflow-hidden relative">
                   <div
                     className="entry tokyo_tm_portfolio_animation_wrap"
-                    data-title="Selena Gomez"
-                    data-category="Detail"
+                    data-title="PANTRA"
+                    data-category="NLP"
                   >
                     <a
                       className="popup_info"
@@ -298,7 +349,7 @@ const Portfolio = () => {
                     </a>
                   </div>
                 </div>
-              </li>
+              </li>{/*
               <li className="detail mb-[40px] float-left w-1/3 pl-[40px] item__">
                 <div className="inner w-full h-auto clear-both float-left overflow-hidden relative">
                   <div
@@ -326,7 +377,7 @@ const Portfolio = () => {
                     </a>
                   </div>
                 </div>
-              </li>
+              </li>*/}
             </ul>
           </div>
         </div>
