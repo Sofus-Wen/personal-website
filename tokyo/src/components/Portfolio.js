@@ -8,10 +8,10 @@ const detailData = [
   {
     id: 1,
     thumbnail: "assets/img/portfolio/7.jpg",
-    title: "Selena Gomez",
+    title: "PANTRA: Personality Analysis through Natural Text Response Assessment",
     text: [
-      "We live in a world where we need to move quickly and iterate on our ideas as flexibly as possible. Building mockups strikes the ideal balance between true-life representation of the end product and ease of modification.",
       "Mockups are useful both for the creative phase of the project - for instance when you're trying to figure out your user flows or the proper visual hierarchy - and the production phase when they will represent the target product. Making mockups a part of your creative and development process allows you to quickly and easily ideate.",
+      "PANTRA leverages Natural Language Processing (NLP) and psychological analysis, to offer a seamless approach to decoding the Big Five personality traits through text analysis. By examining patterns in written or conversational language, PANTRA provides insights into an individual's Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism—collectively known as the OCEAN model.",
     ],
     client: "Alvaro Morata",
     date: "October 22, 2022",
