@@ -15,7 +15,7 @@ const detailData = [
     ],
     client: "PANTRA: Personality Analysis through Natural Text Response Assessment",
     date: "Februar 27, 2024",
-    category: "AI NLP",
+    category: "AI - Natural language processing",
     share: [
       {
         id: 1,
@@ -327,7 +327,7 @@ const Portfolio = () => {
                   <div
                     className="entry tokyo_tm_portfolio_animation_wrap"
                     data-title="PANTRA"
-                    data-category="NLP"
+                    data-category="Natural Language Processing"
                   >
                     <a
                       className="popup_info"
