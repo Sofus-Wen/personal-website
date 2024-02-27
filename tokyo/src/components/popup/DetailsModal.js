@@ -39,7 +39,7 @@ const DetailsModal = () => {
             <ul className="list-none">
               <li className="mb-[8px] w-full float-left">
                 <span className="first font-bold block text-black mb-[3px]">
-                  Client
+                  Project
                 </span>
                 <span>{portfolioDetailsModal.client}</span>
               </li>
