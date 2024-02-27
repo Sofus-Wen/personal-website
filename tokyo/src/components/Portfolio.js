@@ -13,7 +13,7 @@ const detailData = [
       "PANTRA is a personality predictor based on word usage using NLP.",
       "PANTRA leverages Natural Language Processing (NLP) and psychological analysis, to offer a seamless approach to decoding the Big Five personality traits through text analysis. By examining patterns in written or conversational language, PANTRA provides insights into an individual's Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism—collectively known as the OCEAN model.",
     ],
-    project: "PANTRA: Personality Analysis through Natural Text Response Assessment",
+    client: "PANTRA: Personality Analysis through Natural Text Response Assessment",
     date: "Februar 27, 2024",
     category: "AI - Natural language processing",
     share: [
