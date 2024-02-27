@@ -62,9 +62,9 @@ const DetailsModal = () => {
                 </span>
                 <span>{portfolioDetailsModal.date}</span>
               </li>
-              <li className="w-full float-left">
+              {/*<li className="w-full float-left">
                 <span className="first font-bold block text-black mb-[3px]">
-                  Share
+                  Other places
                 </span>
                 <ul className="share list-none relative top-[7px]">
                   {portfolioDetailsModal.share.map((social) => (
@@ -75,7 +75,7 @@ const DetailsModal = () => {
                     </li>
                   ))}
                 </ul>
-              </li>
+              </li>*/}
             </ul>
           </div>
         </div>
