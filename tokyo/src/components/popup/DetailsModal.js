@@ -110,7 +110,7 @@ const DetailsModal = () => {
                     />
                     <div
                       className="main absolute inset-0 bg-no-repeat bg-center bg-cover"
-                      data-img-url="assets/img/portfolio/3.jpg"
+                      data-img-url="assets/img/portfolio/2.jpg"
                       style={{
                         backgroundImage: `url(${img})`,
                       }}
