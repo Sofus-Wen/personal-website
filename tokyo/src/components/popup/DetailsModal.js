@@ -80,26 +80,22 @@ const DetailsModal = () => {
           </div>
         </div>
         <div className="additional_images w-full h-auto clear-both float-left">
-          <ul className="ml-[-30px] list-none">
-            <li className="mb-[30px] float-left w-1/2 pl-[30px]">
-              <div className="list_inner w-full h-auto clear-both float-left relative">
-                <div className="my_image relative">
-                  <img
-                    className="opacity-0 min-w-full"
-                    src="assets/img/thumbs/4-2.jpg"
-                    alt="image"
-                  />
-                  <div
-                    className="main absolute inset-0 bg-no-repeat bg-center bg-cover"
-                    data-img-url="assets/img/portfolio/1.jpg"
-                    style={{
-                      backgroundImage: `url(${portfolioDetailsModal.bigImage})`,
-                    }}
-                  />
-                </div>
+        <ul className="ml-[-30px] list-none">
+          {/* Dynamically render the bigImage first */}
+          <li className="mb-[30px] float-left w-1/2 pl-[30px]">
+            <div className="list_inner w-full h-auto clear-both float-left relative">
+              <div className="my_image relative">
+                <img className="opacity-0 min-w-full" src="assets/img/thumbs/4-2.jpg" alt="image" />
+                <div
+                  className="main absolute inset-0 bg-no-repeat bg-center bg-cover"
+                  data-img-url={portfolioDetailsModal.bigImage}
+                  style={{ backgroundImage: `url(${portfolioDetailsModal.bigImage})` }}
+                />
               </div>
-            </li>
-            {portfolioDetailsModal.images.map((img, i) => (
+            </div>
+          </li>
+          {/* Now dynamically render the other images from the images array */}
+          {portfolioDetailsModal.images.map((img, i) => (
             <li key={i} className="mb-[30px] float-left w-1/2 pl-[30px]">
               <div className="list_inner w-full h-auto clear-both float-left relative">
                 <div className="my_image relative">
@@ -113,8 +109,8 @@ const DetailsModal = () => {
               </div>
             </li>
           ))}
-          </ul>
-        </div>
+        </ul>
+      </div>
       </div>
     </ModalContainer>
   );
