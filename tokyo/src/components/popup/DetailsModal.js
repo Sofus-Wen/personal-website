@@ -100,25 +100,19 @@ const DetailsModal = () => {
               </div>
             </li>
             {portfolioDetailsModal.images.map((img, i) => (
-              <li key={i} className="mb-[30px] float-left w-1/2 pl-[30px]">
-                <div className="list_inner w-full h-auto clear-both float-left relative">
-                  <div className="my_image relative">
-                    <img
-                      className="opacity-0 min-w-full"
-                      src="assets/img/thumbs/4-2.jpg"
-                      alt="image"
-                    />
-                    <div
-                      className="main absolute inset-0 bg-no-repeat bg-center bg-cover"
-                      data-img-url="assets/img/portfolio/2.jpg"
-                      style={{
-                        backgroundImage: `url(${img})`,
-                      }}
-                    />
-                  </div>
+            <li key={i} className="mb-[30px] float-left w-1/2 pl-[30px]">
+              <div className="list_inner w-full h-auto clear-both float-left relative">
+                <div className="my_image relative">
+                  <img className="opacity-0 min-w-full" src="assets/img/thumbs/4-2.jpg" alt="image" />
+                  <div
+                    className="main absolute inset-0 bg-no-repeat bg-center bg-cover"
+                    data-img-url={img}
+                    style={{ backgroundImage: `url(${img})` }}
+                  />
                 </div>
-              </li>
-            ))}
+              </div>
+            </li>
+          ))}
           </ul>
         </div>
       </div>
