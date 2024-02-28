@@ -24,23 +24,23 @@ const detailData = [
     share: [
       {
         id: 1,
-        iconName: "icon-facebook-squared",
-        link: "https://www.facebook.com/",
+        iconName: "icon-medium",
+        link: "https://www.medium.com/@sofuswenoee/decoding-personality-with-ai-introducing-pantra-9aa268139f65",
       },
       {
         id: 2,
-        iconName: "icon-twitter-squared",
+        iconName: "icon-youtube-squared",
         link: "https://twitter.com/",
       },
       {
         id: 3,
-        iconName: "icon-behance-squared",
-        link: "https://www.behance.net/",
+        iconName: "icon-linkedin-squared",
+        link: "https://www.linkedin.com/in/sofuswenoee",
       },
       {
         id: 4,
         iconName: "icon-linkedin-squared",
-        link: "https://www.linkedin.com/",
+        link: "https://colab.research.google.com/drive/1RUBQx8I5w67s12e6gpdQptodvat0FVU4?usp=sharing",
       },
     ],
     bigImage: "assets/img/portfolio/1.jpg",
