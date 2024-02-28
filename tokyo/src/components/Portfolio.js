@@ -30,7 +30,7 @@ const detailData = [
       {
         id: 2,
         iconName: "icon-youtube-squared",
-        link: "https://twitter.com/",
+        link: "https://youtube.com/",
       },
       {
         id: 3,
@@ -39,7 +39,7 @@ const detailData = [
       },
       {
         id: 4,
-        iconName: "icon-linkedin-squared",
+        iconName: "icon-mail",
         link: "https://colab.research.google.com/drive/1RUBQx8I5w67s12e6gpdQptodvat0FVU4?usp=sharing",
       },
     ],
