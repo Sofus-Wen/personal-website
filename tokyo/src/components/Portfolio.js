@@ -44,7 +44,7 @@ const detailData = [
       },
     ],
     bigImage: "assets/img/portfolio/1.jpg",
-    images: ["assets/img/portfolio/2.jpg", "assets/img/portfolio/3.jpg"],
+    images: "assets/img/portfolio/2.jpg",
   },{/*{
   {
     id: 2,
