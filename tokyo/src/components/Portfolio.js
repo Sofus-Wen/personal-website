@@ -17,6 +17,7 @@ const detailData = [
       "• Personalize digital experiences in education, social media, and customer engagement.",
       "• Promote self-awareness and personal growth through accessible personality insights.",
       "• Advance the field of computational psychology by linking language use to personality patterns.",
+      "This initiative benefits from the collective knowledge and efforts of experts across psychology, computational linguistics, and artificial intelligence. Special acknowledgment is extended to Tal Yarkoni's seminal research, which significantly influences PANTRA's development.",
     ],
     client: "PANTRA: Personality Analysis through Natural Text Response Assessment",
     date: "Februar 27, 2024",
