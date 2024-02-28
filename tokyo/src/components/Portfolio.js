@@ -44,8 +44,8 @@ const detailData = [
         link: "https://colab.research.google.com/drive/1RUBQx8I5w67s12e6gpdQptodvat0FVU4?usp=sharing",
       },
     ],
-    bigImage: "assets/img/portfolio/1.jpg",
-    images: ["assets/img/portfolio/2.jpg", "assets/img/portfolio/3.jpg"],
+    bigImage: "assets/img/portfolio/3.jpg",
+    images: ["assets/img/portfolio/2.jpg", "assets/img/portfolio/1.jpg"],
   },{/*{
   {
     id: 2,
