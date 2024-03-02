@@ -47,7 +47,7 @@ const detailData = [
     ],
     bigImage: "assets/img/portfolio/3.jpg",
     images: ["assets/img/portfolio/2.jpg", "assets/img/portfolio/1.jpg"],
-  },{/*{
+  },{
   {
     id: 2,
     thumbnail: "assets/img/portfolio/8.jpg",
@@ -83,7 +83,7 @@ const detailData = [
     ],
     bigImage: "assets/img/portfolio/1.jpg",
     images: ["assets/img/portfolio/2.jpg", "assets/img/portfolio/3.jpg"],
-  },*/}
+  },
 ];
 const Portfolio = () => {
   const isotope = useRef();
