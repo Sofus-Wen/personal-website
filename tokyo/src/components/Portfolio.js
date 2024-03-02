@@ -316,8 +316,8 @@ const Portfolio = () => {
                 <div className="inner w-full h-auto clear-both float-left overflow-hidden relative">
                   <div
                     className="entry tokyo_tm_portfolio_animation_wrap"
-                    data-title="Ave Simone"
-                    data-category="Detail"
+                    data-title="LazyStudent AI: Enhancing Academic Comprehension through Finetuned Second-Order Recommendations"
+                    data-category="AI - Data Curation & Fine Tuning"
                   >
                     <a
                       className="popup_info"
