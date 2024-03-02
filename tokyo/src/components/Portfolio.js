@@ -305,7 +305,7 @@ const Portfolio = () => {
                     </a>
                   </div>
                 </div>
-              </li>{/*
+              </li>
               <li className="detail mb-[40px] float-left w-1/3 pl-[40px] item__">
                 <div className="inner w-full h-auto clear-both float-left overflow-hidden relative">
                   <div
@@ -333,7 +333,7 @@ const Portfolio = () => {
                     </a>
                   </div>
                 </div>
-              </li>*/}
+              </li>
             </ul>
           </div>
         </div>
