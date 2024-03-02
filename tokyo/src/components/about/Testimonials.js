@@ -23,6 +23,14 @@ const testimonialData = [
     id: 5,
     authorImage: "assets/img/companies/company5.png",
   },
+  {
+    id: 6,
+    authorImage: "assets/img/companies/company6.png",
+  },
+  {
+    id: 7,
+    authorImage: "assets/img/companies/company7.png",
+  },
 ];
 
 const Testimonials = () => {
@@ -33,7 +41,7 @@ const Testimonials = () => {
         <Swiper
         {...sliderProps.testimonial}
         spaceBetween={30}
-        slidesPerView={3} // Display 3 logos at a time
+        slidesPerView={5} // Display 3 logos at a time
         loop={true}
         centeredSlides={true}
         className="m-0 list-none cursor-e-resize"
