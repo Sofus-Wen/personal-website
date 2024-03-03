@@ -69,7 +69,7 @@ const detailData = [
       {
         id: 1,
         iconName: "icon-medium",
-        link: "https://www.medium.com/@sofuswenoee/",
+        link: "https://medium.com/@sofuswenoee/how-i-built-lazystudent-to-hack-my-way-to-better-grades-without-the-effort-ab376391096b/",
       },
       {
         id: 2,
@@ -79,7 +79,7 @@ const detailData = [
       {
         id: 3,
         iconName: "icon-linkedin-squared",
-        link: "https://www.linkedin.com/in/sofuswenoee",
+        link: "https://www.linkedin.com/in/sofuswenoee/",
       },
       {
         id: 4,
