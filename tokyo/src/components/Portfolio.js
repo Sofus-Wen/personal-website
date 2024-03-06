@@ -317,7 +317,7 @@ const Portfolio = () => {
                   <div
                     className="entry tokyo_tm_portfolio_animation_wrap"
                     data-title="LazyStudent AI"
-                    data-category="Enhancing Academic Comprehension through Finetuned Second-Order Recommendations"
+                    data-category="Finetuned Second-Order Recommendations"
                   >
                     <a
                       className="popup_info"
