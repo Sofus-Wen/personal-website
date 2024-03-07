@@ -31,6 +31,10 @@ const testimonialData = [
     id: 7,
     authorImage: "assets/img/companies/company7.png",
   },
+  {
+    id: 8,
+    authorImage: "assets/img/companies/company8.png",
+  },
 ];
 
 const Testimonials = () => {
