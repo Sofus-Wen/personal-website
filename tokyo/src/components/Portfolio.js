@@ -32,7 +32,7 @@ const detailData = [
       {
         id: 2,
         iconName: "icon-youtube-squared",
-        link: "https://youtube.com/",
+        link: "https://youtu.be/CLRQ5qoxN88",
       },
       {
         id: 3,
