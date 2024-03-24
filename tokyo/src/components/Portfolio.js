@@ -388,7 +388,7 @@ const Portfolio = () => {
                       className="popup_info"
                       href="#"
                       onClick={() => {
-                        setPortfolioDetailsModal(detailData[1]);
+                        setPortfolioDetailsModal(detailData[2]);
                         modalToggle(true);
                       }}
                     >
