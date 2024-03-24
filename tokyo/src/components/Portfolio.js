@@ -325,14 +325,14 @@ const Portfolio = () => {
                 <div className="inner w-full h-auto clear-both float-left overflow-hidden relative">
                   <div
                     className="entry tokyo_tm_portfolio_animation_wrap"
-                    data-title="PANTRA"
-                    data-category="Personality Analysis through Natural Text Response Assessment"
+                    data-title="SOLON"
+                    data-category="AI Agent-Driven Personalization and Gamification"
                   >
                     <a
                       className="popup_info"
                       href="#"
                       onClick={() => {
-                        setPortfolioDetailsModal(detailData[0]);
+                        setPortfolioDetailsModal(detailData[2]);
                         modalToggle(true);
                       }}
                     >
@@ -343,7 +343,7 @@ const Portfolio = () => {
                       />
                       <div
                         className="abs_image absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300"
-                        data-img-url="assets/img/portfolio/7.jpg"
+                        data-img-url="assets/img/portfolio/9.jpg"
                       />
                     </a>
                   </div>
@@ -381,14 +381,14 @@ const Portfolio = () => {
                 <div className="inner w-full h-auto clear-both float-left overflow-hidden relative">
                   <div
                     className="entry tokyo_tm_portfolio_animation_wrap"
-                    data-title="SOLON"
-                    data-category="AI Agent-Driven Personalization and Gamification"
+                    data-title="PANTRA"
+                    data-category="Personality Analysis through Natural Text Response Assessment"
                   >
                     <a
                       className="popup_info"
                       href="#"
                       onClick={() => {
-                        setPortfolioDetailsModal(detailData[2]);
+                        setPortfolioDetailsModal(detailData[0]);
                         modalToggle(true);
                       }}
                     >
@@ -399,7 +399,7 @@ const Portfolio = () => {
                       />
                       <div
                         className="abs_image absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300"
-                        data-img-url="assets/img/portfolio/9.jpg"
+                        data-img-url="assets/img/portfolio/7.jpg"
                       />
                     </a>
                   </div>
