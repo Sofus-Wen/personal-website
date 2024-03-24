@@ -377,6 +377,34 @@ const Portfolio = () => {
                   </div>
                 </div>
               </li>
+              <li className="detail mb-[40px] float-left w-1/3 pl-[40px] item__">
+                <div className="inner w-full h-auto clear-both float-left overflow-hidden relative">
+                  <div
+                    className="entry tokyo_tm_portfolio_animation_wrap"
+                    data-title="SOLON"
+                    data-category="AI Agent-Driven Personalization and Gamification"
+                  >
+                    <a
+                      className="popup_info"
+                      href="#"
+                      onClick={() => {
+                        setPortfolioDetailsModal(detailData[1]);
+                        modalToggle(true);
+                      }}
+                    >
+                      <img
+                        className="opacity-0 min-w-full"
+                        src="assets/img/thumbs/1-1.jpg"
+                        alt="image"
+                      />
+                      <div
+                        className="abs_image absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300"
+                        data-img-url="assets/img/portfolio/9.jpg"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
