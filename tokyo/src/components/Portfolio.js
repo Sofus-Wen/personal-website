@@ -111,7 +111,7 @@ const detailData = [
       {
         id: 1,
         iconName: "icon-medium",
-        link: "https://medium.com/@sofuswenoee/how-i-built-lazystudent-to-hack-my-way-to-better-grades-without-the-effort-ab376391096b/",
+        link: "https://medium.com/@sofuswenoee/reimagining-education-with-project-solon-a-personal-game-of-learning-b9d3454a81cf",
       },
       {
         id: 2,
