@@ -93,7 +93,7 @@ const detailData = [
   {
     id: 3,
     thumbnail: "assets/img/portfolio/9.jpg",
-    title: "Solon.AI: Personalizing learning through AI Agent-driven customization and gamification",
+    title: "Solon AI: Personalizing learning through AI Agent-driven customization and gamification",
     text: [
       "Solon revolutionizes personalized education by leveraging AI and gamification to transform the student experience. Integrating technologies such as NLP, data curation, and advanced AI modeling, Solon analyzes educational content and student preferences to create a customized learning pathway. This platform dynamically adapts to each student's learning style and personality, offering tailored study methods and material recommendations to optimize learning efficiency.",
       "At Solon's core is its unique ability to understand and cater to individual educational goals, making the learning process more immersive and interactive. By personalizing the educational journey, Solon allows students to navigate their studies with a sense of ownership and engagement previously unseen in traditional educational settings.",
@@ -104,7 +104,7 @@ const detailData = [
       "• Enhance the accessibility of tailored study materials, ensuring every student can navigate their educational journey with confidence.",
       "Solon represents a collaborative effort to redefine education, supporting students from high school to university levels. This project showcases the transformative power of technology in education, making learning more relevant, engaging, and tailored to individual needs.",
       "For those looking to redefine their educational experience, Solon offers a glimpse into the future of personalized learning. More information on how Solon can personalize your educational journey is available under 'More From This Project.'",],
-    client: "Solon.AI: Personalizing learning through AI Agent-driven customization and gamification",
+    client: "Solon AI: Personalizing learning through AI Agent-driven customization and gamification",
     date: "March 2, 2024",
     category: "AI - Agents & Custom Tools",
     share: [
