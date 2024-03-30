@@ -23,7 +23,7 @@ const socialIcon = [
   {
     id: 5,
     iconName: "icon-newspaper",
-    link: "https://sofus.substack.com",
+    link: "https://tks.life/profile/sofus.wen%C3%B8e#portfolio",
   },
 ];
 const Home = () => {
