@@ -7,17 +7,22 @@ const socialIcon = [
   },
   {
     id: 2,
-    iconName: "icon-linkedin-squared",
+    iconName: "icon-linkedin-4",
     link: "https://www.linkedin.com/in/sofuswenoee",
   },
   {
     id: 3,
-    iconName: "icon-twitter-squared",
+    iconName: "icon-twitter-4",
     link: "https://twitter.com/sofuswenoee",
   },
   {
     id: 4,
     iconName: "icon-mail",
+    link: "https://sofus.substack.com",
+  },
+  {
+    id: 5,
+    iconName: "icon-newspaper",
     link: "https://sofus.substack.com",
   },
 ];
