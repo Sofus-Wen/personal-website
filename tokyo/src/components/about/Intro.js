@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 const Intro = () => {
-  // Your birthdate
-  const birthDate = new Date('2006-06-28');
+  // Correct birthdate to April 28, 2006
+  const birthDate = new Date('2006-04-28');
   const today = new Date();
   let age = today.getFullYear() - birthDate.getFullYear();
   const m = today.getMonth() - birthDate.getMonth();
@@ -23,7 +23,7 @@ const Intro = () => {
       </div>
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
         <p className="mb-[11px]">
-          Welcome back to my little corner of the internet! For those who don’t know me, my name is Sofus, and I am a 17-year-old high school student deeply fascinated by the transformative possibilities of AI on our future education system. I want to redefine the landscape of learning, making it more personalized, effective, and, above all, meaningful.
+          Welcome to my little corner of the internet! For those who don’t know me, my name is Sofus, and I am a {age}-year-old high school student deeply fascinated by the transformative possibilities of AI on our future education system. I want to redefine the landscape of learning, making it more personalized, effective, and, above all, meaningful.
           <br />
           <br />
           By integrating AI into education, I envision a future where learning is not a one-size-fits-all model but a tailored experience that meets individual needs, ignites passions, and unlocks the full potential of every learner.
@@ -37,7 +37,7 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Birthday:
                 </span>
-                <span>28.06.2006</span>
+                <span>28.04.2006</span>
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
