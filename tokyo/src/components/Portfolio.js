@@ -74,7 +74,7 @@ const detailData = [
       {
         id: 2,
         iconName: "icon-youtube-squared",
-        link: "https://youtube.com/",
+        link: "https://youtu.be/DyLjlLCo6d0",
       },
       {
         id: 3,
@@ -116,7 +116,7 @@ const detailData = [
       {
         id: 2,
         iconName: "icon-youtube-squared",
-        link: "https://youtube.com/",
+        link: "https://youtu.be/6ogm8ZXvXRc",
       },
       {
         id: 3,
