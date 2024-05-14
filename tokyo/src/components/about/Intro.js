@@ -27,6 +27,9 @@ const Intro = () => {
           <br />
           <br />
           By integrating AI into education, I envision a future where learning is not a one-size-fits-all model but a tailored experience that meets individual needs, ignites passions, and unlocks the full potential of every learner.
+          <br />
+          <br />
+          “The culture I want to set in my personal life is the culture of radically doing what one knows to be right. Essentialism, love, peace & meaning, as by products & life lived as it was supposed to moment to moment. Moving towards a better place, surrounding yourself with the right people, doing what is right, & following the red string of love. All. Together. Now. Towards what could be. Living for the journey.”
         </p>
       </div>
       <div className="tokyo_tm_short_info w-full h-auto clear-both float-left flex border-solid border-[#DFDFDF] border-b pb-[30px] mb-[40px]">
