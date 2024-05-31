@@ -52,7 +52,7 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   City:
                 </span>
-                <span>Værløse, Denmark (Barrie, Canada)</span>
+                <span>Værløse, Denmark</span>
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
@@ -96,7 +96,7 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Study:
                 </span>
-                <span>Niels Brock DIG (Georgian College)</span>
+                <span>Niels Brock DIG</span>
               </li>
               {/*}<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
