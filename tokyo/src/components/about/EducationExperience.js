@@ -8,14 +8,14 @@ const experiencesData = [
   {
     id: 2,
     date: "2024 - Now",
-    designation: "Alterok Builder",
+    designation: "AIxEducation Builder",
     company: "Buildspace",
   },
   {
     id: 3,
     date: "2024",
     designation: "Peoples Choice Award",
-    company: "Moonshots Toronto",
+    company: "Moonshots",
   },
   {
     id: 4,
