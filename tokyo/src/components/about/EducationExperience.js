@@ -46,8 +46,8 @@ const educationData = [
   {
     id: 2,
     date: "2023 - Now",
-    designation: "Innovator & Activator",
-    company: "TKS - The Knowledge Society",
+    degree: "Innovator & Activator",
+    institute: "TKS - The Knowledge Society",
   },
   {
     id: 3,
