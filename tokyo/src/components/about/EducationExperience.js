@@ -45,13 +45,13 @@ const experiencesData = [
 const educationData = [
   {
     id: 1,
-    date: "2024 - Now",
+    date: "2024",
     degree: "HHX (Higher Business Degree)",
     institute: "Georgian College",
   },
   {
     id: 2,
-    date: "2023 - Now",
+    date: "2023 - 2024",
     degree: "HHX (Higher Business Degree)",
     institute: "Niels Brock",
   },
