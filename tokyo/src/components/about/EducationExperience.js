@@ -7,18 +7,36 @@ const experiencesData = [
   },
   {
     id: 2,
+    date: "2024 - Now",
+    designation: "Alterok Builder",
+    company: "Buildspace",
+  },
+  {
+    id: 3,
+    date: "2024",
+    designation: "Peoples Choice Award",
+    company: "Moonshots Toronto",
+  },
+  {
+    id: 4,
+    date: "2024",
+    designation: "Speaker",
+    company: "AI For Education Summit",
+  },
+  {
+    id: 5,
     date: "2023",
     designation: "Finalist",
     company: "Crimson 18u18",
   },
   {
-    id: 3,
+    id: 6,
     date: "2023",
     designation: "Speaker",
     company: "PuzzleX",
   },
   {
-    id: 4,
+    id: 7,
     date: "2020 - 2022",
     designation: "Web Designer",
     company: "Taiyo Official",
