@@ -1,42 +1,36 @@
 const experiencesData = [
   {
     id: 1,
-    date: "2023 - Now",
-    designation: "Innovator & Activator",
-    company: "TKS - The Knowledge Society",
-  },
-  {
-    id: 2,
     date: "2024 - Now",
     designation: "AIxEducation Builder",
     company: "Buildspace",
   },
   {
-    id: 3,
+    id: 2,
     date: "2024",
     designation: "Peoples Choice Award",
     company: "Moonshots",
   },
   {
-    id: 4,
+    id: 3,
     date: "2024",
     designation: "Speaker",
     company: "AI For Education Summit",
   },
   {
-    id: 5,
+    id: 4,
     date: "2023",
     designation: "Finalist",
     company: "Crimson 18u18",
   },
   {
-    id: 6,
+    id: 5,
     date: "2023",
     designation: "Speaker",
     company: "PuzzleX",
   },
   {
-    id: 7,
+    id: 6,
     date: "2020 - 2022",
     designation: "Web Designer",
     company: "Taiyo Official",
@@ -45,18 +39,24 @@ const experiencesData = [
 const educationData = [
   {
     id: 1,
-    date: "2024",
-    degree: "HHX (Higher Business Degree)",
-    institute: "Georgian College",
-  },
-  {
-    id: 2,
-    date: "2023 - 2024",
+    date: "2023 - Now",
     degree: "HHX (Higher Business Degree)",
     institute: "Niels Brock",
   },
   {
+    id: 2,
+    date: "2023 - Now",
+    designation: "Innovator & Activator",
+    company: "TKS - The Knowledge Society",
+  },
+  {
     id: 3,
+    date: "2024",
+    degree: "IBB Semester Abroad",
+    institute: "Georgian College",
+  },
+  {
+    id: 4,
     date: "2012 - 2022",
     degree: "Primary School",
     institute: "Marie Kruses School",
