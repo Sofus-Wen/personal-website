@@ -2,7 +2,7 @@ const experiencesData = [
   {
     id: 1,
     date: "2024 - Now",
-    designation: "AIxEducation Builder",
+    designation: "s5 Builder",
     company: "Buildspace",
   },
   {
