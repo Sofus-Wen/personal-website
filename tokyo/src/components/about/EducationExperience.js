@@ -2,7 +2,7 @@ const experiencesData = [
   {
     id: 1,
     date: "2023 - Now",
-    designation: "Innovator",
+    designation: "Innovator & Activator",
     company: "TKS - The Knowledge Society",
   },
   {
