@@ -35,6 +35,14 @@ const testimonialData = [
     id: 8,
     authorImage: "assets/img/companies/company8.png",
   },
+  {
+    id: 9,
+    authorImage: "assets/img/companies/company9.png",
+  },
+  {
+    id: 10,
+    authorImage: "assets/img/companies/company10.png",
+  },
 ];
 
 const Testimonials = () => {
