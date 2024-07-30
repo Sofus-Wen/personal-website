@@ -3,7 +3,7 @@ import { TokyoContext } from "../Context";
 import SectionContainer from "./SectionContainer";
 import SectionTitle from "./SectionTitle";
 
-const news = [
+const blogPosts = [
   {
     id: 1,
     title: "Format releases a new tool that enables direct video hosting",
@@ -34,19 +34,19 @@ const news = [
   },
 ];
 
-const News = () => {
+const Blog = () => {
   const { setNewsModal, modalToggle } = useContext(TokyoContext);
   return (
-    <SectionContainer name={"Blog"}>
+    <SectionContainer name={"blog"}>
       <div className="container">
         <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[100px] px-0 pb-[45px]">
           <div className="tokyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
             <div className="title_flex w-full h-auto clear-both flex justify-between items-end">
-              <SectionTitle pageName={"Blog"} title={"My Blog"} />
+              <SectionTitle pageName={"Blog"} title={"Latest Blog Posts"} />
             </div>
           </div>
           <ul className="ml-[-50px] list-none">
-            {news.map((item) => (
+            {blogPosts.map((item) => (
               <li
                 className="mb-[50px] float-left w-1/2 pl-[50px]"
                 key={item.id}
@@ -124,4 +124,4 @@ const News = () => {
     </SectionContainer>
   );
 };
-export default News;
+export default Blog;
