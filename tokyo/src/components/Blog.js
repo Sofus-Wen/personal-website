@@ -4,7 +4,7 @@ import SectionContainer from "./SectionContainer";
 import SectionTitle from "./SectionTitle";
 
 const blogPosts = [
-  {
+  {/*{
     id: 1,
     title: "Format releases a new tool that enables direct video hosting",
     image: "assets/img/news/1.jpg",
@@ -71,7 +71,7 @@ const blogPosts = [
       quote: "A relevant quote for the fourth blog post",
       conclusion: "Concluding paragraph for the fourth blog post..."
     }
-  },
+  },*/}
 ];
 
 const Blog = () => {
