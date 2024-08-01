@@ -35,7 +35,7 @@ const blogPosts = [
 ];
 
 const Blog = () => {
-  const { setNewsModal, modalToggle } = useContext(TokyoContext);
+  const { setBlogModal, modalToggle } = useContext(TokyoContext);
   return (
     <SectionContainer name={"blog"}>
       <div className="container">
@@ -62,15 +62,16 @@ const Blog = () => {
                       className="main absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300"
                       data-img-url={item.image}
                       style={{ backgroundImage: `url(${item.image})` }}
-                    />
-                    <a
-                      className="tokyo_tm_full_link"
-                      href="#"
-                      onClick={() => {
-                        modalToggle(true);
-                        setNewsModal(item);
-                      }}
-                    />
+                    >
+                      <a
+                        className="tokyo_tm_full_link"
+                        href="#"
+                        onClick={() => {
+                          modalToggle(true);
+                          setBlogModal(item);
+                        }}
+                      />
+                    </div>
                   </div>
                   <div className="details w-full float-left px-[40px] pt-[30px] pb-[25px] bg-white transition-all duration-300">
                     <div className="extra flex items-center justify-between mb-[25px] relative">
@@ -82,7 +83,7 @@ const Blog = () => {
                             href="#"
                             onClick={() => {
                               modalToggle(true);
-                              setNewsModal(item);
+                              setBlogModal(item);
                             }}
                           >
                             {item.author}
@@ -97,7 +98,7 @@ const Blog = () => {
                         href="#"
                         onClick={() => {
                           modalToggle(true);
-                          setNewsModal(item);
+                          setBlogModal(item);
                         }}
                       >
                         {item.title}
@@ -108,7 +109,7 @@ const Blog = () => {
                         href="#"
                         onClick={() => {
                           modalToggle(true);
-                          setNewsModal(item);
+                          setBlogModal(item);
                         }}
                       >
                         <span>Read More</span>

@@ -9,7 +9,7 @@ const type = {
   ANIMATION: "ANIMATION",
   MODAL: "MODAL",
   SERVICEMODAL: "SERVICEMODAL",
-  NEWSMODAL: "NEWSMODAL",
+  BLOGMODAL: "BLOGMODAL",
   PORTFOLIODETAILSMODAL: "PORTFOLIODETAILSMODAL",
 };
 const {
@@ -17,7 +17,7 @@ const {
   ANIMATION,
   MODAL,
   SERVICEMODAL,
-  NEWSMODAL,
+  BLOGMODAL,
   PORTFOLIODETAILSMODAL,
 } = type;
 
@@ -27,12 +27,12 @@ const initialState = {
   animation: "fadeInLeft",
   modal: false,
   serviceModal: null,
-  newsModal: null,
+  blogModal: null,
   portfolioDetailsModal: null,
   menus: [
     { id: 1, name: "Welcome", href: "home" },
     { id: 2, name: "About Me", href: "about" },
-    { id: 3, name: "Blog", href: "news" },
+    { id: 3, name: "Blog", href: "blog" },
     { id: 4, name: "My Projects", href: "portfolio" },
     { id: 5, name: "Get in Touch", href: "contact" },
     //{ id: 6, name: "news", href: "service" },
@@ -63,10 +63,10 @@ const reducer = (state, action) => {
         ...state,
         serviceModal: payload,
       };
-    case NEWSMODAL:
+    case BLOGMODAL:
       return {
         ...state,
-        newsModal: payload,
+        blogModal: payload,
       };
     case PORTFOLIODETAILSMODAL:
       return {
@@ -109,9 +109,9 @@ const TokyoState = ({ children }) => {
       payload: value,
     });
   }, []);
-  const setNewsModal = useCallback((value) => {
+  const setBlogModal = useCallback((value) => {
     dispatch({
-      type: NEWSMODAL,
+      type: BLOGMODAL,
       payload: value,
     });
   }, []);
@@ -127,7 +127,7 @@ const TokyoState = ({ children }) => {
     animation,
     modal,
     serviceModal,
-    newsModal,
+    blogModal,
     portfolioDetailsModal,
     menus,
   } = state;
@@ -143,8 +143,8 @@ const TokyoState = ({ children }) => {
         modalToggle,
         serviceModal,
         setServiceModal,
-        newsModal,
-        setNewsModal,
+        blogModal,
+        setBlogModal,
         portfolioDetailsModal,
         setPortfolioDetailsModal,
       }}

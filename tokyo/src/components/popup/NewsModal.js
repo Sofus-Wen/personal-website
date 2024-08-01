@@ -1,10 +1,10 @@
 import { TokyoContext } from "@/src/Context";
 import { useContext } from "react";
 import ModalContainer from "./ModalContainer";
-const NewsModal = () => {
-  const { newsModal, setNewsModal } = useContext(TokyoContext);
+const BlogModal = () => {
+  const { blogModal, setBlogModal } = useContext(TokyoContext);
   return (
-    <ModalContainer nullValue={setNewsModal}>
+    <ModalContainer nullValue={setBlogModal}>
       <div className="image relative overflow-hidden">
         <img
           className="min-w-full opacity-0"
@@ -13,8 +13,8 @@ const NewsModal = () => {
         />
         <div
           className="main absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300"
-          data-img-url={newsModal.image}
-          style={{ backgroundImage: `url(${newsModal.image})` }}
+          data-img-url={blogModal.image}
+          style={{ backgroundImage: `url(${blogModal.image})` }}
         />
         <a className="tokyo_tm_full_link" href="#" />
       </div>
@@ -27,25 +27,25 @@ const NewsModal = () => {
                 className="text-[#767676] transition-all duration-300 hover:text-black"
                 href="#"
               >
-                {newsModal.author}
+                {blogModal.author}
               </a>{" "}
-              <span className="relative">{newsModal.date}</span>
+              <span className="relative">{blogModal.date}</span>
             </p>
           </div>
         </div>
-        <h3 className="title mb-[10px] leading-[1.4]">{newsModal.title}</h3>
+        <h3 className="title mb-[10px] leading-[1.4]">{blogModal.title}</h3>
       </div>
-      {/* News Popup Start */}
+      {/* Blog Popup Start */}
       <div className="main_content w-full float-left">
         <div className="descriptions w-full float-left">
           <p className="bigger text-[#888] text-[20px] mb-[31px]">
             Just because we can't get out and about like we normally would,
-            doesn’t mean we have to stop taking pictures. There’s still plenty
+            doesn't mean we have to stop taking pictures. There's still plenty
             you can do, provided you're prepared to use some imagination. Here
             are a few ideas to keep you shooting until normal life resumes.
           </p>
           <p className="mb-[22px]">
-            Most photographers love to shoot the unusual, and you don’t get much
+            Most photographers love to shoot the unusual, and you don't get much
             more unusual than These Unprecedented Times. Right now everything
             counts as out of the ordinary. There are a number of remarkable
             things about these lockdown days that are worth photographing now so
@@ -70,7 +70,7 @@ const NewsModal = () => {
             show how far apart we should be.
           </p>
           <p className="mb-[22px]">
-            Pretend everything is new and that you haven’t seen it before, and
+            Pretend everything is new and that you haven't seen it before, and
             then you will be free to notice the leading lines, the places where
             one edge meets another in delightful geometric harmony, and how the
             ordinary things in the kitchen are transformed when the light is on
@@ -85,8 +85,8 @@ const NewsModal = () => {
           </p>
         </div>
       </div>
-      {/* /News Popup End */}
+      {/* /Blog Popup End */}
     </ModalContainer>
   );
 };
-export default NewsModal;
+export default BlogModal;
