@@ -10,6 +10,16 @@ const blogPosts = [
     image: "assets/img/news/1.jpg",
     author: "Alex Watson",
     date: "22 Oct 2022",
+    content: {
+      intro: "Introduction paragraph for the first blog post...",
+      paragraphs: [
+        "First main paragraph for the first blog post...",
+        "Second paragraph for the first blog post...",
+        "Third paragraph for the first blog post..."
+      ],
+      quote: "A relevant quote for the first blog post",
+      conclusion: "Concluding paragraph for the first blog post..."
+    }
   },
   {
     id: 2,
@@ -17,6 +27,16 @@ const blogPosts = [
     image: "assets/img/news/2.jpg",
     author: "Brook Kennedy",
     date: "15 Oct 2022",
+    content: {
+      intro: "Introduction paragraph for the second blog post...",
+      paragraphs: [
+        "First main paragraph for the second blog post...",
+        "Second paragraph for the second blog post...",
+        "Third paragraph for the second blog post..."
+      ],
+      quote: "A relevant quote for the second blog post",
+      conclusion: "Concluding paragraph for the second blog post..."
+    }
   },
   {
     id: 3,
@@ -24,6 +44,16 @@ const blogPosts = [
     image: "assets/img/news/3.jpg",
     author: "Paola Atkins",
     date: "07 Oct 2022",
+    content: {
+      intro: "Introduction paragraph for the third blog post...",
+      paragraphs: [
+        "First main paragraph for the third blog post...",
+        "Second paragraph for the third blog post...",
+        "Third paragraph for the third blog post..."
+      ],
+      quote: "A relevant quote for the third blog post",
+      conclusion: "Concluding paragraph for the third blog post..."
+    }
   },
   {
     id: 4,
@@ -31,6 +61,16 @@ const blogPosts = [
     image: "assets/img/news/4.jpg",
     author: "Kevin Stone",
     date: "25 Sep 2022",
+    content: {
+      intro: "Introduction paragraph for the fourth blog post...",
+      paragraphs: [
+        "First main paragraph for the fourth blog post...",
+        "Second paragraph for the fourth blog post...",
+        "Third paragraph for the fourth blog post..."
+      ],
+      quote: "A relevant quote for the fourth blog post",
+      conclusion: "Concluding paragraph for the fourth blog post..."
+    }
   },
 ];
 
