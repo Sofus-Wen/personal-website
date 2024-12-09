@@ -1,7 +1,7 @@
 const experiencesData = [
   {
     id: 1,
-    date: "2024 - Now",
+    date: "2024 - 2024",
     designation: "s5 Builder",
     company: "Buildspace",
   },
@@ -39,24 +39,30 @@ const experiencesData = [
 const educationData = [
   {
     id: 1,
-    date: "2023 - Now",
+    date: "2024 - Now",
+    degree: "Exchange Student",
+    institute: "Shibuya Makuhari Junior & Senior High School",
+  },
+  {
+    id: 2,
+    date: "2023 - 2024",
     degree: "HHX (Higher Business Degree)",
     institute: "Niels Brock",
   },
   {
-    id: 2,
-    date: "2023 - Now",
-    degree: "Innovator & Activator",
+    id: 3,
+    date: "2023 - 2024",
+    degree: "Innovator",
     institute: "TKS - The Knowledge Society",
   },
   {
-    id: 3,
+    id: 4,
     date: "2024",
     degree: "IBB Semester Abroad",
     institute: "Georgian College",
   },
   {
-    id: 4,
+    id: 5,
     date: "2012 - 2022",
     degree: "Primary School",
     institute: "Marie Kruses School",
