@@ -24,8 +24,8 @@ const Index = () => {
       {/* PORTFOLIO */}
       <Portfolio />
       {/* /PORTFOLIO */}
-      {/* BLOG */}
-      <Blog />
+      {/* BLOG
+      <Blog /> */}
       {/* /BLOG */}
       {/* CONTACT */}
       <Contact />
