@@ -41,7 +41,7 @@ const educationData = [
     id: 1,
     date: "2024 - Now",
     degree: "Exchange Student",
-    institute: "Shibuya Makuhari Junior & Senior High School",
+    institute: "High School in Japan",
   },
   {
     id: 2,
