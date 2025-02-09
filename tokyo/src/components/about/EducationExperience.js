@@ -41,7 +41,7 @@ const educationData = [
     id: 1,
     date: "2024 - Now",
     degree: "Exchange Student",
-    institute: "High School in Japan",
+    institute: "Japan Educatius Group",
   },
   {
     id: 2,
