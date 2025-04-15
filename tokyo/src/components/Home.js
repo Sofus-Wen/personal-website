@@ -48,8 +48,8 @@ const Home = () => {
                 Sofus <span>Wenoee</span>
               </h3>
               <p className="job font-montserrat font-medium max-w-[450px] mb-[25px]">
-                I'm a student following my curiosity towards 
-                reshaping how we see AI tech in education.
+                I'm a student following his curiosity towards 
+                building & doing stuff for their own sake.
               </p>
               <div className="social w-full float-left">
                 <ul className="m-0 list-none">
