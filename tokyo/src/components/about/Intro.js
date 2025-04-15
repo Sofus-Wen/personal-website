@@ -23,13 +23,16 @@ const Intro = () => {
       </div>
       <div className="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
         <p className="mb-[11px]">
-          Welcome to my little corner of the internet! For those who don’t know me, my name is Sofus, and I am a {age}-year-old high school student deeply fascinated by the transformative possibilities of AI on our future education system. I want to redefine the landscape of learning, making it more personalized, effective, and, above all, meaningful.
+          Welcome to my little corner of the internet! For those who don’t know me, my name is Sofus, and I am a {age}-year-old high school student deeply fascinated by the transformative possibilities of AI on our future education system.
           <br />
           <br />
-          By integrating AI into education, I envision a future where learning is not a one-size-fits-all model but a tailored experience that meets individual needs, ignites passions, and unlocks the full potential of every learner.
+          The future of  integrating AI into education excites me. I envision a future where learning is not a one-size-fits-all model but a tailored experience that meets individual needs, ignites passions, and unlocks the full potential of every learner.
           <br />
           <br />
-          “The culture I want to set in my personal life is the culture of radically doing what one knows to be right. Essentialism, love, peace & meaning, as by products & life lived as it was supposed to moment to moment. Moving towards a better place, surrounding yourself with the right people, doing what is right, & following the red string of love. All. Together. Now. Towards what could be. Living for the journey.”
+          But beyond that I am just exploring.
+          <br />
+          <br />
+          “The culture I want to set in my personal life is the culture of radically doing what one knows to be right. Essentialism, love, peace & meaning, as a by products, a life lived as it was supposed to, moment to moment. Moving towards a better place, surrounding yourself with the right people, doing what is right, & following love. Towards what is. Living for the journey.”
         </p>
       </div>
       <div className="tokyo_tm_short_info w-full h-auto clear-both float-left flex border-solid border-[#DFDFDF] border-b pb-[30px] mb-[40px]">
@@ -52,7 +55,7 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   City:
                 </span>
-                <span>Værløse, Denmark</span>
+                <span>Copenhagen, Denmark</span>
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
@@ -96,7 +99,7 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Study:
                 </span>
-                <span>Niels Brock DIG</span>
+                <span>Japanese High School Exchange</span>
               </li>
               {/*}<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
@@ -108,13 +111,13 @@ const Intro = () => {
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Interest:
                 </span>
-                <span>AI in Education</span>
+                <span>Exploring</span>
               </li>
               <li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                   Languages:
                 </span>
-                  <span>Danish, English, & Cantonese</span>
+                  <span>Danish, English, Cantonese & Japanese</span>
               </li>
               {/*<li className="m-0">
                 <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
