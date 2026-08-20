@@ -192,14 +192,22 @@ section nav {
 }
 
 .page .line + .line {
-  margin-top: 0.4em;
+  margin-top: 1.05em;
 }
 
 .page .year-label {
   margin-bottom: 0.25em;
 }
 
-/* Talk pages read as separate sentences, a blank line apart. */
-.talk .line + .line {
-  margin-top: 1.05em;
+/* The fuji sequence: arrows and steps evenly spaced, and the line rule
+   above does not apply inside it. */
+.flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.page .flow .line + .line,
+.flow .year-label {
+  margin: 0;
 }
