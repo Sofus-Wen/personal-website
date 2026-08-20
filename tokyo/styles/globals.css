@@ -97,11 +97,13 @@ h2 {
 }
 
 /* One column, left-aligned, that stops growing so the page stays a tight
-   block on wide screens. 44rem is measured, not picked: it is the width at
-   which the longest timeline line still fits on one line at 17px. */
+   block on wide screens. 48rem is measured, not picked: the longest timeline
+   line needs 731px at the 17px size used from 1024px up, so this leaves it a
+   little slack. Any edit that lengthens that line has to be re-measured at
+   17px, not at the 16px used on narrower screens. */
 .block {
   width: 100%;
-  max-width: 44rem;
+  max-width: 48rem;
 }
 
 header {
