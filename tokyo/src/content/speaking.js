@@ -8,8 +8,9 @@ export const TALKS = [
     location: "tokyo",
     lines: [
       "made it to the finals and gave a speech about multilingualism.",
-      "I grew up speaking danish, english and some cantonese, then started learning japanese while living there.",
-      "the talk was about how learning languages gives you another way of understanding people, cultures & the world around you.",
+      "I grew up speaking danish, english and some cantonese.",
+      "then started learning japanese while living there.",
+      "the talk was about how languages give you another way of understanding people & the world.",
     ],
   },
   {
