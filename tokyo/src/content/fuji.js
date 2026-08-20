@@ -11,7 +11,7 @@ export const CONTEXT = [
           " in india, with Pablo, Leo, Krishna & Steve",
         ],
       },
-      { name: "raised money for it" },
+      { name: "raised $2k" },
     ],
   },
 ];
