@@ -15,7 +15,7 @@ export default function Page({ title, children }) {
       <hr />
 
       <main className="container">
-        <div className="block">
+        <div className="block page">
           <h2>{title}</h2>
           {children}
         </div>

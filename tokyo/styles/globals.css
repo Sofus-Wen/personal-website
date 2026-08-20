@@ -178,3 +178,23 @@ section nav {
   flex-direction: column;
   gap: 1.25rem;
 }
+
+/* Subpages get more air than the homepage index: these are read top to
+   bottom, where the homepage is scanned. Scoped to .page so the homepage
+   keeps its tighter rhythm. */
+.page h2 {
+  margin-bottom: 0.9rem;
+}
+
+.page .stack {
+  margin-top: 1.6rem;
+  gap: 1.9rem;
+}
+
+.page .line + .line {
+  margin-top: 0.4em;
+}
+
+.page .year-label {
+  margin-bottom: 0.25em;
+}

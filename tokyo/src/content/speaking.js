@@ -28,7 +28,9 @@ export const TALKS = [
   {
     slug: "copenhagen-innovation-cup",
     name: "Copenhagen Innovation Cup",
+    year: "2023",
     location: "copenhagen",
     lines: ["presented PerfectFit"],
+    video: "https://youtu.be/Zh6ySXv6oss",
   },
 ];
