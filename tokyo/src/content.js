@@ -20,8 +20,8 @@ export const NOW = [
   "films, music, fashion, startups, whatever.",
 ];
 
-/* Descriptions are plain strings, or an array of segments when part of the
-   line should link somewhere. */
+/* A name or description is either a plain string, or an array of segments
+   where a segment may be {text, href} to link part of the line. */
 export const TIMELINE = [
   {
     year: "2025\u20132026",
@@ -46,34 +46,20 @@ export const TIMELINE = [
     year: "2023\u20132024",
     items: [
       {
-        name: "TKS",
-        href: "https://tks.world/",
-        desc: [
-          "spent a couple years experimenting with AI: ",
-          { text: "Tanar", href: "https://youtu.be/4Se1xhJhYr4" },
-          ", ",
-          { text: "Solon", href: "https://youtu.be/6ogm8ZXvXRc" },
-          ", ",
-          { text: "PANTRA", href: "https://youtu.be/CLRQ5qoxN88" },
-          ", ",
-          { text: "LazyStudent", href: "https://youtu.be/DyLjlLCo6d0" },
-        ],
+        key: "tks",
+        name: [{ text: "TKS", href: "https://tks.world/" }, " / toronto"],
+        desc: "spent a couple years building things with AI & speaking about them",
       },
       {
         name: "buildspace",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7228701780937740289/",
-        desc: "spent a summer in sf building with some really cool people",
+        desc: "spent the summer in sf with Mats & Pranava",
       },
     ],
   },
   {
-    year: "2022",
-    items: [
-      {
-        name: "Taiyo",
-        desc: "started a clothing brand with a friend at 14",
-      },
-    ],
+    year: "2022\u20132023",
+    items: [{ name: "fashion school \u00b7 hypnosis / NLP \u00b7 Taiyo" }],
   },
 ];
 
