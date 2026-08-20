@@ -36,14 +36,9 @@ export const TIMELINE = [
         ],
       },
       {
-        key: "book",
-        name: "wrote my first book",
-        desc: [
-          {
-            text: "now that I am 20, I can\u2019t fail",
-            href: "/now-that-i-am-20-i-cant-fail.pdf",
-          },
-        ],
+        name: "now that I am 20, I can\u2019t fail",
+        href: "/now-that-i-am-20-i-cant-fail.pdf",
+        desc: "wrote my first book",
       },
     ],
   },
