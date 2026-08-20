@@ -46,7 +46,12 @@ export const TALKS = [
     lines: [
       "presented PerfectFit.",
       "we used 3D body scanning to help clothes fit better online.",
-      "made it to the finals.",
+      [
+        {
+          text: "made it to the finals.",
+          href: "https://youtu.be/Zh6ySXv6oss",
+        },
+      ],
     ],
   },
 ];
