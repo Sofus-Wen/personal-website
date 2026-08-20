@@ -198,3 +198,8 @@ section nav {
 .page .year-label {
   margin-bottom: 0.25em;
 }
+
+/* Talk pages read as separate sentences, a blank line apart. */
+.talk .line + .line {
+  margin-top: 1.05em;
+}

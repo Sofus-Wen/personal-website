@@ -9,14 +9,14 @@ export default function Talk({ talk }) {
   return (
     <Page title={talk.name}>
       {facts ? <p className="line year-label">{facts}</p> : null}
-      <div className="stack">
+      <div className="stack talk">
         {talk.lines ? (
           <List groups={[{ items: talk.lines.map((line) => ({ name: line })) }]} />
         ) : null}
         {/* Add `video: "<url>"` to a talk and the link appears here. */}
         {talk.video ? (
           <p className="line">
-            <Link href={talk.video}>video</Link>
+            <Link href={talk.video}>watch the talk.</Link>
           </p>
         ) : null}
       </div>
