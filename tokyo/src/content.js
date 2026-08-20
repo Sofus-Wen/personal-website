@@ -47,8 +47,11 @@ export const TIMELINE = [
     items: [
       {
         name: "TKS",
+        href: "https://tks.world/",
         desc: [
-          "spent a couple years experimenting with AI: Tanar, ",
+          "spent a couple years experimenting with AI: ",
+          { text: "Tanar", href: "https://youtu.be/4Se1xhJhYr4" },
+          ", ",
           { text: "Solon", href: "https://youtu.be/6ogm8ZXvXRc" },
           ", ",
           { text: "PANTRA", href: "https://youtu.be/CLRQ5qoxN88" },
@@ -58,6 +61,7 @@ export const TIMELINE = [
       },
       {
         name: "buildspace",
+        href: "https://www.linkedin.com/feed/update/urn:li:activity:7228701780937740289/",
         desc: "spent a summer in sf building with some really cool people",
       },
     ],
