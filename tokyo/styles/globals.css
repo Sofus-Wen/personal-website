@@ -1,21 +1,22 @@
-:root {
+/* Light is the default theme and mirrors the reference:
+   white bg, slate-800 text, blue-500 links, #e5e5e5 rule. */
+:root,
+[data-theme="light"] {
   --bg: #ffffff;
-  --text: #1c1c1c;
-  --muted: #6b6b6b;
-  --link: #2563eb;
+  --text: #1e293b;
+  --muted: #64748b;
+  --link: #3b82f6;
   --link-hover: #1d4ed8;
   --rule: #e5e5e5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #191817;
-    --text: #e7e5e4;
-    --muted: #a8a29e;
-    --link: #7ab0ff;
-    --link-hover: #a8c9ff;
-    --rule: #3a3836;
-  }
+[data-theme="dark"] {
+  --bg: #292524;
+  --text: #e7e5e4;
+  --muted: #a8a29e;
+  --link: #60a5fa;
+  --link-hover: #93c5fd;
+  --rule: #44403c;
 }
 
 *,
@@ -32,22 +33,29 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica,
-    Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.55;
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 0.875rem; /* 14px — reference text-sm */
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Reference type scale: text-sm / base / lg / xl */
 @media (min-width: 640px) {
   body {
-    font-size: 1.0625rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.125rem;
   }
 }
 
 @media (min-width: 1024px) {
   body {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -67,19 +75,102 @@ a:focus-visible {
   border-radius: 2px;
 }
 
-h1 {
+p {
   margin: 0;
-  font-size: 1.375rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+}
+
+/* Name and section titles stay at body size, as in the reference.
+   Weight 500 is the one concession — Manrope is a sans, so it needs a
+   touch more weight than a monospace to read as a heading. */
+h1,
+h2 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+/* 40px horizontal padding at every width, as in the reference. */
+.container {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+/* Fluid content column: 100% -> 11/12 -> 10/12 -> 9/12 -> 8/12 */
+.block {
+  width: 100%;
 }
 
 @media (min-width: 640px) {
-  h1 {
-    font-size: 1.5rem;
+  .block {
+    width: 91.6667%;
   }
 }
 
-p {
+@media (min-width: 768px) {
+  .block {
+    width: 83.3333%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .block {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .block {
+    width: 66.6667%;
+  }
+}
+
+header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.header-top {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
   margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* reference gap-[1.25rem] */
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.year + .year {
+  margin-top: 1.4em; /* one blank line, as the reference's <br/><br/> */
+}
+
+.year-label {
+  color: var(--muted);
+}
+
+/* Hanging indent so wrapped descriptions align under the project name. */
+.line {
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
+section nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
 }
