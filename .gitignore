@@ -6,3 +6,5 @@ out/
 ._*
 __MACOSX/
 *.log
+
+.next-check/
