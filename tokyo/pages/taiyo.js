@@ -4,7 +4,7 @@ import { GROUPS, OPENING } from "@/src/content/taiyo";
 
 export default function Taiyo() {
   return (
-    <Page title="Taiyo">
+    <Page title="Taiyo / fashion school">
       <p className="line">{OPENING}</p>
       <div className="stack">
         <List groups={GROUPS} />

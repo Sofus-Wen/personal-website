@@ -8,7 +8,9 @@ export default function Talk({ talk }) {
   return (
     <Page title={talk.name}>
       {facts ? <p className="line year-label">{facts}</p> : null}
-      {talk.about ? <List groups={[{ items: [{ name: talk.about }] }]} /> : null}
+      {talk.lines ? (
+        <List groups={[{ items: talk.lines.map((line) => ({ name: line })) }]} />
+      ) : null}
     </Page>
   );
 }
