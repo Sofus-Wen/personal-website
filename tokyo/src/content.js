@@ -48,7 +48,17 @@ export const TIMELINE = [
       {
         key: "tks",
         name: [{ text: "TKS", href: "https://tks.world/" }, " / toronto"],
-        desc: "spent a couple years building things with AI & speaking about them",
+        desc: [
+          "spent a couple years building things with AI (",
+          { text: "Tanar", href: "https://youtu.be/4Se1xhJhYr4" },
+          ", ",
+          { text: "Solon", href: "https://youtu.be/6ogm8ZXvXRc" },
+          ", ",
+          { text: "PANTRA", href: "https://youtu.be/CLRQ5qoxN88" },
+          ", ",
+          { text: "LazyStudent", href: "https://youtu.be/DyLjlLCo6d0" },
+          ") & speaking about them",
+        ],
       },
       {
         name: "buildspace",
