@@ -1,13 +1,14 @@
-import EntryList from "@/src/components/EntryList";
+import List from "@/src/components/List";
 import Page from "@/src/components/Page";
-import { AI_PROJECTS } from "@/src/content";
+import { ENTRIES, OPENING } from "@/src/content/ai";
 
 export default function Ai() {
   return (
-    <Page title="ai">
-      <EntryList
-        entries={AI_PROJECTS.map((p) => ({ ...p, href: `/ai/${p.slug}` }))}
-      />
+    <Page title="AI / TKS">
+      <p className="line">{OPENING}</p>
+      <div className="stack">
+        <List groups={ENTRIES} />
+      </div>
     </Page>
   );
 }

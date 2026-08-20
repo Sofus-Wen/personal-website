@@ -1,13 +1,21 @@
+import List from "@/src/components/List";
 import Page from "@/src/components/Page";
-import { TALKS } from "@/src/content";
+import { TALKS } from "@/src/content/speaking";
 
 export default function Talk({ talk }) {
-  return <Page title={talk.name} />;
+  const facts = [talk.year, talk.location].filter(Boolean).join(" · ");
+
+  return (
+    <Page title={talk.name}>
+      {facts ? <p className="line year-label">{facts}</p> : null}
+      {talk.about ? <List groups={[{ items: [{ name: talk.about }] }]} /> : null}
+    </Page>
+  );
 }
 
 export function getStaticPaths() {
   return {
-    paths: TALKS.map((t) => ({ params: { slug: t.slug } })),
+    paths: TALKS.map((talk) => ({ params: { slug: talk.slug } })),
     fallback: false,
   };
 }

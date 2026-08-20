@@ -20,34 +20,11 @@ export const NOW = [
   "-> films, music, fashion, startups, whatever...",
 ];
 
-/* Things under /ai. The video is the artifact each page already has; the
-   pages themselves are otherwise empty until content is written. */
-export const AI_PROJECTS = [
-  { slug: "tanar", name: "Tanar", video: "https://youtu.be/4Se1xhJhYr4" },
-  { slug: "solon", name: "Solon", video: "https://youtu.be/6ogm8ZXvXRc" },
-  { slug: "pantra", name: "PANTRA", video: "https://youtu.be/CLRQ5qoxN88" },
-  {
-    slug: "lazystudent",
-    name: "LazyStudent",
-    video: "https://youtu.be/DyLjlLCo6d0",
-  },
-];
-
-/* Talks, from the dates recorded on the old site. No content yet. */
-export const TALKS = [
-  { slug: "puzzle-x", name: "PUZZLE X", year: "2023" },
-  {
-    slug: "ai-for-education-summit",
-    name: "AI for education summit",
-    year: "2024",
-  },
-];
-
 /* A name or description is either a plain string, or an array of segments
    where a segment may be {text, href} to link part of the line. */
 export const TIMELINE = [
   {
-    year: "2025\u20132026",
+    label: "2025\u20132026",
     items: [
       {
         name: "TETR",
@@ -61,7 +38,7 @@ export const TIMELINE = [
     ],
   },
   {
-    year: "2024\u20132025",
+    label: "2024\u20132025",
     items: [
       {
         name: "exchange in japan",
@@ -71,7 +48,7 @@ export const TIMELINE = [
     ],
   },
   {
-    year: "2023\u20132024",
+    label: "2023\u20132024",
     items: [
       {
         key: "tks",
@@ -79,15 +56,7 @@ export const TIMELINE = [
         desc: [
           "spent a couple years building things with ",
           { text: "AI", href: "/ai" },
-          " (",
-          { text: "Tanar", href: "/ai/tanar" },
-          ", ",
-          { text: "Solon", href: "/ai/solon" },
-          ", ",
-          { text: "PANTRA", href: "/ai/pantra" },
-          ", ",
-          { text: "LazyStudent", href: "/ai/lazystudent" },
-          ") & ",
+          " & ",
           { text: "speaking", href: "/speaking" },
           " about them",
         ],
@@ -100,7 +69,7 @@ export const TIMELINE = [
     ],
   },
   {
-    year: "2022\u20132023",
+    label: "2022\u20132023",
     items: [
       {
         key: "2022",

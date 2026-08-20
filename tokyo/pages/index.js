@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "@/src/components/Header";
-import ProjectList from "@/src/components/ProjectList";
+import List from "@/src/components/List";
 import Section from "@/src/components/Section";
 import {
   CONTACT_NOTE,
@@ -30,7 +30,7 @@ export default function Home() {
           ))}
         </Section>
         <Section title="things i’ve done">
-          <ProjectList groups={TIMELINE} />
+          <List groups={TIMELINE} />
         </Section>
         <div className="block ps">
           <p>p.s. {CONTACT_NOTE}</p>

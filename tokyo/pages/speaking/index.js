@@ -1,15 +1,15 @@
 import EntryList from "@/src/components/EntryList";
 import Page from "@/src/components/Page";
-import { TALKS } from "@/src/content";
+import { TALKS } from "@/src/content/speaking";
 
 export default function Speaking() {
   return (
     <Page title="speaking">
       <EntryList
-        entries={TALKS.map((t) => ({
-          ...t,
-          prefix: t.year,
-          href: `/speaking/${t.slug}`,
+        entries={TALKS.map((talk) => ({
+          ...talk,
+          prefix: talk.year,
+          href: `/speaking/${talk.slug}`,
         }))}
       />
     </Page>

@@ -170,3 +170,11 @@ section nav {
   color: var(--text);
   text-decoration: underline;
 }
+
+/* Space between a page opening and the lines under it. */
+.stack {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
