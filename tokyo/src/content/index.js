@@ -35,6 +35,16 @@ export const TIMELINE = [
           " in india, then dropped out :)",
         ],
       },
+      {
+        key: "book",
+        name: "wrote my first book",
+        desc: [
+          {
+            text: "now that I am 20, I can\u2019t fail",
+            href: "/now-that-i-am-20-i-cant-fail.pdf",
+          },
+        ],
+      },
     ],
   },
   {

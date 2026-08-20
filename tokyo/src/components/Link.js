@@ -1,9 +1,12 @@
 import NextLink from "next/link";
 
-/* Internal hrefs route client-side and stay in the tab; anything else is
-   treated as external. */
+/* Internal routes go through the router. A path with a file extension is a
+   static file in /public, so it gets a plain anchor and opens in a new tab
+   like any other external artifact. */
 export default function Link({ href, children }) {
-  if (href.startsWith("/")) {
+  const isRoute = href.startsWith("/") && !/\.[a-z0-9]+$/i.test(href);
+
+  if (isRoute) {
     return <NextLink href={href}>{children}</NextLink>;
   }
 
