@@ -19,34 +19,56 @@ export const NAV = [
   { label: "LinkedIn", href: LINKS.linkedin },
 ];
 
-export const PROJECTS = [
+export const TIMELINE = [
   {
     year: "2026",
     items: [
       {
         name: "Fuji Chocolates",
-        desc: "made Japanese-inspired chocolates in India",
+        desc: "a chocolate brand I started in India, built on Japanese flavors",
+      },
+      { name: "dropped out :)", desc: "left school to make things full time" },
+    ],
+  },
+  {
+    year: "2025",
+    items: [
+      {
+        name: "TETR",
+        desc: "business school where each term is in a new country \u2014 I built companies in Dubai and India",
       },
     ],
   },
   {
     year: "2024",
     items: [
-      { name: "Tanar AI", desc: "built a virtual AI teacher" },
+      {
+        name: "exchange in Japan",
+        desc: "a year at a Japanese high school, and why I keep going back",
+      },
+      {
+        name: "buildspace s5",
+        desc: "a summer in San Francisco building my own ideas",
+      },
+      { name: "Tanar AI", desc: "a virtual teacher you could talk to" },
       {
         name: "Solon AI",
-        desc: "tried making education more personal",
+        desc: "explained ideas differently depending on who was learning",
         href: "https://medium.com/@sofuswenoee/reimagining-education-with-project-solon-a-personal-game-of-learning-b9d3454a81cf",
       },
       {
         name: "PANTRA",
-        desc: "predicting personality from writing",
+        desc: "guessed your personality from the way you write",
         href: "https://medium.com/@sofuswenoee/decoding-personality-with-ai-introducing-pantra-9aa268139f65",
       },
       {
         name: "LazyStudent",
-        desc: "AI notes + recommendations from lectures",
+        desc: "turned my recorded lectures into notes",
         href: "https://medium.com/@sofuswenoee/how-i-built-lazystudent-to-hack-my-way-to-better-grades-without-the-effort-ab376391096b/",
+      },
+      {
+        name: "AI for Education Summit",
+        desc: "spoke about the two education projects above",
       },
     ],
   },
@@ -55,29 +77,25 @@ export const PROJECTS = [
     items: [
       {
         name: "PerfectFit",
-        desc: "tried using 3D scanning to make clothes fit better online",
+        desc: "3D body scanning so clothes fit before you buy",
       },
+      { name: "PUZZLE X", desc: "spoke in Barcelona" },
+    ],
+  },
+  {
+    year: "2022",
+    items: [
       {
         name: "Taiyo",
-        desc: "tried starting a clothing brand with a friend when I was 14",
+        desc: "a clothing brand I started with a friend at 14",
       },
     ],
   },
 ];
 
-export const OTHER_STUFF = [
-  "exchange student at a Japanese high school",
-  "buildspace s5 in San Francisco",
-  "spoke at PUZZLE X in Barcelona",
-  "spoke at the AI for Education Summit",
-  "built businesses in Dubai + India at TETR",
-  "dropped out in 2026 :)",
-];
-
-export const RIGHT_NOW = [
+export const NOW = [
   "coming back to Japan.",
-  "I want to find people I genuinely like making things with.",
-  "films, music, fashion, startups, whatever we’re excited about.",
+  "I want to find people I genuinely like making things with — films, music, fashion, startups, whatever we’re excited about.",
 ];
 
 export const CONTACT_NOTE =

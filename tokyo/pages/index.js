@@ -8,10 +8,9 @@ import {
   EMAIL,
   INTRO_VIDEO,
   NAME,
-  OTHER_STUFF,
-  PROJECTS,
-  RIGHT_NOW,
+  NOW,
   TAGLINE,
+  TIMELINE,
 } from "@/src/content";
 
 export default function Home() {
@@ -38,29 +37,20 @@ export default function Home() {
           </p>
         </div>
 
-        <Section title="right now">
-          {RIGHT_NOW.map((line) => (
+        <Section title="now">
+          {NOW.map((line) => (
             <p className="line" key={line}>
               {line}
             </p>
           ))}
         </Section>
 
-        <Section title="things I’ve made">
-          <ProjectList groups={PROJECTS} />
-        </Section>
-
-        <Section title="other stuff">
-          {OTHER_STUFF.map((line) => (
-            <p className="line" key={line}>
-              {line}
-            </p>
-          ))}
+        <Section title="things I’ve done">
+          <ProjectList groups={TIMELINE} />
         </Section>
 
         <p className="block ps">
-          p.s. {CONTACT_NOTE}{" "}
-          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          p.s. {CONTACT_NOTE} <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
         </p>
       </main>
     </>
