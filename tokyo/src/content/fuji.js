@@ -20,7 +20,7 @@ export const STEPS = [
   "idea",
   "making the chocolates",
   "first sales",
-  "retail",
+  "retail + pop ups",
   "$5k+",
   "mt. fuji :)",
 ];
