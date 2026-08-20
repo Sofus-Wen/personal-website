@@ -15,9 +15,9 @@ export const NAV = [
 ];
 
 export const NOW = [
-  "coming back to japan.",
-  "finding my people. making good shit together.",
-  "films, music, fashion, startups, whatever.",
+  "- coming back to japan.",
+  "- finding my people. making good shit together.",
+  "-> films, music, fashion, startups, whatever...",
 ];
 
 /* A name or description is either a plain string, or an array of segments
