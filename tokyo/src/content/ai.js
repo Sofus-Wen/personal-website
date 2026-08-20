@@ -7,7 +7,7 @@ export const INTRO = [
     name: [
       "joined ",
       { text: "TKS", href: "https://tks.world/" },
-      ", then ended up studying in toronto where their headquarters was.",
+      ", then ended up studying in toronto where one of their hq’s was.",
     ],
   },
 ];
