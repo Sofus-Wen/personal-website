@@ -16,7 +16,7 @@ export const NAV = [
 
 export const NOW = [
   "coming back to japan.",
-  "looking for people I like making things with.",
+  "finding my people. making good shit together.",
   "films, music, fashion, startups, whatever.",
 ];
 
