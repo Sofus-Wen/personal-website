@@ -20,70 +20,46 @@ export const NOW = [
   "films, music, fashion, startups, whatever.",
 ];
 
-/* Written the way you'd answer a friend asking "what was that thing you did?"
-   Every line that has a real artifact links to it, so the page works as a map
-   rather than an explanation. */
+/* Descriptions are plain strings, or an array of segments when part of the
+   line should link somewhere. */
 export const TIMELINE = [
   {
-    year: "2026",
-    items: [
-      {
-        name: "Fuji Chocolates",
-        desc: "sold japanese chocolate in india with some friends",
-      },
-    ],
-  },
-  {
-    year: "2025",
+    year: "2025\u20132026",
     items: [
       {
         name: "TETR",
-        desc: "went around the world building businesses. eventually dropped out :)",
+        desc: "traveled around building businesses. made Fuji Chocolates in india, then dropped out :)",
       },
     ],
   },
   {
-    year: "2024",
+    year: "2024\u20132025",
     items: [
       {
         name: "exchange in japan",
-        desc: "went to japanese high school for a year. changed my life quite a bit",
+        desc: "spent a year at a japanese high school. probably the best year of my life",
         href: "https://youtu.be/Egg8OXpQG5M",
-      },
-      {
-        name: "buildspace s5",
-        desc: "spent a summer in sf making stuff with internet people",
-      },
-      { name: "Tanar AI", desc: "made a teacher you could actually talk to" },
-      {
-        name: "Solon AI",
-        desc: "tried to make learning feel personal",
-        href: "https://youtu.be/6ogm8ZXvXRc",
-      },
-      {
-        name: "PANTRA",
-        desc: "guessed what people are like from how they write",
-        href: "https://youtu.be/CLRQ5qoxN88",
-      },
-      {
-        name: "LazyStudent",
-        desc: "recorded my classes and turned them into notes because I was lazy",
-        href: "https://youtu.be/DyLjlLCo6d0",
-      },
-      {
-        name: "AI for education summit",
-        desc: "talked about the school stuff above",
       },
     ],
   },
   {
-    year: "2023",
+    year: "2023\u20132024",
     items: [
       {
-        name: "PerfectFit",
-        desc: "tried to 3D scan people so clothes would actually fit",
+        name: "TKS",
+        desc: [
+          "spent a couple years experimenting with AI: Tanar, ",
+          { text: "Solon", href: "https://youtu.be/6ogm8ZXvXRc" },
+          ", ",
+          { text: "PANTRA", href: "https://youtu.be/CLRQ5qoxN88" },
+          ", ",
+          { text: "LazyStudent", href: "https://youtu.be/DyLjlLCo6d0" },
+        ],
       },
-      { name: "PUZZLE X", desc: "somehow ended up on a stage in barcelona" },
+      {
+        name: "buildspace",
+        desc: "spent a summer in sf building with some really cool people",
+      },
     ],
   },
   {

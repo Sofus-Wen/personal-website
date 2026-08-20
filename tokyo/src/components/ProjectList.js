@@ -1,8 +1,21 @@
 import ExternalLink from "./ExternalLink";
 
-/* One chronological list. A row is "name - description", where the name is a
-   link when there is somewhere to send people. Rows without a description
-   render as just the name. */
+/* A description is either a plain string, or an array of segments where a
+   segment may be {text, href} to link part of the line. */
+function Description({ desc }) {
+  if (!Array.isArray(desc)) return desc;
+
+  return desc.map((part, i) =>
+    typeof part === "string" ? (
+      part
+    ) : (
+      <ExternalLink key={i} href={part.href}>
+        {part.text}
+      </ExternalLink>
+    )
+  );
+}
+
 export default function ProjectList({ groups }) {
   return groups.map((group) => (
     <div className="year" key={group.year}>
@@ -14,7 +27,8 @@ export default function ProjectList({ groups }) {
           ) : (
             item.name
           )}
-          {item.desc ? ` - ${item.desc}` : null}
+          {item.desc ? " - " : null}
+          <Description desc={item.desc} />
         </p>
       ))}
     </div>

@@ -34,7 +34,7 @@ export default function Home() {
           ))}
         </Section>
 
-        <Section title="things I’ve done">
+        <Section title="things i’ve done">
           <ProjectList groups={TIMELINE} />
         </Section>
 
