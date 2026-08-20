@@ -4,8 +4,9 @@ import Header from "@/src/components/Header";
 import ProjectList from "@/src/components/ProjectList";
 import Section from "@/src/components/Section";
 import {
-  CONTACT_NAV,
+  CONTACT_NOTE,
   EMAIL,
+  INTRO_VIDEO,
   NAME,
   OTHER_STUFF,
   PROJECTS,
@@ -26,6 +27,25 @@ export default function Home() {
       <hr />
 
       <main className="container">
+        <div className="block intro">
+          <p>{TAGLINE}</p>
+          <p>
+            mostly about my life — my favorite one so far is{" "}
+            <ExternalLink href={INTRO_VIDEO.href}>
+              {INTRO_VIDEO.name}
+            </ExternalLink>
+            .
+          </p>
+        </div>
+
+        <Section title="right now">
+          {RIGHT_NOW.map((line) => (
+            <p className="line" key={line}>
+              {line}
+            </p>
+          ))}
+        </Section>
+
         <Section title="things I’ve made">
           <ProjectList groups={PROJECTS} />
         </Section>
@@ -38,27 +58,10 @@ export default function Home() {
           ))}
         </Section>
 
-        <Section title="right now">
-          {RIGHT_NOW.map((line) => (
-            <p className="line" key={line}>
-              {line}
-            </p>
-          ))}
-        </Section>
-
-        <Section title="contact">
-          <p className="line">if you want to make something together, say hi :)</p>
-          <p className="line">
-            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          </p>
-          <nav>
-            {CONTACT_NAV.map((item) => (
-              <ExternalLink key={item.label} href={item.href}>
-                {item.label}
-              </ExternalLink>
-            ))}
-          </nav>
-        </Section>
+        <p className="block ps">
+          p.s. {CONTACT_NOTE}{" "}
+          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+        </p>
       </main>
     </>
   );

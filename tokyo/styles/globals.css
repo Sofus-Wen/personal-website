@@ -79,14 +79,20 @@ p {
   margin: 0;
 }
 
-/* Name and section titles stay at body size, as in the reference.
-   Weight 500 is the one concession — Manrope is a sans, so it needs a
-   touch more weight than a monospace to read as a heading. */
+/* Name and section titles stay at body size, as in the reference, and lean
+   on weight alone for hierarchy. */
 h1,
 h2 {
   margin: 0;
   font-size: 1em;
-  font-weight: 500;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 650;
 }
 
 /* 40px horizontal padding at every width, as in the reference. */
@@ -167,6 +173,20 @@ main {
 .line {
   padding-left: 1rem;
   text-indent: -1rem;
+}
+
+.intro p + p {
+  margin-top: 0;
+}
+
+/* Closing p.s., set apart by space rather than a heading. */
+.ps {
+  margin-top: 0.6em;
+  color: var(--muted);
+}
+
+.ps a {
+  color: var(--link);
 }
 
 section nav {

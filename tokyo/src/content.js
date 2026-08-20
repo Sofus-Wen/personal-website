@@ -1,5 +1,10 @@
 export const NAME = "Sofus Wenøe";
 export const TAGLINE = "making videos :)";
+
+export const INTRO_VIDEO = {
+  name: "Valentine’s Day in Japan",
+  href: "https://www.youtube.com/watch?v=Egg8OXpQG5M",
+};
 export const EMAIL = "sofus.wenoee.contact@gmail.com";
 
 export const LINKS = {
@@ -21,17 +26,6 @@ export const PROJECTS = [
       {
         name: "Fuji Chocolates",
         desc: "made Japanese-inspired chocolates in India",
-      },
-    ],
-  },
-  {
-    year: "2025",
-    items: [
-      { name: "YouTube", desc: "videos about my life", href: LINKS.youtube },
-      {
-        name: "Valentine’s Day in Japan",
-        desc: "one of my favorite videos I’ve made",
-        href: "https://www.youtube.com/watch?v=Egg8OXpQG5M",
       },
     ],
   },
@@ -86,8 +80,5 @@ export const RIGHT_NOW = [
   "films, music, fashion, startups, whatever we’re excited about.",
 ];
 
-export const CONTACT_NAV = [
-  { label: "Instagram", href: LINKS.instagram },
-  { label: "YouTube", href: LINKS.youtube },
-  { label: "LinkedIn", href: LINKS.linkedin },
-];
+export const CONTACT_NOTE =
+  "if you want to make something together, say hi \u2014 i read everything and reply to anything with a real idea in it.";

@@ -1,6 +1,6 @@
 import ExternalLink from "./ExternalLink";
 import ThemeToggle from "./ThemeToggle";
-import { NAME, NAV, TAGLINE } from "../content";
+import { NAME, NAV } from "../content";
 
 export default function Header() {
   return (
@@ -10,7 +10,6 @@ export default function Header() {
           <h1>{NAME}</h1>
           <ThemeToggle />
         </div>
-        <p>{TAGLINE}</p>
         <nav>
           {NAV.map((item) => (
             <ExternalLink key={item.label} href={item.href}>
