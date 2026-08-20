@@ -88,4 +88,4 @@ export const TIMELINE = [
   },
 ];
 
-export const CONTACT_NOTE = "if you wanna make something together, say hi :)";
+export const CONTACT_NOTE = "if you wanna make something together, drop me a message :)";
