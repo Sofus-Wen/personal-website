@@ -64,7 +64,7 @@ export const TIMELINE = [
       {
         name: "buildspace",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7228701780937740289/",
-        desc: "spent the summer in sf with Mats & Pranava",
+        desc: "spent the summer in sf building with Mats & Pranava",
       },
     ],
   },
@@ -77,6 +77,7 @@ export const TIMELINE = [
           { text: "Taiyo / fashion school", href: "/taiyo" },
           " \u00b7 hypnosis / NLP",
         ],
+        desc: "took a year off school and tried a bunch of things",
       },
     ],
   },
