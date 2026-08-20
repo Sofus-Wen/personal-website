@@ -1,4 +1,4 @@
-import ExternalLink from "./ExternalLink";
+import Link from "./Link";
 
 /* Renders a string as-is, or an array of segments where {text, href} links
    part of the line. Used for both names and descriptions. */
@@ -9,9 +9,9 @@ function Segments({ value }) {
     typeof part === "string" ? (
       part
     ) : (
-      <ExternalLink key={i} href={part.href}>
+      <Link key={i} href={part.href}>
         {part.text}
-      </ExternalLink>
+      </Link>
     )
   );
 }
@@ -23,7 +23,7 @@ export default function ProjectList({ groups }) {
       {group.items.map((item) => (
         <p className="line" key={item.key || item.name}>
           {item.href ? (
-            <ExternalLink href={item.href}>{item.name}</ExternalLink>
+            <Link href={item.href}>{item.name}</Link>
           ) : (
             <Segments value={item.name} />
           )}

@@ -20,6 +20,29 @@ export const NOW = [
   "-> films, music, fashion, startups, whatever...",
 ];
 
+/* Things under /ai. The video is the artifact each page already has; the
+   pages themselves are otherwise empty until content is written. */
+export const AI_PROJECTS = [
+  { slug: "tanar", name: "Tanar", video: "https://youtu.be/4Se1xhJhYr4" },
+  { slug: "solon", name: "Solon", video: "https://youtu.be/6ogm8ZXvXRc" },
+  { slug: "pantra", name: "PANTRA", video: "https://youtu.be/CLRQ5qoxN88" },
+  {
+    slug: "lazystudent",
+    name: "LazyStudent",
+    video: "https://youtu.be/DyLjlLCo6d0",
+  },
+];
+
+/* Talks, from the dates recorded on the old site. No content yet. */
+export const TALKS = [
+  { slug: "puzzle-x", name: "PUZZLE X", year: "2023" },
+  {
+    slug: "ai-for-education-summit",
+    name: "AI for education summit",
+    year: "2024",
+  },
+];
+
 /* A name or description is either a plain string, or an array of segments
    where a segment may be {text, href} to link part of the line. */
 export const TIMELINE = [
@@ -28,7 +51,12 @@ export const TIMELINE = [
     items: [
       {
         name: "TETR",
-        desc: "traveled around building businesses. made Fuji Chocolates in india, then dropped out :)",
+        href: "/tetr",
+        desc: [
+          "traveled around building businesses. made ",
+          { text: "Fuji Chocolates", href: "/fuji-chocolates" },
+          " in india, then dropped out :)",
+        ],
       },
     ],
   },
@@ -49,15 +77,19 @@ export const TIMELINE = [
         key: "tks",
         name: [{ text: "TKS", href: "https://tks.world/" }, " / toronto"],
         desc: [
-          "spent a couple years building things with AI (",
-          { text: "Tanar", href: "https://youtu.be/4Se1xhJhYr4" },
+          "spent a couple years building things with ",
+          { text: "AI", href: "/ai" },
+          " (",
+          { text: "Tanar", href: "/ai/tanar" },
           ", ",
-          { text: "Solon", href: "https://youtu.be/6ogm8ZXvXRc" },
+          { text: "Solon", href: "/ai/solon" },
           ", ",
-          { text: "PANTRA", href: "https://youtu.be/CLRQ5qoxN88" },
+          { text: "PANTRA", href: "/ai/pantra" },
           ", ",
-          { text: "LazyStudent", href: "https://youtu.be/DyLjlLCo6d0" },
-          ") & speaking about them",
+          { text: "LazyStudent", href: "/ai/lazystudent" },
+          ") & ",
+          { text: "speaking", href: "/speaking" },
+          " about them",
         ],
       },
       {
@@ -69,7 +101,15 @@ export const TIMELINE = [
   },
   {
     year: "2022\u20132023",
-    items: [{ name: "fashion school \u00b7 hypnosis / NLP \u00b7 Taiyo" }],
+    items: [
+      {
+        key: "2022",
+        name: [
+          "fashion school \u00b7 hypnosis / NLP \u00b7 ",
+          { text: "Taiyo", href: "/taiyo" },
+        ],
+      },
+    ],
   },
 ];
 

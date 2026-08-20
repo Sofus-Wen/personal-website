@@ -10,7 +10,6 @@ import {
   TAGLINE,
   TIMELINE,
 } from "@/src/content";
-
 export default function Home() {
   return (
     <>
@@ -19,13 +18,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={`${NAME} - ${TAGLINE}`} />
       </Head>
-
       <Header />
       <hr />
-
       <main className="container">
         <p className="block">{TAGLINE}</p>
-
         <Section title="now">
           {NOW.map((line) => (
             <p className="line" key={line}>
@@ -33,11 +29,9 @@ export default function Home() {
             </p>
           ))}
         </Section>
-
         <Section title="things i’ve done">
           <ProjectList groups={TIMELINE} />
         </Section>
-
         <div className="block ps">
           <p>p.s. {CONTACT_NOTE}</p>
           <p>
