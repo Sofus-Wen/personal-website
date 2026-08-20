@@ -1,10 +1,5 @@
 export const NAME = "Sofus Wenøe";
 export const TAGLINE = "making videos :)";
-
-export const INTRO_VIDEO = {
-  name: "Valentine’s Day in Japan",
-  href: "https://www.youtube.com/watch?v=Egg8OXpQG5M",
-};
 export const EMAIL = "sofus.wenoee.contact@gmail.com";
 
 export const LINKS = {
@@ -19,15 +14,23 @@ export const NAV = [
   { label: "LinkedIn", href: LINKS.linkedin },
 ];
 
+export const NOW = [
+  "coming back to japan.",
+  "looking for people I like making things with.",
+  "films, music, fashion, startups, whatever.",
+];
+
+/* Written the way you'd answer a friend asking "what was that thing you did?"
+   Every line that has a real artifact links to it, so the page works as a map
+   rather than an explanation. */
 export const TIMELINE = [
   {
     year: "2026",
     items: [
       {
         name: "Fuji Chocolates",
-        desc: "a chocolate brand I started in India, built on Japanese flavors",
+        desc: "sold japanese chocolate in india with some friends",
       },
-      { name: "dropped out :)", desc: "left school to make things full time" },
     ],
   },
   {
@@ -35,7 +38,7 @@ export const TIMELINE = [
     items: [
       {
         name: "TETR",
-        desc: "business school where each term is in a new country \u2014 I built companies in Dubai and India",
+        desc: "went around the world building businesses. eventually dropped out :)",
       },
     ],
   },
@@ -43,32 +46,33 @@ export const TIMELINE = [
     year: "2024",
     items: [
       {
-        name: "exchange in Japan",
-        desc: "a year at a Japanese high school, and why I keep going back",
+        name: "exchange in japan",
+        desc: "went to japanese high school for a year. changed my life quite a bit",
+        href: "https://youtu.be/Egg8OXpQG5M",
       },
       {
         name: "buildspace s5",
-        desc: "a summer in San Francisco building my own ideas",
+        desc: "spent a summer in sf making stuff with internet people",
       },
-      { name: "Tanar AI", desc: "a virtual teacher you could talk to" },
+      { name: "Tanar AI", desc: "made a teacher you could actually talk to" },
       {
         name: "Solon AI",
-        desc: "explained ideas differently depending on who was learning",
-        href: "https://medium.com/@sofuswenoee/reimagining-education-with-project-solon-a-personal-game-of-learning-b9d3454a81cf",
+        desc: "tried to make learning feel personal",
+        href: "https://youtu.be/6ogm8ZXvXRc",
       },
       {
         name: "PANTRA",
-        desc: "guessed your personality from the way you write",
-        href: "https://medium.com/@sofuswenoee/decoding-personality-with-ai-introducing-pantra-9aa268139f65",
+        desc: "guessed what people are like from how they write",
+        href: "https://youtu.be/CLRQ5qoxN88",
       },
       {
         name: "LazyStudent",
-        desc: "turned my recorded lectures into notes",
-        href: "https://medium.com/@sofuswenoee/how-i-built-lazystudent-to-hack-my-way-to-better-grades-without-the-effort-ab376391096b/",
+        desc: "recorded my classes and turned them into notes because I was lazy",
+        href: "https://youtu.be/DyLjlLCo6d0",
       },
       {
-        name: "AI for Education Summit",
-        desc: "spoke about the two education projects above",
+        name: "AI for education summit",
+        desc: "talked about the school stuff above",
       },
     ],
   },
@@ -77,9 +81,9 @@ export const TIMELINE = [
     items: [
       {
         name: "PerfectFit",
-        desc: "3D body scanning so clothes fit before you buy",
+        desc: "tried to 3D scan people so clothes would actually fit",
       },
-      { name: "PUZZLE X", desc: "spoke in Barcelona" },
+      { name: "PUZZLE X", desc: "somehow ended up on a stage in barcelona" },
     ],
   },
   {
@@ -87,16 +91,10 @@ export const TIMELINE = [
     items: [
       {
         name: "Taiyo",
-        desc: "a clothing brand I started with a friend at 14",
+        desc: "started a clothing brand with a friend at 14",
       },
     ],
   },
 ];
 
-export const NOW = [
-  "coming back to Japan.",
-  "I want to find people I genuinely like making things with — films, music, fashion, startups, whatever we’re excited about.",
-];
-
-export const CONTACT_NOTE =
-  "if you want to make something together, say hi \u2014 i read everything and reply to anything with a real idea in it.";
+export const CONTACT_NOTE = "if you wanna make something together, say hi :)";

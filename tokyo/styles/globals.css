@@ -35,27 +35,22 @@ body {
   color: var(--text);
   font-family: var(--font-manrope), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 0.875rem; /* 14px — reference text-sm */
-  line-height: 1.4;
+  font-size: 0.9375rem; /* 15px */
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Reference type scale: text-sm / base / lg / xl */
+/* Deliberately stops at 17px. Letting it run to 20px made the page feel like
+   it was floating rather than sitting as one block. */
 @media (min-width: 640px) {
   body {
     font-size: 1rem;
   }
 }
 
-@media (min-width: 768px) {
-  body {
-    font-size: 1.125rem;
-  }
-}
-
 @media (min-width: 1024px) {
   body {
-    font-size: 1.25rem;
+    font-size: 1.0625rem;
   }
 }
 
@@ -101,33 +96,11 @@ h2 {
   padding-right: 2.5rem;
 }
 
-/* Fluid content column: 100% -> 11/12 -> 10/12 -> 9/12 -> 8/12 */
+/* One narrow column, closer to a README than a portfolio. Left-aligned, and
+   it stops growing so the page stays a tight block on wide screens. */
 .block {
   width: 100%;
-}
-
-@media (min-width: 640px) {
-  .block {
-    width: 91.6667%;
-  }
-}
-
-@media (min-width: 768px) {
-  .block {
-    width: 83.3333%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .block {
-    width: 75%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .block {
-    width: 66.6667%;
-  }
+  max-width: 38rem;
 }
 
 header {
@@ -175,13 +148,8 @@ main {
   text-indent: -1rem;
 }
 
-.intro p + p {
-  margin-top: 0;
-}
-
 /* Closing p.s., set apart by space rather than a heading. */
 .ps {
-  margin-top: 0.6em;
   color: var(--muted);
 }
 
