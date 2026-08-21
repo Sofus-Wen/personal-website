@@ -23,7 +23,7 @@
     });
   });
 
-  var sharePopups = undefined;
+  /*var sharePopups = undefined;
 	sharePopups = {
 		triggers : $('.share-popup'),
 
@@ -40,7 +40,7 @@
 		    popupWindow.focus();
 		}
 	};
-	sharePopups.init();
+	sharePopups.init();*/
 
 
   var system = {
@@ -243,6 +243,7 @@
 
       $('#video .mpeg').attr('src', "video/"+video+".mp4");
       $('#video .webm').attr('src', "video/"+video+".webm");
+      $('#video .milkdrop-video').attr('src', "#webamp canvas");
       $('#video').get(0).load();
 
       self.audioPlayer.src = "sound/"+track;
@@ -251,7 +252,7 @@
       if ('mediaSession' in navigator) {
         navigator.mediaSession.metadata = new MediaMetadata({
           title: title,
-          artist: 'Toasty Digital',
+          artist: 'Taiyo Official',
           album: album,
           artwork: [
             { src: 'img/cover/'+album+'_96x96.png',   sizes: '96x96',   type: 'image/png' },
@@ -329,7 +330,8 @@
 
   $('.login form').on('submit', function(e){
     e.preventDefault();
-    var answers = ['dGFpeW8=', 'b2ZmaWNpYWw=', 'dGFpeW8gb2ZmaWNpYWw=', 'dGFpeW8yMDQ5', 'dGFpeW8gMjA0OQ==', 'c3Vu', 'dGhlIHN1bg==', 'YmUgbGlrZSB0YWl5bw==', 'dGhlIGV0ZXJuYWwgc3Vuc2hpbmUgb2YgaG9wZQ==', 'ZXRlcm5hbCBzdW5zaGluZSBvZiBob3Bl', 'dGhpcyBpcyB0YWl5bw==', 'MjA0OQ=='];
+    // var answers = ['dGFpeW8=', 'b2ZmaWNpYWw=', 'dGFpeW8gb2ZmaWNpYWw=', 'dGFpeW8yMDQ5', 'dGFpeW8gMjA0OQ==', 'c3Vu', 'dGhlIHN1bg==', 'YmUgbGlrZSB0YWl5bw==', 'dGhlIGV0ZXJuYWwgc3Vuc2hpbmUgb2YgaG9wZQ==', 'dGhpcyBpcyB0YWl5bw==', 'MjA0OQ==', 'Z3JlYXRlc3QgYnJhbmQgb2YgYWxsIHRpbWU='];
+    var answers = ['dGFpeW8=', 'b2ZmaWNpYWw=', 'dGFpeW8gb2ZmaWNpYWw=', 'dGFpeW8yMDQ5', 'dGFpeW8gMjA0OQ==', 'c3Vu', 'dGhlIHN1bg==', 'YmUgbGlrZSB0YWl5bw==', 'dGhlIGV0ZXJuYWwgc3Vuc2hpbmUgb2YgaG9wZQ==', 'dGhpcyBpcyB0YWl5bw==', 'MjA0OQ==', 'Z3JlYXRlc3QgYnJhbmQgb2YgYWxsIHRpbWU='];
     var value = $('.login form input[type=password]').val().toLowerCase();
 
     //console.log(btoa(value));
@@ -402,7 +404,7 @@
   $('#social').on('click', function(e){
     e.preventDefault();
     $('.navbar .item.submenu.active').removeClass('active');
-    var content = '<div><p><em><a href="https://www.instagram.com/taiyo.official_/" target="_blank">INSTAGRAM</a></em><br /><br />'+
+    var content = '<div><p><em><a href="https://www.instagram.com/taiyo_official_/" target="_blank">INSTAGRAM</a></em><br /><br />'+
     '<em><a href="https://www.tiktok.com/@taiyoofficial" target="_blank">TIK TOK</a></em><br /><br />'+
     '<em><a href="https://www.facebook.com/Taiyo-Official-108891261657101" target="_blank">FACEBOOK</a></em><br /><br />'+
     '<em><a href="https://twitter.com/TaiyoOfficial_" target="_blank">TWITTER</a></em><br /><br />'+
@@ -422,12 +424,53 @@
   });
 
 
+  $('#fullscreen').on('click', function(e){
+    e.preventDefault();
+    $('.navbar .item.submenu.active').removeClass('active');
+    var elem = document.documentElement;
+
+    if($('body').hasClass('fullscreen')){
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { /* Firefox */
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE/Edge */
+        document.msExitFullscreen();
+      }
+      $('body').removeClass('fullscreen');
+    } else {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+      $('body').addClass('fullscreen');
+    }
+  });
+
+/*  $('#restart').on('click', function(e){
+    e.preventDefault();
+    location.reload();
+  });
+
+  $('#print').on('click', function(e){
+    $('.navbar .item.submenu.active').removeClass('active');
+    e.preventDefault();
+    window.print();
+  });*/
+
   $('#switchfiles').on('click', function(e){
     e.preventDefault();
     $('.navbar .item.submenu.active').removeClass('active');
     $(this).toggleClass('invert');
     $('body').toggleClass('show-hidden-files');
-  });
+  });/*
 
   $('#folder1').on('click', function(e){
     e.preventDefault();
@@ -439,18 +482,18 @@
   $('#folder2').on('click', function(e){
     e.preventDefault();
     $('.finder').removeClass('focus');
-    $('.finder.catalogfolder').addClass('focus').show('slow');
+    $('.finder.gktfolder').addClass('focus').show('slow');
     $(this).addClass('active');
   });
 
   $('#folder3').on('click', function(e){
     e.preventDefault();
     $('.finder').removeClass('focus');
-    $('.finder.loremipsumfolder').addClass('focus').show('slow');
+    $('.finder.dietyeezusfolder').addClass('focus').show('slow');
     $(this).addClass('active');
-  });
+  });*/
 
-  $('#folder4').on('click', function(e){
+  /*$('#folder4').on('click', function(e){
     e.preventDefault();
     $('.finder').removeClass('focus');
     $(this).addClass('active');
@@ -460,52 +503,76 @@
     }, 0);
     $(this).addClass('active');
   });
-
-  $('#filecorrupted').on('click', function(e){
+*/
+  $('#snake').on('click', function(e){
     e.preventDefault();
-    $('.finder').removeClass('focus');
-    $(this).addClass('active');
-    setTimeout(function(){
-      var content = '<div><p>File corrupted!<br />Please download it again.</p></div>';
-      $('.dialog').html(content).css('display', 'flex');
-    }, 0);
-    $(this).addClass('active');
+    $('#video').get(0).play();
+    $('.tab.fdl.snake').addClass('focus').show();
   });
+
+  $('#blog').on('click', function(e){
+    e.preventDefault();
+    $('#video').get(0).play();
+    $('.tab.fdl.blog').addClass('focus').show();
+  });
+
+  $('#winamp').on('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+        const Webamp = window.Webamp;
+        new Webamp({
+            initialTracks: [{
+                metaData: {
+                    artist: "Claude Debussy",
+                    title: "Clair de lune"
+                },
+                // NOTE: Your audio file must be served from the same domain as your HTML
+                // file, or served with permissive CORS HTTP headers:
+                // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+                url: "https://cdn.shopify.com/s/files/1/0551/2708/1111/files/Clair-de-lune-piano.mp3?v=1642522472",
+                duration: 305
+            }],
+            __butterchurnOptions: {
+                importButterchurn: () => Promise.resolve(window.butterchurn),
+                getPresets: () => {
+                    const presets = window.butterchurnPresets.getPresets();
+                    return Object.keys(presets).map((name) => {
+                        return {
+                            name,
+                            butterchurnPresetObject: presets[name]
+                        };
+                    });
+                },
+                butterchurnOpen: true
+            },
+            __initialWindowLayout: {
+                main: { position: { x: 0, y: 0 } },
+                equalizer: { position: { x: 0, y: 116 } },
+                playlist: { position: { x: 0, y: 232 }, size: [0, 4] },
+                milkdrop: { position: { x: 275, y: 0 }, size: [7, 12] }
+            }
+        }).renderWhenReady(document.getElementById('app'));
+    $('.wwwinamp').addClass('focus').show();
+  });
+
+  /*
 
   $('#readme').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
     $('.finder.readme').addClass('focus').show('slow');
-  });
+  });*/
 
-  $('#dontopenthistht').on('click', function(e){
+  $('#earththt2').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('.finder.dontopenthis').addClass('focus').show('slow');
+    $('.tab.earth').addClass('focus').show('slow');
   });
 
-  $('#dontopenthistht2').on('click', function(e){
+  $('#termstht2').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('.tab.dontopenthis').addClass('focus').show('slow');
-  });
-
-  $('#earthtxttht').on('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.tab.earthtxt').addClass('focus').show('slow');
-  });
-
-  $('earthtxttht2').on('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.tab.earthtxt').addClass('focus').show('slow');
-  });
-
-  $('#customer-caretht2').on('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.tab.customer-care').addClass('focus').show('slow');
+    $('.tab.terms').addClass('focus').show('slow');
   });
 
   $('#catalogtht2').on('click', function(e){
@@ -544,16 +611,16 @@
     $('.tab.white-hoodie').addClass('focus').show('slow');
   });
 
-  $('#dontopenthistht3').on('click', function(e){
+  $('#earththt3').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('.tab.dontopenthis').addClass('focus').show('slow');
+    $('.tab.earth').addClass('focus').show('slow');
   });
 
-  $('#customer-caretht3').on('click', function(e){
+  $('#termstht3').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('.tab.customer-care').addClass('focus').show('slow');
+    $('.tab.terms').addClass('focus').show('slow');
   });
 
   $('#catalogtht3').on('click', function(e){
@@ -592,16 +659,16 @@
     $('.tab.white-hoodie').addClass('focus').show('slow');
   });
 
-  $('#dontopenthistht4').on('click', function(e){
+  $('#earththt4').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('.tab.dontopenthis').addClass('focus').show('slow');
+    $('.tab.earth').addClass('focus').show('slow');
   });
 
-  $('#customer-caretht4').on('click', function(e){
+  $('#termstht4').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('.tab.customer-care').addClass('focus').show('slow');
+    $('.tab.terms').addClass('focus').show('slow');
   });
 
   $('#catalogtht4').on('click', function(e){
@@ -640,16 +707,16 @@
     $('.tab.white-hoodie').addClass('focus').show('slow');
   });
 
-  $('#dontopenthistht5').on('click', function(e){
+  $('#earththt5').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('.tab.dontopenthis').addClass('focus').show('slow');
+    $('.tab.earth').addClass('focus').show('slow');
   });
 
-  $('#customer-caretht5').on('click', function(e){
+  $('#termstht5').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('.tab.customer-care').addClass('focus').show('slow');
+    $('.tab.terms').addClass('focus').show('slow');
   });
 
   $('#catalogtht5').on('click', function(e){
@@ -683,30 +750,6 @@
   });
 
   $('#white-hoodietht5').on('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.tab.white-hoodie').addClass('focus').show('slow');
-  });
-
-  $('#black-tshirttht6').on('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.tab.black-tshirt').addClass('focus').show('slow');
-  });
-
-  $('#white-tshirttht6').on('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.tab.white-tshirt').addClass('focus').show('slow');
-  });
-
-  $('#black-hoodietht6').on('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.tab.black-hoodie').addClass('focus').show('slow');
-  });
-
-  $('#white-hoodietht6').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
     $('.tab.white-hoodie').addClass('focus').show('slow');
@@ -762,44 +805,17 @@ $('.tab').each(function(i,e){
   dragElement(e);
 });
 
-$('.finder').on('mousedown click', function(e){
-  $('.finder.focus').removeClass('focus');
-  $(this).addClass('focus');
-});
 
-$('.finder').each(function(i,e){
-  dragElement(e);
-});
-
-
-$('#dontopenthistht').on('click', function(e){
+$('#earththt').on('click', function(e){
   e.preventDefault();
   e.stopPropagation();
-  $('.tab.dontopenthis').addClass('focus').show('slow');
+  $('.tab.earth').addClass('focus').show('slow');
 });
 
-$('#customer-caretht').on('click', function(e){
+$('#termstht').on('click', function(e){
   e.preventDefault();
   e.stopPropagation();
-  $('.tab.customer-care').addClass('focus').show('slow');
-});
-
-$('#customer-caretht2').on('click', function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  $('.tab.customer-care').addClass('focus').show('slow');
-});
-
-$('#loremipsum-pdftht').on('click', function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  $('.tab.loremipsum-pdf').addClass('focus').show('slow');
-});
-
-$('#loremipsum-pdftht2').on('click', function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  $('.tab.loremipsum-pdf').addClass('focus').show('slow');
+  $('.tab.terms').addClass('focus').show('slow');
 });
 
 $('#catalogtht').on('click', function(e){
@@ -812,18 +828,6 @@ $('#lorem-ipsumtht').on('click', function(e){
   e.preventDefault();
   e.stopPropagation();
   $('.tab.lorem-ipsum').addClass('focus').show('slow');
-});
-
-$('#storetht').on('click', function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  $('.tab.store').addClass('focus').show('slow');
-});
-
-$('#storetht2').on('click', function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  $('.tab.store').addClass('focus').show('slow');
 });
 
 $('#black-tshirttht').on('click', function(e){
@@ -855,199 +859,10 @@ $('.tab .close').on('click', function(e){
   $(this).closest('.tab').hide();
 });
 
-$('.slideout-menu li').click(function() {
-    $(this).children('.mobile-sub-menu').toggle("slow");
-    $(this).toggleClass('active'); // add this
-});
 
-
-$(function() {
-  var b = $("#button");
-  var w = $("#wrapper");
-  var l = $("#list");
-  var l_ = $("#list_");
-
-
-  b.click(function() {
-
-    if (w.hasClass('open')) {
-      w.removeClass('open');
-      w.height(0);
-    } else {
-      w.addClass('open');
-      w.height(l.outerHeight(true));
-      w.height(l_.outerHeight(true));
-    }
-
-  });
-});
-
-$(function() {
-  var b2 = $("#option-size-title");
-  var w2 = $("#wrapper2");
-  var l2 = $("#list2");
-  var w = $("#wrapper");
-  var a = $("#arrow-icon");
-
-  // w.height(l.outerHeight(true)); REMOVE THIS
-
-  b2.click(function() {
-
-    if (w2.hasClass('open')) {
-      w2.removeClass('open');
-      a.removeClass('switch');
-      w.removeClass('down');
-      w2.height(0);
-    } else {
-      w2.addClass('open');
-      a.addClass('switch');
-      w.addClass('down');
-      w2.height(l2.outerHeight(true));
-    }
-
-  });
-});
-
-$(function() {
-  var b_white_tee = $("#button_white_tee");
-  var w_white_tee = $("#wrapper_white_tee");
-  var l_white_tee = $("#list_white_tee");
-  var l__white_tee = $("#list__white_tee");
-
-
-  b_white_tee.click(function() {
-
-    if (w_white_tee.hasClass('open')) {
-      w_white_tee.removeClass('open');
-      w_white_tee.height(0);
-    } else {
-      w_white_tee.addClass('open');
-      w_white_tee.height(l_white_tee.outerHeight(true));
-      w_white_tee.height(l__white_tee.outerHeight(true));
-    }
-
-  });
-});
-
-$(function() {
-  var b2_white_tee = $("#option-size-title_white_tee");
-  var w2_white_tee = $("#wrapper2_white_tee");
-  var l2_white_tee = $("#list2_white_tee");
-  var w_white_tee = $("#wrapper_white_tee");
-  var a_white_tee = $("#arrow-icon_white_tee");
-
-  // w.height(l.outerHeight(true)); REMOVE THIS
-
-  b2_white_tee.click(function() {
-
-    if (w2_white_tee.hasClass('open')) {
-      w2_white_tee.removeClass('open');
-      a_white_tee.removeClass('switch');
-      w_white_tee.removeClass('down');
-      w2_white_tee.height(0);
-    } else {
-      w2_white_tee.addClass('open');
-      a_white_tee.addClass('switch');
-      w_white_tee.addClass('down');
-      w2_white_tee.height(l2_white_tee.outerHeight(true));
-    }
-
-  });
-});
-
-$(function() {
-  var b_black_hoodie = $("#button_black_hoodie");
-  var w_black_hoodie = $("#wrapper_black_hoodie");
-  var l_black_hoodie = $("#list_black_hoodie");
-  var l__black_hoodie = $("#list__black_hoodie");
-
-
-  b_black_hoodie.click(function() {
-
-    if (w_black_hoodie.hasClass('open')) {
-      w_black_hoodie.removeClass('open');
-      w_black_hoodie.height(0);
-    } else {
-      w_black_hoodie.addClass('open');
-      w_black_hoodie.height(l_black_hoodie.outerHeight(true));
-      w_black_hoodie.height(l__black_hoodie.outerHeight(true));
-    }
-
-  });
-});
-
-$(function() {
-  var b2_black_hoodie = $("#option-size-title_black_hoodie");
-  var w2_black_hoodie = $("#wrapper2_black_hoodie");
-  var l2_black_hoodie = $("#list2_black_hoodie");
-  var w_black_hoodie = $("#wrapper_black_hoodie");
-  var a_black_hoodie = $("#arrow-icon_black_hoodie");
-
-  // w.height(l.outerHeight(true)); REMOVE THIS
-
-  b2_black_hoodie.click(function() {
-
-    if (w2_black_hoodie.hasClass('open')) {
-      w2_black_hoodie.removeClass('open');
-      a_black_hoodie.removeClass('switch');
-      w_black_hoodie.removeClass('down');
-      w2_black_hoodie.height(0);
-    } else {
-      w2_black_hoodie.addClass('open');
-      a_black_hoodie.addClass('switch');
-      w_black_hoodie.addClass('down');
-      w2_black_hoodie.height(l2_black_hoodie.outerHeight(true));
-    }
-
-  });
-});
-
-$(function() {
-  var b_white_hoodie = $("#button_white_hoodie");
-  var w_white_hoodie = $("#wrapper_white_hoodie");
-  var l_white_hoodie = $("#list_white_hoodie");
-  var l__white_hoodie = $("#list__white_hoodie");
-
-
-  b_white_hoodie.click(function() {
-
-    if (w_white_hoodie.hasClass('open')) {
-      w_white_hoodie.removeClass('open');
-      w_white_hoodie.height(0);
-    } else {
-      w_white_hoodie.addClass('open');
-      w_white_hoodie.height(l_white_hoodie.outerHeight(true));
-      w_white_hoodie.height(l__white_hoodie.outerHeight(true));
-    }
-
-  });
-});
-
-$(function() {
-  var b2_white_hoodie = $("#option-size-title_white_hoodie");
-  var w2_white_hoodie = $("#wrapper2_white_hoodie");
-  var l2_white_hoodie = $("#list2_white_hoodie");
-  var w_white_hoodie = $("#wrapper_white_hoodie");
-  var a_white_hoodie = $("#arrow-icon_white_hoodie");
-
-  // w.height(l.outerHeight(true)); REMOVE THIS
-
-  b2_white_hoodie.click(function() {
-
-    if (w2_white_hoodie.hasClass('open')) {
-      w2_white_hoodie.removeClass('open');
-      a_white_hoodie.removeClass('switch');
-      w_white_hoodie.removeClass('down');
-      w2_white_hoodie.height(0);
-    } else {
-      w2_white_hoodie.addClass('open');
-      a_white_hoodie.addClass('switch');
-      w_white_hoodie.addClass('down');
-      w2_white_hoodie.height(l2_white_hoodie.outerHeight(true));
-    }
-
-  });
-});
+function buttonFunction(el) {
+  el.style.backgroundColor = "red";
+}
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -1100,17 +915,17 @@ function dragElement(elmnt) {
     pos3 = clientX;
     pos4 = clientY;
 
+    /*if (elmnt.offsetLeft + element.clientWidth > window.innerWidth
+        || elmnt.offsetLeft + element.clientHeight > window.innerHeight
+        || elmnt.offsetLeft < 0*/
 
-    var posY = (elmnt.offsetTop - pos2  >= 0) ? elmnt.offsetTop - pos2 : 0;
-    var posYB = (elmnt.offsetTop + elmnt.offsetHeight + pos2 <= window.innerHeight) ? elmnt.offsetTop + elmnt.offsetHeight + pos2 : 0;
+    var posY = (elmnt.offsetTop - pos2  >= 0) ? elmnt.offsetTop - pos2 : 0 || elmnt.offsetLeft + element.clientHeight > window.innerHeight;
+    //(elmnt.offsetTop + pos2  <= window.innerHeight) ? elmnt.offsetTop - pos2 : window.innerHeight;
     var posX = (elmnt.offsetLeft - pos1 >= 0) ? elmnt.offsetLeft - pos1 : 0;
-    var posXR = (elmnt.offsetLeft + elmnt.offsetWidth + pos1 <= window.innerWidth) ? elmnt.offsetLeft + elmnt.offsetWidth + pos1 : 0;
     // set the element's new position:
     elmnt.style.top = posY + "px";
     elmnt.style.left = posX + "px";
-    elmnt.style.bottom = posYB + "px";
-    elmnt.style.right = posXR + "px";
-  }
+}
 
   function closeDragElement() {
     /* stop moving when mouse button is released:*/
@@ -1121,6 +936,132 @@ function dragElement(elmnt) {
   }
 }
 
+$(function() {
+  var b = $("#button");
+  var w = $("#wrapper");
+  var l = $("#list");
+  var l_ = $("#list_");
+
+  // w.height(l.outerHeight(true)); REMOVE THIS
+
+  b.click(function() {
+
+    if (w.hasClass('open')) {
+      w.removeClass('open');
+      w.height(0);
+    } else {
+      w.addClass('open');
+      w.height(l.outerHeight(true));
+      w.height(l_.outerHeight(true));
+    }
+
+  });
+});
+
+$(function() {
+  var b2 = $("#option-size-title");
+  var w2 = $("#wrapper2");
+  var l2 = $("#list2");
+  var w = $("#wrapper");
+
+  // w.height(l.outerHeight(true)); REMOVE THIS
+
+  b2.click(function() {
+
+    if (w2.hasClass('open')) {
+      w2.removeClass('open');
+      w.removeClass('down');
+      w2.height(0);
+    } else {
+      w2.addClass('open');
+      w.addClass('down');
+      w2.height(l2.outerHeight(true));
+    }
+
+  });
+});
+
+/* Dropdown menu in clothing tab */
+var x, i, j, l, ll, selElmnt, a, b, c;
+/* Look for any elements with the class "custom-select": */
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /* For each element, create a new DIV that will act as the selected item: */
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /* For each element, create a new DIV that will contain the option list: */
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /* For each option in the original select element,
+    create a new DIV that will act as an option item: */
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /* When an item is clicked, update the original select box,
+        and the selected item: */
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+    /* When the select box is clicked, close any other select boxes,
+    and open/close the current select box: */
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
+}
+
+function closeAllSelect(elmnt) {
+  /* A function that will close all select boxes in the document,
+  except the current select box: */
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+
+/* If the user clicks anywhere outside the select box,
+then close all select boxes: */
+document.addEventListener("click", closeAllSelect);
 
 
 })(jQuery);
