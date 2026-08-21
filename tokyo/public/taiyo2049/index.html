@@ -1151,12 +1151,18 @@
       }
       /* BLOG.txt is a text file: give it the same box as BESTFRIENDS.txt and
          let it scroll, instead of .tab.fdl's short, clipped video box. */
+      /* No !important on the box: resizing writes inline width/height, and
+         !important would beat it, so the drag handle did nothing. The triple
+         class already outranks .tab.fdl. Opens where the header is always
+         reachable. */
       .tab.fdl.blog {
-        height: 450px !important;
-        width: 320px !important;
+        top: 96px;
+        left: 200px;
+        height: 450px;
+        width: 320px;
       }
       .tab.fdl.blog .body {
-        overflow-y: auto !important;
+        overflow-y: auto;
       }
       /* The spinning logo at half width, centred both ways. .tab .body is a
          flex row aligned to flex-start, which pinned it to the top. */
