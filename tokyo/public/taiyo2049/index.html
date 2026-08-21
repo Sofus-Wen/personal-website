@@ -88,25 +88,25 @@
             <div class="item submenu">
               <button>File</button>
               <ul class="drop">
-                <li><button class="ga-ce" data-category="elements" data-action="click" data-label="lorem-ipsum" id="lorem-ipsumtht" style="width: 100%; height: 100%; padding: 0px; text-align: inherit;">
-                  <a style="padding-top: 7px; padding-bottom: 7px;">LOREM IPSUM<wbr></a>
+                <li><button class="ga-ce" data-category="elements" data-action="click" data-label="archive" id="archivetht" style="width: 100%; height: 100%; padding: 0px; text-align: inherit;">
+                  <a style="padding-top: 7px; padding-bottom: 7px;">Archive<wbr></a>
                 </button></li>
-                <li><button class="ga-ce" data-category="elements" data-action="click" data-label="catalog2" id="catalogtht2" style="width: 100%; height: 100%; padding: 0px; text-align: inherit;">
+                <li><button class="ga-ce" data-category="elements" data-action="click" data-label="lorem-ipsum" id="lorem-ipsumtht" style="width: 100%; height: 100%; padding: 0px; text-align: inherit;">
                   <a style="padding-top: 7px; padding-bottom: 7px;">Catalog<wbr></a>
                 </button></li>
-                <li><button class="ga-ce" data-category="elements" data-action="click" data-label="terms" id="termstht" style="width: 100%; height: 100%; padding: 0px; text-align: inherit;">
-                  <a style="padding-top: 7px; padding-bottom: 7px;">Terms<wbr></a>
+                <li><button class="ga-ce" data-category="elements" data-action="click" data-label="jens-sofus" id="jenssofustht" style="width: 100%; height: 100%; padding: 0px; text-align: inherit;">
+                  <a style="padding-top: 7px; padding-bottom: 7px;">Jens &amp; Sofus<wbr></a>
                 </button></li>
               </ul>
             </div>
             <div class="item submenu media-nav d-none">
               <button>Media</button>
               <ul class="drop">
-                <li><a href="#" id="pause">
+                <li><a href="#" id="pause" class="act-pause">
                   <span class="off">Pause</span>
                   <span class="on">Play</span>
                 </a></li>
-                <li><a href="#" id="stop">Stop</a></li>
+                <li><a href="#" id="stop" class="act-stop">Stop</a></li>
               </ul>
             </div>
             <div class="item submenu default-nav">
@@ -122,11 +122,11 @@
                   <span class="off ga-ce" data-category="elements" data-action="click" data-label="ShowHiddenFiles">Show hidden files</span>
                   <span class="on">Hide hidden files</span>
                 </a></li>
-                <li><a href="#" id="pause">
+                <li><a href="#" id="pause" class="act-pause">
                   <span class="off">Pause</span>
                   <span class="on">Play</span>
                 </a></li>
-                <li><a href="#" id="stop">Stop</a></li>
+                <li><a href="#" id="stop" class="act-stop">Stop</a></li>
               </ul>
             </div>
             <div class="item submenu">
@@ -380,6 +380,38 @@
           </div>
         </div>
       </div>--->
+
+      <div class="tab archive">
+        <header class="header">
+          <span class="title" style="left: 41px;">ARCHIVE</span>
+          <button class="minimize btn">_</button>
+          <button class="question btn">?</button>
+          <button class="close btn">x</button>
+        </header>
+        <div class="body">
+          <div>
+            <div class="archive-grid"></div>
+            <p class="archive-empty">no files recovered yet.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab jenssofus">
+        <header class="header">
+          <span class="title" style="left: 41px;">JENS &amp; SOFUS</span>
+          <button class="minimize btn">_</button>
+          <button class="question btn">?</button>
+          <button class="close btn">x</button>
+        </header>
+        <div class="body">
+          <div>
+            <p>we started taiyo when we were 14.</p>
+            <div class="js-grid"></div>
+            <p class="archive-empty js-empty">no photos recovered yet.</p>
+            <p class="js-last">two friends making things we thought were cool.</p>
+          </div>
+        </div>
+      </div>
 
       <div class="tab earth">
         <header class="header">
@@ -726,16 +758,20 @@
 
       <div class="tab fdl blog">
         <header class="header">
-          <span class="title" style="left: 45px;">sun.gif</span>
+          <span class="title" style="left: 45px;">BLOG.txt</span>
           <button class="minimize btn">_</button>
           <button class="question btn">?</button>
           <button class="close btn">x</button>
         </header>
         <div class="body">
-          <video class="video2" id="video2" loop muted playsinline>
-            <source src="video/sun.webm" type="video/webm">
-            <source src="video/sun.mp4" type="video/mp4">
-          </video>
+          <div>
+            <p>WE HAD NO IDEA WHAT WE WERE DOING.</p>
+            <p>SO WE JUST MADE THINGS.</p>
+            <p>CLOTHES.<br />WEBSITES.<br />PHOTOS.<br />VIDEOS.<br />GRAPHICS.<br />WHATEVER.</p>
+            <p>MOST OF IT NEVER WENT ANYWHERE.</p>
+            <p>BUT THAT WASN&rsquo;T REALLY THE POINT.</p>
+            <p>WE WERE JUST HAVING FUN :)</p>
+          </div>
         </div>
       </div>
 
@@ -747,7 +783,7 @@
           <button class="close btn">x</button>
         </header>
         <div class="body">
-          <video class="video2" id="video2" loop muted playsinline>
+          <video class="video2" id="video2" autoplay loop muted playsinline>
             <source src="video/sun.webm" type="video/webm">
             <source src="video/sun.mp4" type="video/mp4">
           </video>
@@ -998,6 +1034,14 @@
 
       <div class="dialog"></div>
     </div>
+    <div id="shutdown">
+      <div>
+        <p>TAIYO OFFICIAL</p>
+        <p>2019 - 2023</p>
+        <p>thanks for looking :)</p>
+      </div>
+    </div>
+
     <div class="video-container">
       <video class="video" id="video" loop muted playsinline>
         <source src="#" type="video/webm" class="webm">
@@ -1066,18 +1110,68 @@
       #cart-tab .body { padding: 10px 12px 14px; }
       /* The stylesheet indents window titles for the icon; this one has none. */
       #cart-tab .header .title { left: 50%; }
-      #sun-tab {
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%);
-        width: 380px;
-        max-width: 86vw;
-        height: auto !important;
-        z-index: 4;
+      /* Titles were centred on a small left offset, so anything long ran off
+         the left edge. Left-align them all at the same margin instead. */
+      .tab .header .title {
+        left: 14px !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center;
       }
-      #sun-tab .header .title { left: 50%; }
-      #sun-tab .body { padding: 0; background: #fff; }
-      #sun-tab video { display: block; width: 100%; height: auto; }
+      /* Only .tab.earth had body padding; give the text windows the same. */
+      .tab.fdl.blog .body,
+      .tab.jenssofus .body,
+      .tab.archive .body,
+      .tab.terms .body,
+      .tab.readme .body {
+        padding: 10px;
+      }
+      body.paused *,
+      body.paused *::before,
+      body.paused *::after {
+        animation-play-state: paused !important;
+      }
+      /* WINAMP.MP3 takes the middle seat of the three hidden files; BLOG.txt
+         moves out to the left. The stylesheet's own transforms put winamp at
+         -150% and blog at -50%, so they swap. */
+      @media (min-width: 768px) {
+        .winamp.file.image { transform: translate(-50%, -50%) !important; }
+        .blog.file.image { transform: translate(-150%, -50%) !important; }
+      }
+      #shutdown {
+        position: fixed;
+        inset: 0;
+        z-index: 99;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        color: #d9d9d9;
+        font-family: Chicago, sans-serif;
+        font-size: .85rem;
+        line-height: 1.9;
+        text-align: center;
+        cursor: pointer;
+      }
+      .archive-grid, .js-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 10px 0;
+      }
+      .archive-grid figure, .js-grid figure { margin: 0; width: 132px; }
+      .archive-grid img, .js-grid img {
+        display: block; width: 132px; height: 132px; object-fit: cover;
+        border: 1px solid #000;
+      }
+      .archive-grid figcaption, .js-grid figcaption {
+        font-size: .62rem; word-break: break-all; padding-top: 2px;
+      }
+      .archive-empty { opacity: .55; }
+      .js-last { margin-top: 14px; }
+      .sysinfo { opacity: .55; font-size: .7rem; margin-top: 14px; }
       .cart-line { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; }
       .cart-line button { font: inherit; border: 1px solid #000; background: #fff; cursor: pointer; }
       .cart-total { display: flex; justify-content: space-between; border-top: 1px solid #000; margin-top: 6px; padding-top: 4px; font-weight: bold; }
@@ -1087,21 +1181,6 @@
     <button class="cart-icon file folder" id="cart-icon" type="button" aria-label="Open cart">
       <span>CART (0)</span>
     </button>
-
-    <div class="tab sun-gif" id="sun-tab">
-      <header class="header">
-        <span class="title">sun.gif</span>
-        <button class="close btn" type="button">x</button>
-      </header>
-      <div class="body">
-        <!-- Video rather than a gif: chrome needs more than 256 colours, and
-             this is a fifth of the size. -->
-        <video autoplay loop muted playsinline>
-          <source src="video/sun.webm" type="video/webm">
-          <source src="video/sun.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
 
     <div class="tab cart-tab" id="cart-tab">
       <header class="header">
@@ -1271,16 +1350,17 @@
         // The sun.gif icon shipped with no handler and no artwork in this
         // build, which is why nothing ever moved.
         var sunIcon = document.getElementById("sun");
-        var sunTab = document.getElementById("sun-tab");
+        var sunTab = document.querySelector(".tab.fdl.snake");
         if (sunIcon && sunTab) {
           sunIcon.addEventListener("click", function (e) {
             e.preventDefault();
             sunTab.classList.add("focus");
             sunTab.style.display = "block";
+            // The site's windows do not autoplay; their openers start playback.
+            var v = sunTab.querySelector("video");
+            if (v) { v.loop = true; v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
           });
-          sunTab.querySelector(".close").addEventListener("click", function () {
-            sunTab.style.display = "none";
-          });
+          // its own chrome already handles closing
         }
 
         var icon = document.getElementById("cart-icon");

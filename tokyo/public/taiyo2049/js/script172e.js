@@ -387,10 +387,16 @@
   $('#about').on('click', function(e){
     e.preventDefault();
     $('.navbar .item.submenu.active').removeClass('active');
-    var content = '<div><p><a href="" target="_blank">Taiyo Official</a> is a Fashion Label conceptualized in 2019 by <a href="https://www.instagram.com/sofus_w/" target="_blank">Sofus Wenøe</a> and <a href="" target="_blank">Jens Bjerre</a>.<br /><br />'+
-    'The brand aesthetic takes inspiration from Vintage Designs that mirror the Dichotomy between Luxury and Streetwear; A Partition of the past and future.<br /><br />'+
-    'At its definition, <a href="" target="_blank">Taiyo Official</a> is the culmination of Japanese Modern Art with Philosophical references.'+
-    '</p></div>';
+    var content = '<div>'+
+    '<p>TAIYO | \u592a\u967d<br />is the romanization of the<br />Japanese word \u201csun.\u201d</p>'+
+    '<p>Taiyo Official was a fashion label started by<br />Sofus Wen\u00f8e and Jens Bjerre.</p>'+
+    '<p>We were 14.</p>'+
+    '<p>Somewhere between Japanese streetwear,<br />old Greek &amp; Roman art, and whatever else<br />we were obsessed with at the time,<br />we started building our own little world.</p>'+
+    '<p>This is an archive of it.</p>'+
+    '<p class="sysinfo">built taiyo2049 years later to archive all of this.<br />'+
+    'based on <a href="https://kanye2049.com/" target="_blank">kanye2049.com</a> by '+
+    '<a href="https://antoineguillou.fr" target="_blank">Antoine Guillou</a> &lt;3</p>'+
+    '</div>';
     $('.dialog').html(content).css('display', 'flex');
   });
 
@@ -547,6 +553,20 @@
     e.stopPropagation();
     $('.finder.readme').addClass('focus').show('slow');
   });*/
+
+  $('#archivetht').on('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.navbar .item.submenu.active').removeClass('active');
+    $('.tab.archive').addClass('focus').show();
+  });
+
+  $('#jenssofustht').on('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.navbar .item.submenu.active').removeClass('active');
+    $('.tab.jenssofus').addClass('focus').show();
+  });
 
   $('#earththt2').on('click', function(e){
     e.preventDefault();
@@ -762,21 +782,45 @@
     }
   });
 
-  $('#pause').on('click', function(e){
+  // Both menus carry a Pause and a Stop with the same ids, so $('#pause')
+  // only ever bound the hidden one. Delegate on a class so every copy works.
+  $(document).on('click', '.act-pause', function(e){
     e.preventDefault();
-    if(system.audioPlayer.paused){
-      $(this).removeClass('invert');
-      system.resumeTrack();
+    var paused = document.body.classList.contains('paused');
+    if (paused) {
+      document.body.classList.remove('paused');
+      $('.act-pause').removeClass('invert');
+      try { if (window.__webamp) window.__webamp.play(); } catch (err) {}
+      try { system.resumeTrack(); } catch (err) {}
+      document.querySelectorAll('video').forEach(function(v){
+        if (v.dataset.wasPlaying === '1') { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+      });
     } else {
-      $(this).addClass('invert');
-      system.pauseTrack();
+      document.body.classList.add('paused');
+      $('.act-pause').addClass('invert');
+      try { if (window.__webamp) window.__webamp.pause(); } catch (err) {}
+      try { system.pauseTrack(); } catch (err) {}
+      document.querySelectorAll('video').forEach(function(v){
+        v.dataset.wasPlaying = v.paused ? '0' : '1';
+        v.pause();
+      });
     }
-
   });
-  $('#stop').on('click', function(e){
+
+  $(document).on('click', '.act-stop', function(e){
     e.preventDefault();
+    // Shut down first: stopTrack throws when no track was ever loaded, which
+    // would otherwise stop us getting this far.
+    $('#shutdown').css('display', 'flex');
+    document.body.classList.remove('music-playing');
     $('body').removeClass('media-playing');
-    system.stopTrack();
+    document.querySelectorAll('video').forEach(function(v){ v.pause(); });
+    try { if (window.__webamp) window.__webamp.pause(); } catch (err) {}
+    try { system.stopTrack(); } catch (err) {}
+  });
+
+  $(document).on('click', '#shutdown', function(){
+    window.location.reload();
   });
 
 /*TAB THAT CAN GO OUT OF THE SCREEN*/

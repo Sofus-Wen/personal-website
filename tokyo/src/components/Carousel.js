@@ -1,8 +1,23 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "./Link";
 
-/* One image at a time with its own line of the story. Text controls, no dots,
-   no autoplay, no transitions. Arrow keys work too. */
+/* One image at a time with its own line of the story. No dots, no autoplay,
+   no transitions. Arrow keys work too. */
+function Chevron({ dir }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        d={dir === "prev" ? "M15 4 L7 12 L15 20" : "M9 4 L17 12 L9 20"}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function Carousel({ slides }) {
   const [i, setI] = useState(0);
   const count = slides.length;
@@ -25,9 +40,9 @@ export default function Carousel({ slides }) {
 
   return (
     <div className="carousel">
+      {/* The frame hugs the picture, so the arrows sit on its real edges
+          whatever the aspect ratio. Each one is a half-width hit area. */}
       <div className="carousel-frame">
-        {/* Every slide stays mounted so moving between them doesn't refetch
-            or flash; only the current one is shown. */}
         {slides.map((s, index) => (
           <img
             key={s.src}
@@ -37,20 +52,30 @@ export default function Carousel({ slides }) {
             loading={index === 0 ? "eager" : "lazy"}
           />
         ))}
+        <button
+          type="button"
+          className="carousel-arrow prev"
+          onClick={() => go(-1)}
+          aria-label="Previous image"
+        >
+          <Chevron dir="prev" />
+        </button>
+        <button
+          type="button"
+          className="carousel-arrow next"
+          onClick={() => go(1)}
+          aria-label="Next image"
+        >
+          <Chevron dir="next" />
+        </button>
       </div>
 
       <p className="line carousel-caption">{slide.caption}</p>
 
       <p className="line carousel-controls">
-        <button type="button" onClick={() => go(-1)} aria-label="Previous image">
-          ←
-        </button>
         <span className="year-label">
           {i + 1} / {count}
         </span>
-        <button type="button" onClick={() => go(1)} aria-label="Next image">
-          →
-        </button>
         {slide.full ? <Link href={slide.full}>open full size</Link> : null}
       </p>
     </div>

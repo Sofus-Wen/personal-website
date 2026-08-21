@@ -213,18 +213,68 @@ section nav {
 }
 
 /* Carousel: one image at a time, text controls, no dots or transitions. */
-/* `display: block` would otherwise beat the hidden attribute. */
+/* The frame hugs the picture so the arrows land on its real edges. */
+.carousel-frame {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  line-height: 0;
+}
+
 .carousel-frame img[hidden] {
   display: none;
 }
 
 .carousel-frame img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: auto;
+  max-width: 100%;
   max-height: 70vh;
-  object-fit: contain;
-  object-position: left;
+}
+
+/* Each arrow is a half-width hit area over the picture, so clicking anywhere
+   on that side moves. No box or fill — just the mark. */
+.carousel-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carousel-arrow.prev {
+  left: 0;
+  justify-content: flex-start;
+}
+
+.carousel-arrow.next {
+  right: 0;
+  justify-content: flex-end;
+}
+
+.carousel-arrow svg {
+  width: 1.9rem;
+  height: 1.9rem;
+  /* Keeps the mark readable over both pale and dark photographs. */
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.9));
+}
+
+.carousel-arrow:hover svg {
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.9));
+  opacity: 0.65;
+}
+
+.carousel-arrow:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
+  border-radius: 2px;
 }
 
 .carousel-caption {
@@ -234,7 +284,7 @@ section nav {
 .carousel-controls {
   display: flex;
   align-items: baseline;
-  gap: 1rem;
+  gap: 1.75rem;
   margin-top: 0.5em;
 }
 
