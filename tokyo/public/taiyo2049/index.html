@@ -1158,7 +1158,12 @@
       .tab.fdl.blog .body {
         overflow-y: auto !important;
       }
-      /* The spinning logo at half width, centred in its window. */
+      /* The spinning logo at half width, centred both ways. .tab .body is a
+         flex row aligned to flex-start, which pinned it to the top. */
+      .tab.fdl.snake .body {
+        align-items: center !important;
+        justify-content: center !important;
+      }
       .tab.fdl.snake video {
         width: 50% !important;
         margin: 0 auto;
