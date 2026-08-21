@@ -102,7 +102,7 @@
             <div class="item submenu media-nav d-none">
               <button>Media</button>
               <ul class="drop">
-                <li><a href="#" id="pause" class="act-pause">
+                <li><a href="#" id="pause" class="act-pause invert">
                   <span class="off">Pause</span>
                   <span class="on">Play</span>
                 </a></li>
@@ -122,7 +122,7 @@
                   <span class="off ga-ce" data-category="elements" data-action="click" data-label="ShowHiddenFiles">Show hidden files</span>
                   <span class="on">Hide hidden files</span>
                 </a></li>
-                <li><a href="#" id="pause" class="act-pause">
+                <li><a href="#" id="pause" class="act-pause invert">
                   <span class="off">Pause</span>
                   <span class="on">Play</span>
                 </a></li>
@@ -1015,7 +1015,16 @@
                     if (raf) { cancelAnimationFrame(raf); raf = null; }
                   }
                 }
-                if (webamp.store && webamp.store.subscribe) webamp.store.subscribe(sync);
+                function syncLabel() {
+                  // "Play" whenever nothing is sounding, "Pause" while it is.
+                  if (playing()) $('.act-pause').removeClass('invert');
+                  else $('.act-pause').addClass('invert');
+                }
+                if (webamp.store && webamp.store.subscribe) {
+                  webamp.store.subscribe(sync);
+                  webamp.store.subscribe(syncLabel);
+                }
+                syncLabel();
                 setInterval(sync, 1000);
                 sync();
               }
@@ -1139,6 +1148,20 @@
       @media (min-width: 768px) {
         .winamp.file.image { transform: translate(-50%, -50%) !important; }
         .blog.file.image { transform: translate(-150%, -50%) !important; }
+      }
+      /* BLOG.txt is a text file: give it the same box as BESTFRIENDS.txt and
+         let it scroll, instead of .tab.fdl's short, clipped video box. */
+      .tab.fdl.blog {
+        height: 450px !important;
+        width: 320px !important;
+      }
+      .tab.fdl.blog .body {
+        overflow-y: auto !important;
+      }
+      /* The spinning logo at half width, centred in its window. */
+      .tab.fdl.snake video {
+        width: 50% !important;
+        margin: 0 auto;
       }
       #shutdown {
         position: fixed;

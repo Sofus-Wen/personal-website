@@ -786,8 +786,10 @@
   // only ever bound the hidden one. Delegate on a class so every copy works.
   $(document).on('click', '.act-pause', function(e){
     e.preventDefault();
-    var paused = document.body.classList.contains('paused');
-    if (paused) {
+    // "invert" means the control is currently offering Play, i.e. nothing is
+    // sounding — so a click should start rather than pause.
+    var offeringPlay = $('.act-pause').first().hasClass('invert');
+    if (offeringPlay) {
       document.body.classList.remove('paused');
       $('.act-pause').removeClass('invert');
       try { if (window.__webamp) window.__webamp.play(); } catch (err) {}
