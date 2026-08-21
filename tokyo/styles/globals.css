@@ -211,3 +211,29 @@ section nav {
 .flow .year-label {
   margin: 0;
 }
+
+/* Images: plain, stacked, captioned. No frames or cards. */
+.figures {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figure img.portrait {
+  max-width: 24rem;
+}
+
+figcaption {
+  margin-top: 0.5em;
+  color: var(--muted);
+}
