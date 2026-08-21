@@ -224,6 +224,13 @@
         <span>WINAMP.MP3</span>
       </button>
 
+      <button class="file image sun hidden ga-ce" data-category="elements" data-action="click" data-label="sun" id="sun">
+        <span>sun.gif</span>
+      </button>
+
+      <!-- The block below is commented out in the original: the folder
+           icons and the TAIYO 2049 / TAIYO TAPE / DIET TAIYO / readme windows.
+           Left as it was; only sun.gif was lifted out so it renders. -->
       <!---
       <button class="file folder folder1 ga-ce" data-category="elements" data-action="click" data-label="taiyo2049" id="folder1">
         <span>TAIYO 2049</span>
@@ -239,10 +246,6 @@
 
       <button class="file folder folder4 ga-ce" data-category="elements" data-action="click" data-label="taiyo" id="folder4">
         <span>taiyo.zip</span>
-      </button>
-
-      <button class="file image sun hidden ga-ce" data-category="elements" data-action="click" data-label="sun" id="sun">
-        <span>sun.gif</span>
       </button>
 
       <button class="file text earthtxt ga-ce" data-category="elements" data-action="click" data-label="earth" id="earththt">
@@ -1007,7 +1010,7 @@
         z-index: 3;
         display: none;
       }
-      body.cart-has-items .cart-icon { display: flex !important; }
+      body.logged-in.cart-has-items .cart-icon { display: flex !important; }
       /* Size panel: one per product window, opened by "choose size". */
       .taiyo-sizes {
         background: #f5f5f5;
@@ -1050,6 +1053,29 @@
       #cart-tab .body { padding: 10px 12px 14px; }
       /* The stylesheet indents window titles for the icon; this one has none. */
       #cart-tab .header .title { left: 50%; }
+      /* Joins BLOG / SNAKE / WINAMP in the row above the screen. Those use
+         translate(-150%), (-50%) and (50%); this is the fourth seat. */
+      @media (min-width: 768px) {
+        .sun.file.image {
+          position: fixed;
+          top: 95px;
+          right: 50%;
+          left: 50%;
+          transform: translate(150%, -50%);
+        }
+      }
+      #sun-tab {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%);
+        width: 380px;
+        max-width: 86vw;
+        height: auto !important;
+        z-index: 4;
+      }
+      #sun-tab .header .title { left: 50%; }
+      #sun-tab .body { padding: 0; background: #fff; }
+      #sun-tab img { display: block; width: 100%; height: auto; }
       .cart-line { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; }
       .cart-line button { font: inherit; border: 1px solid #000; background: #fff; cursor: pointer; }
       .cart-total { display: flex; justify-content: space-between; border-top: 1px solid #000; margin-top: 6px; padding-top: 4px; font-weight: bold; }
@@ -1059,6 +1085,16 @@
     <button class="cart-icon file folder" id="cart-icon" type="button" aria-label="Open cart">
       <span>CART (0)</span>
     </button>
+
+    <div class="tab sun-gif" id="sun-tab">
+      <header class="header">
+        <span class="title">sun.gif</span>
+        <button class="close btn" type="button">x</button>
+      </header>
+      <div class="body">
+        <img src="img/sun-spin.gif" alt="The handwritten Taiyo sun turning in 3D">
+      </div>
+    </div>
 
     <div class="tab cart-tab" id="cart-tab">
       <header class="header">
@@ -1224,6 +1260,21 @@
         }
 
         document.querySelectorAll('.tab[class*="tshirt"], .tab[class*="hoodie"]').forEach(setupWindow);
+
+        // The sun.gif icon shipped with no handler and no artwork in this
+        // build, which is why nothing ever moved.
+        var sunIcon = document.getElementById("sun");
+        var sunTab = document.getElementById("sun-tab");
+        if (sunIcon && sunTab) {
+          sunIcon.addEventListener("click", function (e) {
+            e.preventDefault();
+            sunTab.classList.add("focus");
+            sunTab.style.display = "block";
+          });
+          sunTab.querySelector(".close").addEventListener("click", function () {
+            sunTab.style.display = "none";
+          });
+        }
 
         var icon = document.getElementById("cart-icon");
         var tab = document.getElementById("cart-tab");

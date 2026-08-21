@@ -336,6 +336,7 @@
 
     //console.log(btoa(value));
     if(answers.includes(btoa(value))){
+      document.body.classList.add('logged-in');
       $('.login').removeClass('loaded');
       setTimeout(function(){
         $('.login').hide();
