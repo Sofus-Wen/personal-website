@@ -519,40 +519,15 @@
   $('#winamp').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-        const Webamp = window.Webamp;
-        new Webamp({
-            initialTracks: [{
-                metaData: {
-                    artist: "Claude Debussy",
-                    title: "Clair de lune"
-                },
-                // NOTE: Your audio file must be served from the same domain as your HTML
-                // file, or served with permissive CORS HTTP headers:
-                // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-                url: "https://cdn.shopify.com/s/files/1/0551/2708/1111/files/Clair-de-lune-piano.mp3?v=1642522472",
-                duration: 305
-            }],
-            __butterchurnOptions: {
-                importButterchurn: () => Promise.resolve(window.butterchurn),
-                getPresets: () => {
-                    const presets = window.butterchurnPresets.getPresets();
-                    return Object.keys(presets).map((name) => {
-                        return {
-                            name,
-                            butterchurnPresetObject: presets[name]
-                        };
-                    });
-                },
-                butterchurnOpen: true
-            },
-            __initialWindowLayout: {
-                main: { position: { x: 0, y: 0 } },
-                equalizer: { position: { x: 0, y: 116 } },
-                playlist: { position: { x: 0, y: 232 }, size: [0, 4] },
-                milkdrop: { position: { x: 275, y: 0 }, size: [7, 12] }
-            }
-        }).renderWhenReady(document.getElementById('app'));
+    // One continuous session: the player is built once on boot, so this only
+    // brings it forward. It used to construct a second Webamp here, which
+    // came up empty because it loaded a placeholder track from the old CDN.
     $('.wwwinamp').addClass('focus').show();
+    var container = document.getElementById('webamp');
+    if (container) {
+      container.style.display = 'block';
+      container.style.zIndex = '12';
+    }
   });
 
   /*

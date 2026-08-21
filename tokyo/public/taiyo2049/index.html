@@ -854,7 +854,9 @@
                       return { name: name, butterchurnPresetObject: presets[name] };
                     });
                   },
-                  butterchurnOpen: true
+                  // The wallpaper is the visualiser; no need for a second
+                  // WebGL context in a window as well.
+                  butterchurnOpen: false
                 };
               }
 
@@ -976,6 +978,238 @@
 
     <script src="js/jquery/jquery-3.4.1.js"></script>
     <script src="js/script172e.js?t=1630050241"></script>
+
+    <!-- Cart, size picking and add-to-cart. Added as its own layer so the
+         original product markup is left as it was. -->
+    <style>
+      /* Sits below the screen, mirroring BLOG/SNAKE/WINAMP above it. */
+      .cart-icon {
+        position: fixed;
+        left: 50%;
+        bottom: 42px;
+        transform: translateX(-50%);
+        z-index: 3;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 0;
+        border: 0;
+        background: none;
+        cursor: pointer;
+        font: inherit;
+        color: #fff;
+      }
+      body.cart-has-items .cart-icon { display: flex; }
+      .cart-icon .glyph {
+        width: 38px; height: 38px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        background: #000;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 18px; line-height: 1;
+      }
+      .cart-icon .label {
+        background: #fff; color: #000;
+        padding: 0 4px;
+        font-size: 12px;
+        white-space: nowrap;
+      }
+      /* Size buttons: mark the chosen one. */
+      .option-size.selected { background-color: #000 !important; color: #fff !important; }
+      #cart-tab {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%);
+        width: 320px;
+        max-width: 84vw;
+        height: auto !important;
+        z-index: 4;
+      }
+      #cart-tab .body { padding: 10px 12px 14px; }
+      /* The stylesheet indents window titles for the icon; this one has none. */
+      #cart-tab .header .title { left: 12px; }
+      .cart-line { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; }
+      .cart-line button { font: inherit; border: 1px solid #000; background: #fff; cursor: pointer; }
+      .cart-total { display: flex; justify-content: space-between; border-top: 1px solid #000; margin-top: 6px; padding-top: 4px; font-weight: bold; }
+      .cart-empty { opacity: .6; }
+    </style>
+
+    <button class="cart-icon" id="cart-icon" type="button" aria-label="Open cart">
+      <span class="glyph">&#9634;</span>
+      <span class="label">CART (0)</span>
+    </button>
+
+    <div class="tab cart-tab" id="cart-tab">
+      <header class="header">
+        <span class="title">CART</span>
+        <button class="close btn" type="button">x</button>
+      </header>
+      <div class="body">
+        <div id="cart-lines"></div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var KEY = "taiyo-cart";
+        var cart = [];
+        try { cart = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { cart = []; }
+
+        var SIZES = ["S", "M", "L", "XL"];
+
+        function save() {
+          try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {}
+        }
+
+        function priceOf(text) {
+          // "249,99 KR." -> 249.99
+          var m = String(text).replace(/\s/g, "").match(/([\d.]+),(\d+)/);
+          if (m) return parseFloat(m[1].replace(/\./g, "") + "." + m[2]);
+          var n = parseFloat(String(text).replace(/[^\d]/g, ""));
+          return isNaN(n) ? 0 : n;
+        }
+
+        function money(n) {
+          return n.toFixed(2).replace(".", ",") + " KR.";
+        }
+
+        function render() {
+          var count = cart.reduce(function (a, i) { return a + i.qty; }, 0);
+          document.body.classList.toggle("cart-has-items", count > 0);
+          var label = document.querySelector("#cart-icon .label");
+          if (label) label.textContent = "CART (" + count + ")";
+
+          var box = document.getElementById("cart-lines");
+          if (!box) return;
+          if (!cart.length) {
+            box.innerHTML = '<p class="cart-empty">nothing in here yet.</p>';
+            return;
+          }
+          var total = 0;
+          box.innerHTML = "";
+          cart.forEach(function (item, idx) {
+            total += item.price * item.qty;
+            var row = document.createElement("div");
+            row.className = "cart-line";
+            var name = document.createElement("span");
+            name.textContent = item.qty + "x " + item.title + " (" + item.size + ")";
+            var right = document.createElement("span");
+            right.textContent = money(item.price * item.qty) + " ";
+            var rm = document.createElement("button");
+            rm.type = "button";
+            rm.textContent = "remove";
+            rm.addEventListener("click", function () {
+              cart.splice(idx, 1); save(); render();
+            });
+            right.appendChild(rm);
+            row.appendChild(name); row.appendChild(right);
+            box.appendChild(row);
+          });
+          var t = document.createElement("div");
+          t.className = "cart-total";
+          t.innerHTML = "<span>total</span><span>" + money(total) + "</span>";
+          box.appendChild(t);
+        }
+
+        function addToCart(win) {
+          var titleEl = win.querySelector(".product-title p");
+          var priceEl = win.querySelector(".product-price p");
+          var selected = win.querySelector(".option-size.selected");
+          if (!selected) return false;
+
+          var title = titleEl ? titleEl.textContent.trim() : "Item";
+          var price = priceOf(priceEl ? priceEl.textContent : "0");
+          var size = selected.textContent.trim();
+          var variant = (win.className.match(/tab\s+([\w-]+)/) || [])[1] || title;
+
+          var found = cart.filter(function (i) { return i.variant === variant && i.size === size; })[0];
+          if (found) found.qty += 1;
+          else cart.push({ variant: variant, title: title, size: size, price: price, qty: 1 });
+          save(); render();
+          return true;
+        }
+
+        // Every product window gets a full set of sizes and a working button.
+        function setupWindow(win) {
+          var row = win.querySelector(".option-size-btn");
+          if (!row) {
+            var host = win.querySelector("#list2, .body");
+            if (!host) return;
+            row = document.createElement("div");
+            row.className = "option-size-btn";
+            host.appendChild(row);
+          }
+          var have = {};
+          row.querySelectorAll(".option-size").forEach(function (b) {
+            have[b.textContent.trim().toUpperCase()] = true;
+          });
+          SIZES.forEach(function (s) {
+            if (have[s]) return;
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "option-size " + s.toLowerCase();
+            b.textContent = s;
+            row.appendChild(b);
+          });
+          // The window shipped with M and L only, so appending leaves them
+          // out of order. Reorder to S M L XL.
+          SIZES.forEach(function (s) {
+            var b = Array.prototype.filter.call(row.querySelectorAll(".option-size"), function (o) {
+              return o.textContent.trim().toUpperCase() === s;
+            })[0];
+            if (b) row.appendChild(b);
+          });
+
+          row.addEventListener("click", function (e) {
+            var b = e.target.closest(".option-size");
+            if (!b) return;
+            e.preventDefault();
+            row.querySelectorAll(".option-size").forEach(function (o) { o.classList.remove("selected"); });
+            b.classList.add("selected");
+            var hint = win.querySelector(".choose-size-span-2");
+            if (hint) hint.textContent = "add to cart";
+            var t = win.querySelector(".option-size-title-p");
+            if (t) t.textContent = "size " + b.textContent.trim() + " selected";
+          });
+
+          var buy = win.querySelector(".choose-size-btn");
+          if (buy) {
+            buy.addEventListener("click", function (e) {
+              e.preventDefault();
+              var hint = win.querySelector(".choose-size-span-2");
+              if (addToCart(win)) {
+                if (hint) {
+                  hint.textContent = "added";
+                  setTimeout(function () { hint.textContent = "add to cart"; }, 1200);
+                }
+              } else {
+                var t = win.querySelector(".option-size-title-p");
+                if (t) t.textContent = "pick a size first";
+                if (hint) hint.textContent = "choose size";
+              }
+            });
+          }
+        }
+
+        document.querySelectorAll('.tab[class*="tshirt"], .tab[class*="hoodie"]').forEach(setupWindow);
+
+        var icon = document.getElementById("cart-icon");
+        var tab = document.getElementById("cart-tab");
+        if (icon && tab) {
+          icon.addEventListener("click", function () {
+            tab.classList.add("focus");
+            tab.style.display = "block";
+          });
+          tab.querySelector(".close").addEventListener("click", function () {
+            tab.style.display = "none";
+          });
+        }
+
+        render();
+      })();
+    </script>
+
   </body>
   <!-- Love Everyone -->
 </html>
