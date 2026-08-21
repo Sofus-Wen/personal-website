@@ -50,6 +50,23 @@
 
     <div class="screen">
       <div class="bios"></div>
+      <!-- Password gate. The site's script already handled this (it binds
+           .login form and .login .hint a) but the markup was never in this
+           copy, so the handler had nothing to attach to. Rebuilt against the
+           class names the stylesheet still carries. -->
+      <div class="login">
+        <div class="login-dialog">
+          <div class="login-dialog-content">
+            <p>TAIYO OFFICIAL</p>
+            <p>password required.</p>
+            <form>
+              <p><input type="password" autocomplete="off" spellcheck="false" aria-label="Password" /></p>
+              <p><button type="submit" class="submit">enter</button></p>
+            </form>
+            <p class="hint"><a href="#">need a hint?</a><span>the name of the brand.</span></p>
+          </div>
+        </div>
+      </div>
       <div class="navbar">
         <div class="left">
           <div class="item submenu">
@@ -729,9 +746,11 @@
          from the Shopify CDN so it does not depend on the store staying up. -->
     <div id="app" class="wwwinamp"></div>
     <style>
-      /* Stays out of the way until the machine has finished booting. */
+      /* Hidden by default: the player is one of the hidden files, so it
+         only appears once "Show hidden files" is on, and only after the
+         machine has booted. */
       #webamp { z-index: 11 !important; display: none; }
-      body.booted #webamp { display: block; }
+      body.booted.show-hidden-files #webamp { display: block; }
       #webamp #about { visibility: hidden; }
     </style>
     <script src="js/webamp.bundle.min.js"></script>
@@ -775,17 +794,40 @@
           }
 
           var webamp = new Webamp(options);
-          webamp.renderWhenReady(document.getElementById("app")).then(function () {
-            // Webamp places its windows itself, so nudge the whole container
-            // until the player sits inside the screen instead of past its edge.
+          var placed = false;
+
+          // Webamp places its windows itself, so nudge the whole container
+          // until the player sits inside the screen instead of past its edge.
+          // This can only be measured while it is visible, which is not until
+          // hidden files are shown — so it runs then, once.
+          function place() {
             var container = document.getElementById("webamp");
             var main = container && container.querySelector("#main-window");
             if (!container || !main) return;
             var m = main.getBoundingClientRect();
+            if (!m.width) return;
             var s = screen.getBoundingClientRect();
             var dx = Math.round(s.left + s.width * 0.34 - m.left);
             var dy = Math.round(s.top + s.height * 0.14 - m.top);
             container.style.transform = "translate(" + dx + "px," + dy + "px)";
+            placed = true;
+          }
+
+          function placeWhenVisible() {
+            if (!placed && document.body.classList.contains("show-hidden-files")) {
+              place();
+            }
+          }
+
+          webamp.renderWhenReady(document.getElementById("app")).then(function () {
+            placeWhenVisible();
+            var toggle = document.getElementById("switchfiles");
+            // Runs after the site's own handler has flipped the body class.
+            if (toggle) {
+              toggle.addEventListener("click", function () {
+                setTimeout(placeWhenVisible, 0);
+              });
+            }
           });
           document.body.classList.add("booted");
         }

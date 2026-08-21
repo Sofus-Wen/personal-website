@@ -329,7 +329,7 @@
 
   $('.login form').on('submit', function(e){
     e.preventDefault();
-    var answers = ['dGhlIGNvbGxlZ2UgZHJvcG91dA==', 'bGF0ZSByZWdpc3RyYXRpb24=', 'Z3JhZHVhdGlvbg==', 'ODA4ICYgaGVhcnRicmVhaw==', 'bXkgYmVhdXRpZnVsIGRhcmsgdHdpc3RlZCBmYW50YXN5', 'eWVlenVz', 'dGhlIGxpZmUgb2YgcGFibG8=', 'eWU=', 'amVzdXMgaXMga2luZw==', 'eWFuZGhp', 'dHVyYm9ncmFmeCAxNg==', 'Z29vZCBhc3Mgam9i', 'Y3J1ZWwgd2ludGVy', 'Y3J1ZWwgc3VtbWVy', 'c28gaGVscCBtZSBnb2Q=', 'c3dpc2g=', 'd2F2ZXM=', 'bG92ZSBldmVyeW9uZQ==', 'ZG9uZGE='];
+    var answers = ['dGFpeW8=', 'b2ZmaWNpYWw=', 'dGFpeW8gb2ZmaWNpYWw=', 'dGFpeW8yMDQ5', 'dGFpeW8gMjA0OQ==', 'c3Vu', 'dGhlIHN1bg==', 'YmUgbGlrZSB0YWl5bw==', 'dGhlIGV0ZXJuYWwgc3Vuc2hpbmUgb2YgaG9wZQ==', 'ZXRlcm5hbCBzdW5zaGluZSBvZiBob3Bl', 'dGhpcyBpcyB0YWl5bw==', 'MjA0OQ=='];
     var value = $('.login form input[type=password]').val().toLowerCase();
 
     //console.log(btoa(value));
