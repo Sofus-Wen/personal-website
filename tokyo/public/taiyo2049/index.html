@@ -770,16 +770,11 @@
           body.music-playing #milkdrop-bg {
             opacity: 1;
           }
-          /* Keep the desktop above the visualiser. These are already
-             positioned, so only the stacking order needs setting — adding
-             position: relative here drops them out of their placement. */
-          .screen > .navbar,
-          .screen > .file,
-          .screen > .tab,
-          .screen > .login,
-          .screen > .dialog {
-            z-index: 2;
-          }
+          /* No stacking overrides here. The canvas is the first child of
+             .screen at z-index 0, so everything after it paints on top
+             anyway. Setting z-index on .tab dropped the product windows
+             below the CRT overlay (z-index 10), which they are meant to
+             sit above at their own z-index 11. */
           /* Milkdrop becomes the wallpaper while a track is playing: its
              window is stretched over the whole screen and pushed behind the
              desktop, with its own chrome hidden. */
