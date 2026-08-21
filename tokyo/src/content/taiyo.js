@@ -13,6 +13,34 @@ export const GROUPS = [
   },
 ];
 
+/* The site i built for the brand. The shell is a rework of Antoine Guillou's
+   kanye2049.com, which i loved enough to spend months inside of. Credited
+   here and in the site's own humans.txt. */
+export const SITE = [
+  {
+    items: [
+      {
+        key: "site",
+        name: [
+          "built ",
+          { text: "taiyo2049", href: "/taiyo2049/" },
+          ", a whole fake computer for the brand.",
+        ],
+      },
+      {
+        key: "credit",
+        name: [
+          "reworked from ",
+          { text: "kanye2049.com", href: "https://kanye2049.com/" },
+          " by ",
+          { text: "Antoine Guillou", href: "https://antoineguillou.fr" },
+          ", which i loved.",
+        ],
+      },
+    ],
+  },
+];
+
 /* Everything below is my own: the drawings, the clothes, the boards, the
    photos from fashion school. */
 export const IMAGES = [
