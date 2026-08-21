@@ -49,6 +49,7 @@
   <body>
 
     <div class="screen">
+      <canvas id="milkdrop-bg" aria-hidden="true"></canvas>
       <div class="bios"></div>
       <div class="login">
         <div class="login-dialog">
@@ -224,27 +225,145 @@
       </button>
 
       <!---
-      
+      <button class="file folder folder1 ga-ce" data-category="elements" data-action="click" data-label="taiyo2049" id="folder1">
+        <span>TAIYO 2049</span>
+      </button>
 
-      
+      <button class="file folder folder2 ga-ce" data-category="elements" data-action="click" data-label="gktf-folder" id="folder2">
+        <span>TAIYOTAPE</span>
+      </button>
 
-      
+      <button class="file folder folder3 ga-ce" data-category="elements" data-action="click" data-label="diet-taiyo-folder" id="folder3">
+        <span>DIET TAIYO</span>
+      </button>
 
       <button class="file folder folder4 ga-ce" data-category="elements" data-action="click" data-label="taiyo" id="folder4">
         <span>taiyo.zip</span>
       </button>
 
-      
+      <button class="file image sun hidden ga-ce" data-category="elements" data-action="click" data-label="sun" id="sun">
+        <span>sun.gif</span>
+      </button>
 
       <button class="file text earthtxt ga-ce" data-category="elements" data-action="click" data-label="earth" id="earththt">
         <span><em>EARTH</em><wbr>.txt</span>
       </button>
 
-      
+      <div class="tab 2k49">
+        <header class="header">
+          <span class="title">TAIYO 2049</span>
+          <button class="close">x</button>
+        </header>
+        <div class="body">
+          <div class="d-flex flex-wrap">
+            <button class="file text ga-ce" data-category="elements" data-action="click" data-label="readme" id="readme">
+              <span><em>readme</em><wbr>.txt</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="TAKEMEHIGHER" data-sound="tracks/01-take-me-higher.mp3" data-title="TAKE ME HIGHER" data-artist="V6" data-album="TAIYO2049" data-video="sun">
+                <span><em>TAKE ME HIGHER</em><wbr>.mp3</span>
+              </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="PLASTICLOVE" data-sound="tracks/02-plastic-love.mp3" data-title="PLASTIC LOVE" data-artist="Friday Night Plans" data-album="TAIYO2049" data-video="sun">
+                <span><em>PLASTIC LOVE</em><wbr>.mp3</span>
+              </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="MAGIC" data-sound="tracks/03-magic.mp3" data-title="MAGIC!" data-artist="リアムMAZE1981" data-album="TAIYO2049" data-video="sun">
+                <span><em>MAGIC!</em><wbr>.mp3</span>
+              </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="WILDIN" data-sound="tracks/04-wildin.mp3" data-title="WILDIN'" data-artist="Berhana" data-album="TAIYO2049" data-video="sun">
+                <span><em>WILDIN'</em><wbr>.mp3</span>
+              </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="HERSIDESTORY" data-sound="tracks/05-herside-story.mp3" data-title="HERSIDE STORY" data-artist="GoldLink x Hare Squead" data-album="TAIYO2049" data-video="sun">
+                <span><em>HERSIDE STORY</em><wbr>.mp3</span>
+              </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="NORTHFACE" data-sound="tracks/06-north-face.mp3" data-title="NORTH FACE" data-artist="ODIE" data-album="TAIYO2049" data-video="sun">
+                <span><em>NORTH FACE</em><wbr>.mp3</span>
+              </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="HELPHERSELF" data-sound="tracks/07-help-herself.mp3" data-title="HELP HERSELF" data-artist="bbno$ & Diamond Pistols" data-album="TAIYO2049" data-video="sun">
+                <span><em>HELP HERSELF</em><wbr>.mp3</span>
+              </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="ANTIDOTE" data-sound="tracks/08-antidote.mp3" data-title="ANTIDOTE" data-artist="Orion Sun" data-album="TAIYO2049" data-video="sun">
+                <span><em>ANTIDOTE</em><wbr>.mp3</span>
+              </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="HELMET" data-sound="tracks/09-helmet.mp3" data-title="HELMET" data-artist="Steve Lacy" data-album="TAIYO2049" data-video="sun">
+                <span><em>HELMET</em><wbr>.mp3</span>
+              </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="NIKES" data-sound="tracks/10-nikes.mp3" data-title="NIKES" data-artist="Nimstarr & Kid Toni" data-album="TAIYO2049" data-video="sun">
+                <span><em>NIKES</em><wbr>.mp3</span>
+              </button>
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
 
-      
+      <div class="tab taiyotapefolder">
+        <header class="header">
+          <span class="title">TAIYO TAPE</span>
+          <button class="close">x</button>
+        </header>
+        <div class="body">
+          <div class="d-flex flex-wrap">
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="TAKEMEHIGHER" data-sound="tracks/01-take-me-higher.mp3" data-title="TAKE ME HIGHER" data-artist="V6" data-album="TAIYOTAPE" data-video="sun">
+                <span><em>TAKE ME HIGHER</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="PLASTICLOVE" data-sound="tracks/02-plastic-love.mp3" data-title="PLASTIC LOVE" data-artist="Friday Night Plans" data-album="TAIYOTAPE" data-video="sun">
+                <span><em>PLASTIC LOVE</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="MAGIC" data-sound="tracks/03-magic.mp3" data-title="MAGIC!" data-artist="リアムMAZE1981" data-album="TAIYOTAPE" data-video="sun">
+                <span><em>MAGIC!</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="WILDIN" data-sound="tracks/04-wildin.mp3" data-title="WILDIN'" data-artist="Berhana" data-album="TAIYOTAPE" data-video="sun">
+                <span><em>WILDIN'</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="HERSIDESTORY" data-sound="tracks/05-herside-story.mp3" data-title="HERSIDE STORY" data-artist="GoldLink x Hare Squead" data-album="TAIYOTAPE" data-video="sun">
+                <span><em>HERSIDE STORY</em><wbr>.mp3</span>
+              </button>
+              
+              
+              
+              
+              
+              
+          </div>
+        </div>
+      </div>
 
-      
+      <div class="tab diettaiyofolder">
+        <header class="header">
+          <span class="title">DIET TAIYO</span>
+          <button class="close">x</button>
+        </header>
+        <div class="body">
+          <div class="d-flex flex-wrap">
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="NORTHFACE" data-sound="tracks/06-north-face.mp3" data-title="NORTH FACE" data-artist="ODIE" data-album="DIETTAIYO" data-video="sun">
+                <span><em>NORTH FACE</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="HELPHERSELF" data-sound="tracks/07-help-herself.mp3" data-title="HELP HERSELF" data-artist="bbno$ & Diamond Pistols" data-album="DIETTAIYO" data-video="sun">
+                <span><em>HELP HERSELF</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="ANTIDOTE" data-sound="tracks/08-antidote.mp3" data-title="ANTIDOTE" data-artist="Orion Sun" data-album="DIETTAIYO" data-video="sun">
+                <span><em>ANTIDOTE</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="HELMET" data-sound="tracks/09-helmet.mp3" data-title="HELMET" data-artist="Steve Lacy" data-album="DIETTAIYO" data-video="sun">
+                <span><em>HELMET</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="NIKES" data-sound="tracks/10-nikes.mp3" data-title="NIKES" data-artist="Nimstarr & Kid Toni" data-album="DIETTAIYO" data-video="sun">
+                <span><em>NIKES</em><wbr>.mp3</span>
+              </button>
+              
+              
+              
+              
+              
+              
+              
+          </div>
+        </div>
+      </div>
 
       <div class="tab readme">
         <header class="header">
@@ -591,7 +710,7 @@
 
       <div class="tab fdl blog">
         <header class="header">
-          <span class="title" style="left: 45px;">BLOG.txt</span>
+          <span class="title" style="left: 45px;">sun.gif</span>
           <button class="minimize btn">_</button>
           <button class="question btn">?</button>
           <button class="close btn">x</button>
@@ -606,7 +725,7 @@
 
       <div class="tab fdl snake">
         <header class="header">
-          <span class="title" style="left: 45px;">SNAKE.exe</span>
+          <span class="title" style="left: 45px;">sun.gif</span>
           <button class="minimize btn">_</button>
           <button class="question btn">?</button>
           <button class="close btn">x</button>
@@ -620,23 +739,228 @@
       </div>
 
         <div id="app" class="wwwinamp"></div>
-        <script src="https://cdn.shopify.com/s/files/1/0551/2708/1111/files/webamp.bundle.min_8044ee98-97b4-4e5b-9110-9e0853c6943a.js?v=1642523413"></script>
-        <script src="https://cdn.shopify.com/s/files/1/0551/2708/1111/files/butterchurn.min.js?v=1642522158"></script>
-        <script src="https://cdn.shopify.com/s/files/1/0551/2708/1111/files/butterchurnPresets.min.js?v=1642522158"></script>
+        <script src="js/webamp.bundle.min.js"></script>
+        <script src="js/butterchurn.min.js"></script>
+        <script src="js/butterchurnPresets.min.js"></script>
         <style>
           #webamp {
             z-index: 11 !important;
+            display: none;
+          }
+          /* The player is one of the hidden files: it shows with BLOG.txt,
+             SNAKE.exe and WINAMP.MP3, once the machine has booted. */
+          body.booted.show-hidden-files #webamp {
+            display: block;
           }
           #webamp #about {
             visibility: hidden;
           }
+          /* Milkdrop fills the screen while Winamp is playing, behind the
+             desktop icons and windows. */
+          #milkdrop-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 800ms linear;
+            pointer-events: none;
+          }
+          body.music-playing #milkdrop-bg {
+            opacity: 1;
+          }
+          /* Keep the desktop above the visualiser. These are already
+             positioned, so only the stacking order needs setting — adding
+             position: relative here drops them out of their placement. */
+          .screen > .navbar,
+          .screen > .file,
+          .screen > .tab,
+          .screen > .login,
+          .screen > .dialog {
+            z-index: 2;
+          }
+          /* Milkdrop becomes the wallpaper while a track is playing: its
+             window is stretched over the whole screen and pushed behind the
+             desktop, with its own chrome hidden. */
+          #webamp #milkdrop-window {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 0 !important;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 600ms linear;
+          }
+          body.music-playing #webamp #milkdrop-window {
+            opacity: 1;
+          }
+          #webamp #milkdrop-window .title-bar,
+          #webamp #milkdrop-window .draggable {
+            display: none !important;
+          }
+          #webamp #milkdrop-window canvas {
+            width: 100vw !important;
+            height: 100vh !important;
+          }
         </style>
-        <!--
         <script>
-          const app = document.getElementById("app")
-          const webamp = new Webamp();
-          webamp.renderWhenReady(app);
-        </script>-->
+          (function () {
+            if (typeof Webamp === "undefined" || !Webamp.browserIsSupported()) return;
+
+            var TRACKS = [
+              ["V6", "TAKE ME HIGHER", "01-take-me-higher"],
+              ["Friday Night Plans", "PLASTIC LOVE", "02-plastic-love"],
+              ["\u30ea\u30a2\u30e0MAZE1981", "MAGIC!", "03-magic"],
+              ["Berhana", "WILDIN'", "04-wildin"],
+              ["GoldLink x Hare Squead", "HERSIDE STORY", "05-herside-story"],
+              ["ODIE", "NORTH FACE", "06-north-face"],
+              ["bbno$ & Diamond Pistols", "HELP HERSELF", "07-help-herself"],
+              ["Orion Sun", "ANTIDOTE", "08-antidote"],
+              ["Steve Lacy", "HELMET", "09-helmet"],
+              ["Nimstarr & Kid Toni", "NIKES", "10-nikes"]
+            ];
+
+            function start() {
+              var screen = document.querySelector(".screen");
+              var box = screen.getBoundingClientRect();
+              var x = Math.round(box.left + box.width * 0.06);
+              var y = Math.round(box.top + box.height * 0.10);
+
+              var options = {
+                initialTracks: TRACKS.map(function (t) {
+                  return {
+                    metaData: { artist: t[0], title: t[1] },
+                    url: "sound/tracks/" + t[2] + ".mp3"
+                  };
+                }),
+                initialWindowLayout: {
+                  main: { position: { x: x, y: y } },
+                  equalizer: { position: { x: x, y: y + 116 } },
+                  playlist: { position: { x: x, y: y + 232 }, size: [0, 4] },
+                  milkdrop: { position: { x: 0, y: 0 }, size: [0, 0] }
+                }
+              };
+
+              if (window.butterchurn && window.butterchurnPresets) {
+                options.__butterchurnOptions = {
+                  importButterchurn: function () { return Promise.resolve(window.butterchurn); },
+                  getPresets: function () {
+                    var bp = window.butterchurnPresets.default || window.butterchurnPresets;
+                var presets = bp.getPresets();
+                    return Object.keys(presets).map(function (name) {
+                      return { name: name, butterchurnPresetObject: presets[name] };
+                    });
+                  },
+                  butterchurnOpen: true
+                };
+              }
+
+              var webamp = new Webamp(options);
+              window.__webamp = webamp;
+              var placed = false;
+
+              // Only measurable while visible, so this waits for the reveal.
+              function place() {
+                var container = document.getElementById("webamp");
+                var main = container && container.querySelector("#main-window");
+                if (!container || !main) return;
+                var m = main.getBoundingClientRect();
+                if (!m.width) return;
+                var s = screen.getBoundingClientRect();
+                container.style.transform = "translate(" +
+                  Math.round(s.left + s.width * 0.34 - m.left) + "px," +
+                  Math.round(s.top + s.height * 0.12 - m.top) + "px)";
+                placed = true;
+              }
+              function placeWhenVisible() {
+                if (!placed && document.body.classList.contains("show-hidden-files")) place();
+              }
+
+              webamp.renderWhenReady(document.getElementById("app")).then(function () {
+                placeWhenVisible();
+                var toggle = document.getElementById("switchfiles");
+                if (toggle) {
+                  toggle.addEventListener("click", function () { setTimeout(placeWhenVisible, 0); });
+                }
+                watchPlayback();
+              });
+
+              // Milkdrop as wallpaper. This build of Webamp has no Milkdrop
+              // window, but its media object exposes the AudioContext and an
+              // analyser, so butterchurn can render straight off Winamp's own
+              // audio onto a canvas behind the desktop.
+              function startVisualizer() {
+                var media = webamp.media;
+                var canvas = document.getElementById("milkdrop-bg");
+                if (!media || !canvas || !window.butterchurn || !window.butterchurnPresets) return;
+
+                var ctx = media._context;
+                var analyser = media.getAnalyser ? media.getAnalyser() : media._analyser;
+                if (!ctx || !analyser) return;
+
+                function size() {
+                  var r = canvas.getBoundingClientRect();
+                  canvas.width = Math.max(1, Math.round(r.width));
+                  canvas.height = Math.max(1, Math.round(r.height));
+                }
+                size();
+
+                // This UMD build exports under .default.
+                var bc = window.butterchurn.default || window.butterchurn;
+                var viz = bc.createVisualizer(ctx, canvas, {
+                  width: canvas.width,
+                  height: canvas.height,
+                  pixelRatio: Math.min(window.devicePixelRatio || 1, 2)
+                });
+                viz.connectAudio(analyser);
+
+                var bp = window.butterchurnPresets.default || window.butterchurnPresets;
+                var presets = bp.getPresets();
+                var names = Object.keys(presets);
+                if (names.length) {
+                  viz.loadPreset(presets[names[Math.floor(Math.random() * names.length)]], 0);
+                }
+
+                window.addEventListener("resize", function () {
+                  size();
+                  viz.setRendererSize(canvas.width, canvas.height);
+                });
+
+                var raf = null;
+                function frame() { viz.render(); raf = requestAnimationFrame(frame); }
+
+                function playing() {
+                  var s = webamp.store && webamp.store.getState();
+                  return !!(s && s.media && s.media.status === "PLAYING");
+                }
+                function sync() {
+                  if (playing()) {
+                    document.body.classList.add("music-playing");
+                    if (!raf) frame();
+                  } else {
+                    document.body.classList.remove("music-playing");
+                    if (raf) { cancelAnimationFrame(raf); raf = null; }
+                  }
+                }
+                if (webamp.store && webamp.store.subscribe) webamp.store.subscribe(sync);
+                setInterval(sync, 1000);
+                sync();
+              }
+
+              function watchPlayback() { startVisualizer(); }
+
+              document.body.classList.add("booted");
+            }
+
+            var waiting = setInterval(function () {
+              var bios = document.querySelector(".screen .bios");
+              if (bios && bios.offsetParent === null) { clearInterval(waiting); start(); }
+            }, 250);
+          })();
+        </script>
 
       <div class="dialog"></div>
     </div>
