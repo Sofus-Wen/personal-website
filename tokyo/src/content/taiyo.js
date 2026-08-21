@@ -22,19 +22,19 @@ export const SITE = [
       {
         key: "site",
         name: [
-          "built ",
-          { text: "taiyo2049", href: "/taiyo2049/" },
-          ", a whole fake computer for the brand.",
+          "the final website i made never got published, but it was called ",
+          { text: "taiyo2049", href: "/taiyo2049" },
+          ".",
         ],
       },
       {
         key: "credit",
         name: [
-          "reworked from ",
-          { text: "kanye2049.com", href: "https://kanye2049.com/" },
-          " by ",
-          { text: "Antoine Guillou", href: "https://antoineguillou.fr" },
-          ", which i loved.",
+          "(shoutout ",
+          { text: "antoine guillou", href: "https://antoineguillou.fr" },
+          "\u2019s ",
+          { text: "kanye2049", href: "https://kanye2049.com/" },
+          ")",
         ],
       },
     ],
