@@ -42,46 +42,53 @@ export const SITE = [
 ];
 
 /* Everything below is my own: the drawings, the clothes, the boards, the
-   photos from fashion school. */
-export const IMAGES = [
+   photos from fashion school. Read as one sequence, in order. */
+export const SLIDES = [
   {
     src: "/taiyo/storyboard.jpg",
-    href: "/taiyo/storyboard-full.jpg",
-    alt: "Dozens of hand-drawn Taiyo storyboard frames tiled together",
-    caption: "drew the whole brand out, frame by frame.",
-    hrefLabel: "open it full size.",
+    full: "/taiyo/storyboard",
+    alt: "Hand-drawn Taiyo storyboard frames tiled together",
+    caption: "started by drawing the whole brand out, frame by frame.",
   },
   {
-    src: "/taiyo/hoodie-sunset.jpg",
-    alt: "Someone wearing the white LOREM IPSUM hoodie at sunset",
-    caption: "the LOREM IPSUM hoodie",
-    portrait: true,
-  },
-  {
-    src: "/taiyo/new-stock.jpg",
-    alt: "Campaign photo at dusk captioned new stock",
-    caption: "new stock",
-    portrait: true,
+    src: "/taiyo/sketches.jpg",
+    full: "/taiyo/sketches",
+    alt: "Digitised pages from the Taiyo sketchbooks",
+    caption: "then filled a notebook with it.",
   },
   {
     src: "/taiyo/moodboard.jpg",
-    alt: "Printed cut-outs arranged into a moodboard",
-    caption: "moodboards",
-    portrait: true,
+    alt: "Cut-outs pinned into a moodboard",
+    caption: "pinned up everything i liked.",
   },
   {
-    src: "/taiyo/show-lineup.jpg",
-    alt: "Line-up of models in student-made garments at a show",
-    caption: "the show at fashion school",
+    src: "/taiyo/room.jpg",
+    alt: "A bedroom desk setup",
+    caption: "most of it happened in my room.",
+  },
+  {
+    src: "/taiyo/hoodie.jpg",
+    alt: "The white LOREM IPSUM hoodie at dusk",
+    caption: "then the clothes actually existed.",
+  },
+  {
+    src: "/taiyo/jacket.jpg",
+    alt: "The black LOREM IPSUM jacket against a sunset",
+    caption: "took the photos at sunset.",
   },
   {
     src: "/taiyo/atelier.jpg",
-    alt: "Studio full of workbenches, mannequins and materials",
-    caption: "the studio in copenhagen",
+    alt: "A studio of workbenches, mannequins and materials",
+    caption: "later, fashion school in copenhagen.",
+  },
+  {
+    src: "/taiyo/show-lineup.jpg",
+    alt: "Line-up of models in student-made garments",
+    caption: "the show.",
   },
   {
     src: "/taiyo/paris.jpg",
     alt: "Class photo in front of the Eiffel Tower",
-    caption: "paris",
+    caption: "and paris, to try to understand any of it.",
   },
 ];
