@@ -876,6 +876,27 @@
                 if (!placed && document.body.classList.contains("show-hidden-files")) place();
               }
 
+              // The icon handler needs a way back in once the player is closed.
+              window.__taiyoWinamp = {
+                closed: false,
+                show: function () {
+                  var c = document.getElementById("webamp");
+                  if (this.closed && typeof webamp.reopen === "function") {
+                    webamp.reopen();
+                    this.closed = false;
+                  }
+                  if (c) {
+                    c.style.display = "block";
+                    c.style.zIndex = "12";
+                  }
+                  placed = false;
+                  placeWhenVisible();
+                }
+              };
+              if (typeof webamp.onClose === "function") {
+                webamp.onClose(function () { window.__taiyoWinamp.closed = true; });
+              }
+
               webamp.renderWhenReady(document.getElementById("app")).then(function () {
                 placeWhenVisible();
                 var toggle = document.getElementById("switchfiles");
@@ -979,37 +1000,42 @@
     <style>
       /* Sits below the screen, mirroring BLOG/SNAKE/WINAMP above it. */
       .cart-icon {
-        position: fixed;
-        left: 50%;
-        bottom: 42px;
+        position: fixed !important;
+        left: 50% !important;
+        bottom: 30px;
         transform: translateX(-50%);
         z-index: 3;
         display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        padding: 0;
-        border: 0;
-        background: none;
+      }
+      body.cart-has-items .cart-icon { display: flex !important; }
+      /* Size panel: one per product window, opened by "choose size". */
+      .taiyo-sizes {
+        background: #f5f5f5;
+        border-top: 1px solid #000;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .2s;
+      }
+      .taiyo-sizes.open { max-height: 120px; }
+      .taiyo-size-title {
+        margin: 0;
+        padding: 6px 10px 2px;
+        font-family: Chicago, sans-serif;
+        font-size: .75rem;
+      }
+      .taiyo-size-row { display: flex; padding: 4px 10px 10px; gap: 6px; }
+      .taiyo-size {
+        flex: 1 1 0;
+        height: 34px;
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
         cursor: pointer;
-        font: inherit;
-        color: #fff;
+        font-family: Chicago, sans-serif;
+        font-size: .75rem;
       }
-      body.cart-has-items .cart-icon { display: flex; }
-      .cart-icon .glyph {
-        width: 38px; height: 38px;
-        border: 2px solid #fff;
-        border-radius: 3px;
-        background: #000;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 18px; line-height: 1;
-      }
-      .cart-icon .label {
-        background: #fff; color: #000;
-        padding: 0 4px;
-        font-size: 12px;
-        white-space: nowrap;
-      }
+      .taiyo-size:hover { background: #000; color: #fff; }
+      .taiyo-size.selected { background: #000; color: #fff; }
       /* Size buttons: mark the chosen one. */
       .option-size.selected { background-color: #000 !important; color: #fff !important; }
       #cart-tab {
@@ -1023,16 +1049,15 @@
       }
       #cart-tab .body { padding: 10px 12px 14px; }
       /* The stylesheet indents window titles for the icon; this one has none. */
-      #cart-tab .header .title { left: 12px; }
+      #cart-tab .header .title { left: 50%; }
       .cart-line { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; }
       .cart-line button { font: inherit; border: 1px solid #000; background: #fff; cursor: pointer; }
       .cart-total { display: flex; justify-content: space-between; border-top: 1px solid #000; margin-top: 6px; padding-top: 4px; font-weight: bold; }
       .cart-empty { opacity: .6; }
     </style>
 
-    <button class="cart-icon" id="cart-icon" type="button" aria-label="Open cart">
-      <span class="glyph">&#9634;</span>
-      <span class="label">CART (0)</span>
+    <button class="cart-icon file folder" id="cart-icon" type="button" aria-label="Open cart">
+      <span>CART (0)</span>
     </button>
 
     <div class="tab cart-tab" id="cart-tab">
@@ -1072,7 +1097,7 @@
         function render() {
           var count = cart.reduce(function (a, i) { return a + i.qty; }, 0);
           document.body.classList.toggle("cart-has-items", count > 0);
-          var label = document.querySelector("#cart-icon .label");
+          var label = document.querySelector("#cart-icon span");
           if (label) label.textContent = "CART (" + count + ")";
 
           var box = document.getElementById("cart-lines");
@@ -1107,15 +1132,18 @@
           box.appendChild(t);
         }
 
-        function addToCart(win) {
+        function addToCart(win, size) {
           var titleEl = win.querySelector(".product-title p");
           var priceEl = win.querySelector(".product-price p");
-          var selected = win.querySelector(".option-size.selected");
-          if (!selected) return false;
+          if (!size) return false;
 
-          var title = titleEl ? titleEl.textContent.trim() : "Item";
+          // The window header carries the colour ("... HOODIE - BLACK"), which
+          // .product-title does not, so black and white would look identical
+          // in the cart.
+          var headEl = win.querySelector(".dd-button, .header .title");
+          var title = headEl ? headEl.textContent.trim().toLowerCase()
+                    : (titleEl ? titleEl.textContent.trim() : "Item");
           var price = priceOf(priceEl ? priceEl.textContent : "0");
-          var size = selected.textContent.trim();
           var variant = (win.className.match(/tab\s+([\w-]+)/) || [])[1] || title;
 
           var found = cart.filter(function (i) { return i.variant === variant && i.size === size; })[0];
@@ -1125,63 +1153,71 @@
           return true;
         }
 
-        // Every product window gets a full set of sizes and a working button.
+        // Every product window gets its own size panel. The stylesheet's
+        // accordion is driven by global ids ($("#wrapper"), $("#button")), so
+        // it only ever bound to the first product window — the black tee.
+        // That is why the tee behaved and the hoodies did not. This replaces
+        // it with one panel per window, built the same way for all four.
         function setupWindow(win) {
-          var row = win.querySelector(".option-size-btn");
-          if (!row) {
-            var host = win.querySelector("#list2, .body");
-            if (!host) return;
-            row = document.createElement("div");
-            row.className = "option-size-btn";
-            host.appendChild(row);
-          }
-          var have = {};
-          row.querySelectorAll(".option-size").forEach(function (b) {
-            have[b.textContent.trim().toUpperCase()] = true;
-          });
+          if (win.dataset.taiyoSizes) return;
+          win.dataset.taiyoSizes = "1";
+
+          // Retire the original collapsible so there is a single mechanism.
+          var legacy = win.querySelector("#wrapper");
+          if (legacy) legacy.style.display = "none";
+
+          var opts = win.querySelector(".product-options");
+          if (!opts || !opts.parentNode) return;
+
+          var panel = document.createElement("div");
+          panel.className = "taiyo-sizes";
+          var title = document.createElement("p");
+          title.className = "taiyo-size-title";
+          title.textContent = "pick a size";
+          var row = document.createElement("div");
+          row.className = "taiyo-size-row";
           SIZES.forEach(function (s) {
-            if (have[s]) return;
             var b = document.createElement("button");
             b.type = "button";
-            b.className = "option-size " + s.toLowerCase();
+            b.className = "taiyo-size";
             b.textContent = s;
             row.appendChild(b);
           });
-          // The window shipped with M and L only, so appending leaves them
-          // out of order. Reorder to S M L XL.
-          SIZES.forEach(function (s) {
-            var b = Array.prototype.filter.call(row.querySelectorAll(".option-size"), function (o) {
-              return o.textContent.trim().toUpperCase() === s;
-            })[0];
-            if (b) row.appendChild(b);
-          });
+          panel.appendChild(title);
+          panel.appendChild(row);
+          opts.parentNode.insertBefore(panel, opts);
+
+          function hint(text) {
+            var el = win.querySelector(".choose-size-span-2");
+            if (el) el.textContent = text;
+          }
 
           row.addEventListener("click", function (e) {
-            var b = e.target.closest(".option-size");
+            var b = e.target.closest(".taiyo-size");
             if (!b) return;
             e.preventDefault();
-            row.querySelectorAll(".option-size").forEach(function (o) { o.classList.remove("selected"); });
+            row.querySelectorAll(".taiyo-size").forEach(function (o) {
+              o.classList.remove("selected");
+            });
             b.classList.add("selected");
-            var hint = win.querySelector(".choose-size-span-2");
-            if (hint) hint.textContent = "add to cart";
-            var t = win.querySelector(".option-size-title-p");
-            if (t) t.textContent = "size " + b.textContent.trim() + " selected";
+            title.textContent = "size " + b.textContent.trim();
+            hint("add to cart");
           });
 
           var buy = win.querySelector(".choose-size-btn");
           if (buy) {
             buy.addEventListener("click", function (e) {
               e.preventDefault();
-              var hint = win.querySelector(".choose-size-span-2");
-              if (addToCart(win)) {
-                if (hint) {
-                  hint.textContent = "added";
-                  setTimeout(function () { hint.textContent = "add to cart"; }, 1200);
-                }
-              } else {
-                var t = win.querySelector(".option-size-title-p");
-                if (t) t.textContent = "pick a size first";
-                if (hint) hint.textContent = "choose size";
+              e.stopPropagation();
+              var chosen = row.querySelector(".taiyo-size.selected");
+              if (!chosen) {
+                panel.classList.add("open");
+                title.textContent = "pick a size";
+                return;
+              }
+              if (addToCart(win, chosen.textContent.trim())) {
+                hint("added");
+                setTimeout(function () { hint("add to cart"); }, 1200);
               }
             });
           }

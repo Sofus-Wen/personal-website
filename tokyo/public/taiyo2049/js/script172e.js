@@ -523,10 +523,15 @@
     // brings it forward. It used to construct a second Webamp here, which
     // came up empty because it loaded a placeholder track from the old CDN.
     $('.wwwinamp').addClass('focus').show();
-    var container = document.getElementById('webamp');
-    if (container) {
-      container.style.display = 'block';
-      container.style.zIndex = '12';
+    // Reopens the same session if it was closed, rather than building a new one.
+    if (window.__taiyoWinamp) {
+      window.__taiyoWinamp.show();
+    } else {
+      var container = document.getElementById('webamp');
+      if (container) {
+        container.style.display = 'block';
+        container.style.zIndex = '12';
+      }
     }
   });
 
