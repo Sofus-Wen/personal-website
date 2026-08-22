@@ -1381,6 +1381,56 @@
 
         document.querySelectorAll('.tab[class*="tshirt"], .tab[class*="hoodie"]').forEach(setupWindow);
 
+        // Keep every window reachable. A window can end up with its header
+        // above the viewport — through a drag, a short viewport, or zoom — and
+        // then there is nothing left to grab. This pulls any opened window
+        // back inside and caps its height to what actually fits.
+        function clampWindow(el) {
+          // Uses layout values, not paint rects, so it works even before the
+          // window has been painted.
+          var w = el.offsetWidth, h = el.offsetHeight;
+          if (!w || !h) return;
+          var margin = 8;
+          var headerRoom = 34;
+          var vh = window.innerHeight, vw = window.innerWidth;
+
+          var maxH = vh - margin * 2;
+          if (h > maxH) { el.style.height = maxH + "px"; h = el.offsetHeight; }
+
+          var top = el.offsetTop, left = el.offsetLeft;
+          if (top + h > vh - margin) top = vh - margin - h;
+          if (top < margin) top = margin;
+          if (top > vh - headerRoom) top = vh - headerRoom;
+          if (left + 90 > vw) left = vw - 90;
+          if (left < margin) left = margin;
+
+          el.style.top = Math.round(top) + "px";
+          el.style.left = Math.round(left) + "px";
+        }
+
+        function clampSoon(el) {
+          requestAnimationFrame(function () { clampWindow(el); });
+        }
+
+        // Any window that becomes visible gets clamped.
+        new MutationObserver(function (records) {
+          records.forEach(function (rec) {
+            var el = rec.target;
+            if (el.classList && el.classList.contains("tab") &&
+                getComputedStyle(el).display !== "none") {
+              clampSoon(el);
+            }
+          });
+        }).observe(document.body, {
+          subtree: true, attributes: true, attributeFilter: ["style", "class"]
+        });
+
+        window.addEventListener("resize", function () {
+          document.querySelectorAll(".tab").forEach(function (el) {
+            if (getComputedStyle(el).display !== "none") clampWindow(el);
+          });
+        });
+
         // The sun.gif icon shipped with no handler and no artwork in this
         // build, which is why nothing ever moved.
         var sunIcon = document.getElementById("sun");
