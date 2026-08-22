@@ -1431,6 +1431,22 @@
           });
         });
 
+        // BLOG.txt is the tallest of the text windows, and its CSS top left
+        // its header out of reach on shorter viewports. Open it centred
+        // instead, so where it lands never depends on the window height.
+        var blogIcon = document.getElementById("blog");
+        var blogWin = document.querySelector(".tab.fdl.blog");
+        if (blogIcon && blogWin) {
+          blogIcon.addEventListener("click", function () {
+            requestAnimationFrame(function () {
+              clampWindow(blogWin);                    // caps height first
+              var h = blogWin.offsetHeight;
+              blogWin.style.top = Math.max(8, Math.round((window.innerHeight - h) / 2)) + "px";
+              clampWindow(blogWin);
+            });
+          });
+        }
+
         // The sun.gif icon shipped with no handler and no artwork in this
         // build, which is why nothing ever moved.
         var sunIcon = document.getElementById("sun");
