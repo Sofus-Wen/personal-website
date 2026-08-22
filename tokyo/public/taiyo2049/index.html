@@ -1240,12 +1240,28 @@
       body.paused *::after {
         animation-play-state: paused !important;
       }
+      /* The three hidden files sit in fixed 110px slots, so their labels used
+         to fill the slot edge to edge and the grey boxes merged into one band.
+         Let each label hug its own text instead, and space the slots apart. */
+      .blog.file.image span,
+      .winamp.file.image span,
+      .snake.file.image span {
+        display: inline-block;
+        flex: 0 0 auto;
+        width: auto;
+        padding: 0 5px;
+      }
+
       /* WINAMP.MP3 takes the middle seat of the three hidden files; FUNFACTS.txt
          moves out to the left. The stylesheet's own transforms put winamp at
-         -150% and blog at -50%, so they swap. */
+         -150% and blog at -50%, so they swap. The extra px push the outer two
+         offsets even out the gaps: the labels differ in width (FUNFACTS.txt 108px,
+         WINAMP.MP3 112px, sun.gif 62px) while the slots are all 110px, so
+         equal slots would not give equal spacing between the grey boxes. */
       @media (min-width: 768px) {
         .winamp.file.image { transform: translate(-50%, -50%) !important; }
-        .blog.file.image { transform: translate(-150%, -50%) !important; }
+        .blog.file.image { transform: translate(calc(-150% - 18px), -50%) !important; }
+        .snake.file.image { transform: translate(calc(50% - 5px), -50%) !important; }
       }
       /* FUNFACTS.txt is a text file: give it the same box as BESTFRIENDS.txt and
          let it scroll, instead of .tab.fdl's short, clipped video box. */
