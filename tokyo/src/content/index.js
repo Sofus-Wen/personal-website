@@ -30,13 +30,9 @@ export const TIMELINE = [
         name: "TETR",
         href: "/tetr",
         desc: [
-          "built businesses in ",
-          { text: "dubai", href: "/dubai" },
-          " & ",
-          { text: "india", href: "/india" },
-          ". made ",
+          "traveled around building businesses. made ",
           { text: "Fuji Chocolates", href: "/fuji-chocolates" },
-          ", then dropped out :)",
+          " in india, then dropped out :)",
         ],
       },
       {
@@ -61,7 +57,7 @@ export const TIMELINE = [
     items: [
       {
         key: "tks",
-        name: [{ text: "TKS", href: "/tks" }, " / toronto"],
+        name: [{ text: "TKS", href: "https://tks.world/" }, " / toronto"],
         desc: [
           "spent a couple years building things with ",
           { text: "AI", href: "/ai" },
@@ -73,10 +69,7 @@ export const TIMELINE = [
       {
         name: "buildspace",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7228701780937740289/",
-        desc: [
-          "spent the summer in sf ",
-          { text: "building with Mats & Pranava", href: "/buildspace" },
-        ],
+        desc: "spent the summer in sf building with Mats & Pranava",
       },
     ],
   },
@@ -87,8 +80,7 @@ export const TIMELINE = [
         key: "2022",
         name: [
           { text: "Taiyo / fashion school", href: "/taiyo" },
-          " \u00b7 ",
-          { text: "hypnosis / NLP", href: "/hypnosis" },
+          " \u00b7 hypnosis / NLP",
         ],
         desc: "took a year off school and tried a bunch of things",
       },
