@@ -22,7 +22,7 @@ export const TALKS = [
       "spoke about AI & education.",
       [
         "shared Tanar AI and the other projects I was building at ",
-        { text: "TKS", href: "/ai" },
+        { text: "TKS", href: "/tks" },
         ".",
       ],
     ],
@@ -47,6 +47,7 @@ export const TALKS = [
     lines: [
       "presented PerfectFit.",
       "we used 3D body scanning to help clothes fit better online.",
+      "i ended up carrying most of it, and we made the finals anyway.",
       [
         {
           text: "made it to the finals.",

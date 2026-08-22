@@ -17,7 +17,7 @@ export const PROJECTS = [
   {
     name: "Tanar AI",
     href: "https://youtu.be/4Se1xhJhYr4",
-    desc: "a virtual teacher you could talk to",
+    desc: "a virtual teacher you could talk to. built it with Max, Derek & Dylan",
   },
   {
     name: "Solon AI",
@@ -37,6 +37,11 @@ export const PROJECTS = [
 ];
 
 export const OUTRO = [
+  {
+    key: "honest",
+    name:
+      "i worked hard on these. they never quite meant to me what i wanted them to.",
+  },
   {
     key: "speaking",
     name: [

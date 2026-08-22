@@ -15,6 +15,19 @@ export const GROUPS = [
       { key: "tetr", name: ["part of ", { text: "TETR", href: "/tetr" }] },
     ],
   },
+  {
+    label: "what i took from it",
+    items: [
+      { name: "the biggest winners in any game are the ones playing for fun" },
+      { name: "team first. a product that fits gets you part of the way" },
+      { name: "loving the work is what makes you stay" },
+      { name: "far more culture here than dubai" },
+      { name: "but it was school to hotel and back, so i never got inside it" },
+      { name: "travel without immersion stays hollow" },
+      { name: "never found anyone there i felt aligned with. that’s a signal" },
+      { name: "people you love and work you love, at the same time" },
+    ],
+  },
 ];
 
 export const SLIDES = [

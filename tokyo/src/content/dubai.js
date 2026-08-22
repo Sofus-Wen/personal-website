@@ -9,6 +9,18 @@ export const GROUPS = [
       { key: "tetr", name: ["part of ", { text: "TETR", href: "/tetr" }] },
     ],
   },
+  {
+    label: "what i took from it",
+    items: [
+      { name: "culture matters more than anything else in a business" },
+      { name: "no clear goal and no clear way of deciding, and it never works" },
+      { name: "you become whoever you spend the most time with, without noticing" },
+      { name: "it isn’t about them being good or bad. it just happens" },
+      { name: "a desert and a metropolis at once. safe, and quiet in a lot of parts" },
+      { name: "found out again that i don’t like programming" },
+      { name: "so i went back to making videos, which i did love" },
+    ],
+  },
 ];
 
 export const SLIDES = [

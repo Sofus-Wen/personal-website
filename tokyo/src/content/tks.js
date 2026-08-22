@@ -10,7 +10,34 @@ export const GROUPS = [
           " is a program for teenagers who want to build things",
         ],
       },
-      { name: "moved to toronto, where one of their hq’s was" },
+      {
+        key: "community",
+        name:
+          "one of the very few places where a lot of young, smart, ambitious people are in the same room",
+      },
+      {
+        key: "aligned",
+        name: "first time i met people walking an unconventional path on purpose",
+      },
+      { key: "authentic", name: "and being themselves while they did it" },
+    ],
+  },
+  {
+    label: "how i got to toronto",
+    items: [
+      { name: "got placed in an elite sports class in denmark. loved it" },
+      { name: "got kicked out, put in a normal class, hated it" },
+      { name: "so i looked for any way out of the country" },
+      {
+        key: "course",
+        name:
+          "ended up picking a course that put me in toronto for the rest of the year",
+      },
+      {
+        key: "january",
+        name:
+          "landed in january and joined the in-person sessions, where one of their hq’s was",
+      },
     ],
   },
   {
@@ -19,7 +46,7 @@ export const GROUPS = [
       {
         name: "AI",
         href: "/ai",
-        desc: "Tanar, Solon, PANTRA, LazyStudent",
+        desc: "Tanar with Max, Derek & Dylan, then Solon, PANTRA & LazyStudent",
       },
       {
         name: "speaking",
@@ -29,7 +56,7 @@ export const GROUPS = [
       {
         name: "buildspace",
         href: "/buildspace",
-        desc: "and then a summer in sf",
+        desc: "and then a summer in sf with two people from here",
       },
     ],
   },

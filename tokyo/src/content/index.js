@@ -71,15 +71,10 @@ export const TIMELINE = [
         ],
       },
       {
-        key: "buildspace",
         name: "buildspace",
+        href: "https://www.linkedin.com/feed/update/urn:li:activity:7228701780937740289/",
         desc: [
-          "spent the summer in ",
-          {
-            text: "sf",
-            href: "https://www.linkedin.com/feed/update/urn:li:activity:7228701780937740289/",
-          },
-          " ",
+          "spent the summer in sf ",
           { text: "building with Mats & Pranava", href: "/buildspace" },
         ],
       },
@@ -92,7 +87,8 @@ export const TIMELINE = [
         key: "2022",
         name: [
           { text: "Taiyo / fashion school", href: "/taiyo" },
-          " \u00b7 hypnosis / NLP",
+          " \u00b7 ",
+          { text: "hypnosis / NLP", href: "/hypnosis" },
         ],
         desc: "took a year off school and tried a bunch of things",
       },

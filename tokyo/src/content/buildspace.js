@@ -14,6 +14,10 @@ export const GROUPS = [
           " with Mats & Pranava",
         ],
       },
+      {
+        key: "tks",
+        name: ["both of them from ", { text: "TKS", href: "/tks" }],
+      },
       { name: "1000 people in one building, all building something" },
       { name: "read the mom test. go ask people face-to-face, then change it" },
       { name: "the part i actually took home was the people" },
