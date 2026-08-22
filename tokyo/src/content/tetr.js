@@ -4,6 +4,7 @@ export const OPENING =
 export const GROUPS = [
   {
     label: "dubai",
+    labelHref: "/dubai",
     items: [
       { name: "first term" },
       { name: "built a third-party fulfillment watch business with my team" },
@@ -13,6 +14,7 @@ export const GROUPS = [
   },
   {
     label: "india",
+    labelHref: "/india",
     items: [
       {
         key: "fuji",

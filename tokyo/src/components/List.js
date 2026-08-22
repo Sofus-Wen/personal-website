@@ -22,7 +22,15 @@ function Segments({ value }) {
 export default function List({ groups }) {
   return groups.map((group, gi) => (
     <div className="year" key={group.label || gi}>
-      {group.label ? <p className="year-label">{group.label}</p> : null}
+      {group.label ? (
+        <p className="year-label">
+          {group.labelHref ? (
+            <Link href={group.labelHref}>{group.label}</Link>
+          ) : (
+            group.label
+          )}
+        </p>
+      ) : null}
       {group.items.map((item, i) => (
         <p className="line" key={item.key || item.name || i}>
           {item.href ? (

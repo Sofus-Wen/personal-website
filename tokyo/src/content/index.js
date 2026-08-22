@@ -30,9 +30,13 @@ export const TIMELINE = [
         name: "TETR",
         href: "/tetr",
         desc: [
-          "traveled around building businesses. made ",
+          "built businesses in ",
+          { text: "dubai", href: "/dubai" },
+          " & ",
+          { text: "india", href: "/india" },
+          ". made ",
           { text: "Fuji Chocolates", href: "/fuji-chocolates" },
-          " in india, then dropped out :)",
+          ", then dropped out :)",
         ],
       },
       {
@@ -57,7 +61,7 @@ export const TIMELINE = [
     items: [
       {
         key: "tks",
-        name: [{ text: "TKS", href: "https://tks.world/" }, " / toronto"],
+        name: [{ text: "TKS", href: "/tks" }, " / toronto"],
         desc: [
           "spent a couple years building things with ",
           { text: "AI", href: "/ai" },
@@ -67,9 +71,17 @@ export const TIMELINE = [
         ],
       },
       {
+        key: "buildspace",
         name: "buildspace",
-        href: "https://www.linkedin.com/feed/update/urn:li:activity:7228701780937740289/",
-        desc: "spent the summer in sf building with Mats & Pranava",
+        desc: [
+          "spent the summer in ",
+          {
+            text: "sf",
+            href: "https://www.linkedin.com/feed/update/urn:li:activity:7228701780937740289/",
+          },
+          " ",
+          { text: "building with Mats & Pranava", href: "/buildspace" },
+        ],
       },
     ],
   },
