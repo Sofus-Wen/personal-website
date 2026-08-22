@@ -388,11 +388,9 @@
     e.preventDefault();
     $('.navbar .item.submenu.active').removeClass('active');
     var content = '<div>'+
-    '<p>TAIYO | \u592a\u967d<br />is the romanization of the<br />Japanese word \u201csun.\u201d</p>'+
-    '<p>Taiyo Official was a fashion label started by<br />Sofus Wen\u00f8e and Jens Bjerre.</p>'+
-    '<p>We were 14.</p>'+
-    '<p>Somewhere between Japanese streetwear,<br />old Greek &amp; Roman art, and whatever else<br />we were obsessed with at the time,<br />we started building our own little world.</p>'+
-    '<p>This is an archive of it.</p>'+
+    '<p>Taiyo Official was a fashion label started by<br />Sofus Wen\u00f8e and Jens Bjerre in Denmark.</p>'+
+    '<p>We made clothes inspired by Japanese streetwear,<br />old Greek &amp; Roman art, and whatever else<br />we were obsessed with at the time.</p>'+
+    '<p>2019 - 2023.</p>'+
     '<p class="sysinfo">built taiyo2049 years later to archive all of this.<br />'+
     'based on <a href="https://kanye2049.com/" target="_blank">kanye2049.com</a> by '+
     '<a href="https://antoineguillou.fr" target="_blank">Antoine Guillou</a> &lt;3</p>'+
