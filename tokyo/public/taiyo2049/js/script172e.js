@@ -398,18 +398,6 @@
     $('.dialog').html(content).css('display', 'flex');
   });
 
-  $('#ourstory').on('click', function(e){
-    e.preventDefault();
-    $('.navbar .item.submenu.active').removeClass('active');
-    var content = '<div>'+
-    '<p>Taiyo Official was a fashion label started by Sofus Wen\u00f8e and Jens Bjerre.</p>'+
-    '<p>We were 14.</p>'+
-    '<p>somewhere between Japanese streetwear, old Greek &amp; Roman art, and whatever else we were obsessed with at the time, we started building our own little world.</p>'+
-    '<p>this is an archive of it.</p>'+
-    '</div>';
-    $('.dialog').html(content).css('display', 'flex');
-  });
-
   $('#social').on('click', function(e){
     e.preventDefault();
     $('.navbar .item.submenu.active').removeClass('active');
