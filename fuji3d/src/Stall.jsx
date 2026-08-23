@@ -6,7 +6,8 @@ import Glow from "./Glow.jsx";
 
 /* Every clickable thing in the scene wraps in this: it handles the hover
    lift, the pointer cursor and firing the panel open. */
-function Hot({ id, onOpen, children, lift = 0.03, position = [0, 0, 0], glow = 0.62 }) {
+function Hot({ id, onOpen, children, lift = 0.03, position = [0, 0, 0],
+              glow = 0.62, glowH, glowAt }) {
   const [hover, setHover] = useState(false);
   const g = useRef();
   return (
@@ -17,7 +18,10 @@ function Hot({ id, onOpen, children, lift = 0.03, position = [0, 0, 0], glow = 0
       onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}
       onClick={(e) => { e.stopPropagation(); onOpen(id); }}
     >
-      {glow > 0 && <Glow size={glow} lit={hover} position={[0, glow * 0.28, -0.02]} />}
+      {glow > 0 && (
+        <Glow size={glow} height={glowH} lit={hover}
+              position={glowAt ?? [0, glow * 0.28, -0.02]} />
+      )}
       {children}
     </group>
   );
@@ -91,6 +95,7 @@ function Bunting({ y, z, halfWidth, count = 19 }) {
 function Speaker({ onSpeaker, playing, x, z }) {
   const cone = useRef();
   const rings = useRef([]);
+  const [hover, setHover] = useState(false);
   useFrame((state) => {
     const t = state.clock.elapsedTime;
     if (cone.current) {
@@ -107,15 +112,16 @@ function Speaker({ onSpeaker, playing, x, z }) {
     });
   });
   return (
-    <group position={[x, 2.02, z]}>
-      {/* the bracket it hangs off */}
-      <mesh position={[0, 0.24, -0.04]}>
-        <boxGeometry args={[0.04, 0.26, 0.04]} />
+    <group position={[x, 2.34, z]}>
+      {/* hanger up to the top rail of the stand */}
+      <mesh position={[0, 0.3, -0.05]}>
+        <boxGeometry args={[0.035, 0.42, 0.035]} />
         <meshStandardMaterial color="#3a3d42" roughness={0.5} metalness={0.4} />
       </mesh>
+      <Glow size={0.62} lit={hover} position={[0, 0, 0.14]} />
       <mesh castShadow onClick={(e) => { e.stopPropagation(); onSpeaker(); }}
-            onPointerOver={(e) => { e.stopPropagation(); document.body.style.cursor = "pointer"; }}
-            onPointerOut={() => (document.body.style.cursor = "auto")}>
+            onPointerOver={(e) => { e.stopPropagation(); setHover(true); document.body.style.cursor = "pointer"; }}
+            onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}>
         <boxGeometry args={[0.26, 0.36, 0.22]} />
         <meshStandardMaterial color="#20222c" roughness={0.6} />
       </mesh>
@@ -142,6 +148,7 @@ function RollUp({ id, onOpen, map, x, z = -0.1, turn }) {
       onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}
       onClick={(e) => { e.stopPropagation(); onOpen(id); }}
     >
+      <Glow size={1.5} height={2.3} lit={hover} position={[0, 0.95, 0.06]} />
       {/* cassette base with feet */}
       <mesh castShadow receiveShadow position={[0, 0.055, 0]}>
         <boxGeometry args={[1.0, 0.11, 0.26]} />
@@ -251,7 +258,8 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       ))}
 
       {/* the card poster, pinned on the left return */}
-      <Hot id="cards" onOpen={onOpen} lift={0} position={[-2.1, 1.5, BACK_Z / 2]}>
+      <Hot id="cards" onOpen={onOpen} lift={0} position={[-2.1, 1.5, BACK_Z / 2]}
+           glow={1.5} glowH={1.15} glowAt={[0.05, 0, 0]}>
         <mesh rotation={[0, Math.PI / 2, 0]}>
           <planeGeometry args={[1.15, 0.84]} />
           <meshStandardMaterial map={poster} roughness={0.9} />
@@ -259,22 +267,24 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       </Hot>
 
       {/* the dark header board */}
-      <Hot id="brand" onOpen={onOpen} lift={0} position={[0, 2.35, BACK_Z + 0.07]}>
+      <Hot id="brand" onOpen={onOpen} lift={0} position={[0, 2.35, BACK_Z + 0.07]}
+           glow={3.5} glowH={1.0} glowAt={[0, 0, -0.05]}>
         <mesh castShadow>
           <boxGeometry args={[3.1, 0.42, 0.06]} />
           <meshStandardMaterial color="#23241f" roughness={0.7} />
         </mesh>
-        <Text position={[0, 0.04, 0.04]} fontSize={0.17} letterSpacing={0.32} color="#f4f1e9"
-              anchorX="center" anchorY="middle">FUJI</Text>
-        <Text position={[0, -0.12, 0.04]} fontSize={0.045} letterSpacing={0.28} color="#c9a227"
-              anchorX="center" anchorY="middle">JAPANESE CHOCOLATES</Text>
+        {/* the same printed banner as the counter front, so top and bottom match */}
+        <mesh position={[0, 0, 0.035]}>
+          <planeGeometry args={[3.06, 3.06 / 8.56]} />
+          <meshBasicMaterial map={banner} toneMapped={false} />
+        </mesh>
       </Hot>
 
       <Bunting y={1.95} z={BACK_Z + 0.5} halfWidth={2.0} />
 
       {/* a speaker hung in each top corner of the stand */}
-      <Speaker onSpeaker={onSpeaker} playing={playing} x={-1.78} z={BACK_Z + 0.24} />
-      <Speaker onSpeaker={onSpeaker} playing={playing} x={1.78} z={BACK_Z + 0.24} />
+      <Speaker onSpeaker={onSpeaker} playing={playing} x={-1.99} z={BACK_Z + 0.26} />
+      <Speaker onSpeaker={onSpeaker} playing={playing} x={1.99} z={BACK_Z + 0.26} />
 
       {/* the roll-up banner, standing to the right of the stall */}
       <RollUp id="poster" onOpen={onOpen} map={standPoster} x={3.35} z={0.5} turn={-0.5} />
@@ -299,7 +309,8 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       ))}
 
       {/* the counter */}
-      <Hot id="stall" onOpen={onOpen} lift={0} position={[0, 0, 0]}>
+      <Hot id="stall" onOpen={onOpen} lift={0} position={[0, 0, 0]}
+           glow={4.6} glowH={1.5} glowAt={[0, 0.5, 0.4]}>
         <RoundedBox args={[4.3, COUNTER_TOP, 0.72]} radius={0.012} smoothness={3}
                     castShadow receiveShadow position={[0, COUNTER_TOP / 2, 0]}>
           <meshStandardMaterial color="#1e2a44" roughness={0.94} />

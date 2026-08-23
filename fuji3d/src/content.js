@@ -19,7 +19,7 @@ export const CONTENT = {
       stopping people as they walked past.</p>
       <p>The bunting, the board and the folding table went up and came down
       again every time. This is where almost all of it was sold.</p>`,
-    grid: ["img/popup.jpg","img/stall.jpg"]
+    grid: ["img/popup.jpg","img/stall.jpg","img/popup-counter.jpg"]
   },
   brand: {
     kicker: "the brand", title: "FUJI · japanese chocolates",

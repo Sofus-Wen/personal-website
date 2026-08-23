@@ -21,15 +21,15 @@ function haloTexture() {
   return shared;
 }
 
-export default function Glow({ size = 0.6, lit = false, position = [0, 0, 0] }) {
+export default function Glow({ size = 0.6, height, lit = false, position = [0, 0, 0] }) {
   const tex = useMemo(haloTexture, []);
   return (
-    <sprite position={position} scale={[size, size, 1]} renderOrder={-1}>
+    <sprite position={position} scale={[size, height ?? size, 1]} renderOrder={-1}>
       <spriteMaterial
         map={tex}
         transparent
         depthWrite={false}
-        opacity={lit ? 0.7 : 0.075}
+        opacity={lit ? 0.75 : 0.15}
         blending={THREE.AdditiveBlending}
       />
     </sprite>
