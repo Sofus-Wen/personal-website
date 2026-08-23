@@ -1,13 +1,16 @@
 export const OPENING =
   "basically learning to read & rewrite the software running in your head.";
 
-/* Same shape as the AI page: a lead-in line, then the names with what
-   each one was. */
-export const PEOPLE = [
+/* Grouped like the AI page: the context sentence stands on its own, then the
+   names sit tight together underneath. The stack puts the air between them. */
+export const INTRO = [
   {
-    key: "lead-in",
+    key: "spring",
     name: "in spring 2023, I went pretty deep into it and met three crazy people:",
   },
+];
+
+export const PEOPLE = [
   {
     name: "Richard Bandler",
     desc: "co-created NLP.",
