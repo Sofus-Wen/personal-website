@@ -136,6 +136,9 @@ for old in os.listdir(out_dir):
     os.remove(os.path.join(out_dir, old))
 
 
+EDGE_MIN = 0.09   # the plate never goes fully edge-on, or it blinks out
+
+
 def quad(c, s, zoff):
     """Corners of one slice of the plate. c and s are cos/sin of the turn —
     c keeps its sign, so past 90 degrees the quad inverts and we see the
@@ -153,6 +156,11 @@ for i in range(FRAMES):
     th = 2 * math.pi * i / FRAMES
     c, s = math.cos(th), math.sin(th)
     front = c >= 0
+    # At exactly 90 and 270 the cosine is zero, the face has no width, and all
+    # that renders is the hairline of the extrusion — one frame that reads as a
+    # blink. Hold a floor on the magnitude but keep the sign, so it still turns
+    # through and shows its far side.
+    c = math.copysign(max(abs(c), EDGE_MIN), 1.0 if front else -1.0)
 
     # The visible surface. Front face normal is (nx,ny,nz); the back face of a
     # thin plate carries the same relief mirrored through the plate, so its
