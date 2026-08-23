@@ -18,7 +18,11 @@ export const CONTENT = {
     html: `<p class="lede">Five of us: two behind the counter, three out front
       stopping people as they walked past.</p>
       <p>The bunting, the board and the folding table went up and came down
-      again every time. This is where almost all of it was sold.</p>`,
+      again every time. This is where almost all of it was sold.</p>
+      <p>Between us we had more than 45,000 subscribers and over 2 million
+      views, so the marketing was founder-led from the start. We never paid
+      for reach — we filmed what we were doing and pointed people at the
+      table.</p>`,
     grid: ["img/popup.jpg","img/stand-rack.jpg"]
   },
   brand: {
@@ -104,13 +108,6 @@ export const CONTENT = {
       shelf was there — but my heart wasn't in it, and taking someone's money to
       run a thing I didn't want to run seemed like the wrong trade.</p>
       <p>We stopped at the end of the semester.</p>`
-  },
-  reach: {
-    kicker: "the speaker", title: "we already had an audience",
-    html: `<p class="lede">Between us we had more than 45,000 subscribers and
-      over 2 million views, so the marketing was founder-led from day one.</p>
-      <p>It meant we never paid for reach. We just filmed what we were doing
-      and pointed people at the table.</p>`
   },
   team: {
     kicker: "behind the counter", title: "Pablo, Leo, Krishna & Steve",

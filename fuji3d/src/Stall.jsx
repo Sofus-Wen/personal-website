@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useFrame } from "@react-three/fiber";
 import { useTexture, RoundedBox, Text } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -85,7 +86,47 @@ function Bunting({ y, z, halfWidth, count = 19 }) {
   );
 }
 
-export default function Stall({ onOpen }) {
+function Speaker({ onSpeaker, playing, z }) {
+  const cone = useRef();
+  const rings = useRef([]);
+  useFrame((state) => {
+    const t = state.clock.elapsedTime;
+    if (cone.current) {
+      const pulse = playing ? 1 + Math.sin(t * 9) * 0.06 : 1;
+      cone.current.scale.setScalar(pulse);
+    }
+    rings.current.forEach((m, k) => {
+      if (!m) return;
+      if (!playing) { m.visible = false; return; }
+      m.visible = true;
+      const phase = (t * 0.9 + k * 0.33) % 1;
+      m.scale.setScalar(0.4 + phase * 1.5);
+      m.material.opacity = 0.5 * (1 - phase);
+    });
+  });
+  return (
+    <group position={[1.75, 1.62, z]}>
+      <mesh castShadow onClick={(e) => { e.stopPropagation(); onSpeaker(); }}
+            onPointerOver={(e) => { e.stopPropagation(); document.body.style.cursor = "pointer"; }}
+            onPointerOut={() => (document.body.style.cursor = "auto")}>
+        <boxGeometry args={[0.26, 0.36, 0.22]} />
+        <meshStandardMaterial color="#20222c" roughness={0.6} />
+      </mesh>
+      <mesh ref={cone} position={[0, 0.03, 0.12]}>
+        <circleGeometry args={[0.085, 32]} />
+        <meshStandardMaterial color="#3c3f4c" roughness={0.5} />
+      </mesh>
+      {[0, 1, 2].map((k) => (
+        <mesh key={k} ref={(el) => (rings.current[k] = el)} position={[0, 0.03, 0.14]}>
+          <ringGeometry args={[0.1, 0.115, 32]} />
+          <meshBasicMaterial color="#c9a227" transparent opacity={0} />
+        </mesh>
+      ))}
+    </group>
+  );
+}
+
+export default function Stall({ onOpen, onSpeaker, playing }) {
   const cards = useTexture("img/card-01.jpg");
   const fuji = useTexture("img/mtfuji.jpg");
   const wallInk = useTexture("img/wall-ink.jpg");
@@ -159,17 +200,8 @@ export default function Stall({ onOpen }) {
         </mesh>
       </Hot>
 
-      {/* speaker in the corner */}
-      <Hot id="reach" onOpen={onOpen} lift={0} position={[1.75, 1.62, BACK_Z + 0.2]}>
-        <mesh castShadow>
-          <boxGeometry args={[0.26, 0.36, 0.22]} />
-          <meshStandardMaterial color="#26271f" roughness={0.6} />
-        </mesh>
-        <mesh position={[0, 0.03, 0.12]}>
-          <circleGeometry args={[0.085, 32]} />
-          <meshStandardMaterial color="#3c3d34" roughness={0.5} />
-        </mesh>
-      </Hot>
+      {/* speaker in the corner — opens the player, and moves while it plays */}
+      <Speaker onSpeaker={onSpeaker} playing={playing} z={BACK_Z + 0.2} />
 
       {/* the counter */}
       <Hot id="stall" onOpen={onOpen} lift={0} position={[0, 0, 0]}>

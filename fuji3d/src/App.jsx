@@ -4,6 +4,7 @@ import { OrbitControls, Environment, ContactShadows, Html } from "@react-three/d
 import Stall from "./Stall.jsx";
 import People from "./People.jsx";
 import Panel from "./Panel.jsx";
+import MusicPlayer from "./MusicPlayer.jsx";
 
 function Loading() {
   return <Html center><p className="loading">setting up the stall…</p></Html>;
@@ -12,6 +13,8 @@ function Loading() {
 export default function App() {
   const [open, setOpen] = useState(null);
   const [speaking, setSpeaking] = useState(null);
+  const [music, setMusic] = useState(false);
+  const [playing, setPlaying] = useState(false);
 
   return (
     <>
@@ -39,7 +42,7 @@ export default function App() {
         <directionalLight position={[-4, 3, -2]} intensity={0.35} />
 
         <Suspense fallback={<Loading />}>
-          <Stall onOpen={setOpen} />
+          <Stall onOpen={setOpen} onSpeaker={() => setMusic((m) => !m)} playing={playing} />
           <People speaking={speaking} onSpeak={setSpeaking} />
           <Environment preset="city" />
         </Suspense>
@@ -63,6 +66,10 @@ export default function App() {
       <p className="foot">the stall · jan–may 2026 · Sofus, Pablo, Leo, Krishna &amp; Steve</p>
 
       <Panel openKey={open} onClose={() => setOpen(null)} />
+      <MusicPlayer
+        open={music} onClose={() => setMusic(false)}
+        playing={playing} setPlaying={setPlaying}
+      />
     </>
   );
 }
