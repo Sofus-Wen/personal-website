@@ -81,7 +81,7 @@ export const TIMELINE = [
         name: [
           { text: "Taiyo / fashion school", href: "/taiyo" },
           " \u00b7 ",
-          { text: "hypnosis / NLP", href: "/hypnosis" },
+          { text: "NLP / hypnosis", href: "/hypnosis" },
         ],
         desc: "took a year off school and tried a bunch of things",
       },
