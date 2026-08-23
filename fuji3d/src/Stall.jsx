@@ -205,27 +205,39 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       {/* speaker in the corner — opens the player, and moves while it plays */}
       <Speaker onSpeaker={onSpeaker} playing={playing} z={BACK_Z + 0.2} />
 
-      {/* the poster that stood outside the stall */}
-      <Hot id="poster" onOpen={onOpen} lift={0} position={[-2.26, 0, 0.62]}>
-        <group rotation={[0, 0.62, 0]}>
-          {/* legs and foot */}
-          <mesh castShadow position={[0, 0.03, 0.06]}>
-            <boxGeometry args={[0.42, 0.05, 0.3]} />
-            <meshStandardMaterial color="#2a2c26" roughness={0.7} />
+      {/* the roll-up banner that stood on the left of the stall */}
+      <Hot id="poster" onOpen={onOpen} lift={0} position={[-2.52, 0, -0.1]}>
+        <group rotation={[0, 0.5, 0]}>
+          {/* cassette base, wider than the banner, with little feet */}
+          <mesh castShadow receiveShadow position={[0, 0.055, 0]}>
+            <boxGeometry args={[1.0, 0.11, 0.26]} />
+            <meshStandardMaterial color="#9a9ea6" roughness={0.42} metalness={0.55} />
           </mesh>
-          <mesh castShadow position={[0, 0.42, 0]}>
-            <boxGeometry args={[0.05, 0.8, 0.05]} />
-            <meshStandardMaterial color="#2a2c26" roughness={0.7} />
-          </mesh>
-          {/* the board, leaning back a touch like a real A-frame */}
-          <group position={[0, 1.28, 0.02]} rotation={[-0.07, 0, 0]}>
-            <mesh castShadow>
-              <boxGeometry args={[0.66, 1.12, 0.035]} />
-              <meshStandardMaterial color="#15203a" roughness={0.8} />
+          {[-1, 1].map((k) => (
+            <mesh key={k} castShadow position={[k * 0.42, 0.015, 0.03]}>
+              <boxGeometry args={[0.1, 0.03, 0.4]} />
+              <meshStandardMaterial color="#3a3d42" roughness={0.5} metalness={0.3} />
             </mesh>
-            <mesh position={[0, 0, 0.022]}>
-              <planeGeometry args={[0.62, 1.08]} />
+          ))}
+          {/* the support pole up the back */}
+          <mesh castShadow position={[0, 0.92, -0.08]}>
+            <cylinderGeometry args={[0.014, 0.014, 1.62, 10]} />
+            <meshStandardMaterial color="#9a9ea6" roughness={0.4} metalness={0.6} />
+          </mesh>
+          {/* the printed banner — kept at the artwork's own proportions */}
+          <group position={[0, 0.92, 0.005]}>
+            <mesh castShadow>
+              <boxGeometry args={[0.92, 1.61, 0.012]} />
+              <meshStandardMaterial color="#15203a" roughness={0.85} />
+            </mesh>
+            <mesh position={[0, 0, 0.008]}>
+              <planeGeometry args={[0.92, 1.61]} />
               <meshBasicMaterial map={standPoster} toneMapped={false} />
+            </mesh>
+            {/* top rail */}
+            <mesh castShadow position={[0, 0.83, 0]}>
+              <boxGeometry args={[0.95, 0.035, 0.035]} />
+              <meshStandardMaterial color="#9a9ea6" roughness={0.4} metalness={0.6} />
             </mesh>
           </group>
         </group>

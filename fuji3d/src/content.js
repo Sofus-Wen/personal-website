@@ -14,7 +14,7 @@ export const CARDS = [
 export const CONTENT = {
   stall: {
     kicker: "the stall", title: "this table, most days",
-    img: "img/stall.jpg",
+    img: "img/stall-cart.jpg",
     html: `<p class="lede">Five of us: two behind the counter, three out front
       stopping people as they walked past.</p>
       <p>The bunting, the board and the folding table went up and came down
@@ -23,7 +23,7 @@ export const CONTENT = {
       views, so the marketing was founder-led from the start. We never paid
       for reach — we filmed what we were doing and pointed people at the
       table.</p>`,
-    grid: ["img/popup.jpg","img/stand-rack.jpg"]
+    grid: ["img/popup.jpg","img/stand-rack.jpg","img/stall.jpg","img/shelf-real.jpg"]
   },
   brand: {
     kicker: "the brand", title: "FUJI · japanese chocolates",
