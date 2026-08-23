@@ -24,7 +24,7 @@ function Hot({ id, onOpen, children, lift = 0.03, position = [0, 0, 0] }) {
 function Bar({ map, position, id, onOpen }) {
   const tex = useTexture(map);
   tex.colorSpace = THREE.SRGBColorSpace;
-  const W = 0.15, H = 0.34, D = 0.022;
+  const W = 0.195, H = 0.34, D = 0.022;   // the released packaging is a wider format
   return (
     <Hot id={id} onOpen={onOpen} position={position}>
       <mesh castShadow position={[0, H / 2, 0]} rotation={[-0.06, 0, 0]}>
@@ -117,7 +117,7 @@ export default function Stall({ onOpen }) {
       {[-2.15, 2.15].map((x) => (
         <mesh key={x} receiveShadow castShadow position={[x, 1.35, BACK_Z / 2]}>
           <boxGeometry args={[0.08, 2.7, 1.5]} />
-          <meshStandardMaterial color="#33553c" roughness={0.9} />
+          <meshStandardMaterial color="#22304c" roughness={0.9} />
         </mesh>
       ))}
 
@@ -175,7 +175,7 @@ export default function Stall({ onOpen }) {
       <Hot id="stall" onOpen={onOpen} lift={0} position={[0, 0, 0]}>
         <RoundedBox args={[4.3, COUNTER_TOP, 0.72]} radius={0.012} smoothness={3}
                     castShadow receiveShadow position={[0, COUNTER_TOP / 2, 0]}>
-          <meshStandardMaterial color="#2f5237" roughness={0.94} />
+          <meshStandardMaterial color="#1e2a44" roughness={0.94} />
         </RoundedBox>
         {/* pale counter top, so the products sit on light */}
         <mesh receiveShadow position={[0, COUNTER_TOP + 0.005, 0]} rotation={[-Math.PI / 2, 0, 0]}>
@@ -198,16 +198,30 @@ export default function Stall({ onOpen }) {
         <Crate position={[0.06, 0.33, -0.03]} rotation={[0, 0.22, 0]} />
       </Hot>
 
-      <Bar id="matcha" map="img/bar-matcha.jpg" position={[-0.45, COUNTER_TOP, 0.05]} onOpen={onOpen} />
-      <Bar id="sesame" map="img/bar-sesame.jpg" position={[-0.15, COUNTER_TOP, 0.05]} onOpen={onOpen} />
-      <Bar id="yuzu"   map="img/bar-yuzu.jpg"   position={[0.15,  COUNTER_TOP, 0.05]} onOpen={onOpen} />
+      <Bar id="matcha" map="img/old-matcha.jpg" position={[-0.52, COUNTER_TOP, 0.05]} onOpen={onOpen} />
+      <Bar id="sesame" map="img/old-sesame.jpg" position={[-0.16, COUNTER_TOP, 0.05]} onOpen={onOpen} />
+      <Bar id="yuzu"   map="img/old-yuzu.jpg"   position={[0.2,   COUNTER_TOP, 0.05]} onOpen={onOpen} />
 
       {/* the card rack */}
-      <Hot id="cards" onOpen={onOpen} position={[0.75, COUNTER_TOP, 0.02]}>
+      <Hot id="cards" onOpen={onOpen} position={[1.06, COUNTER_TOP, 0.0]}>
         <mesh castShadow position={[0, 0.13, 0]} rotation={[-0.34, 0.12, 0]}>
           <boxGeometry args={[0.22, 0.3, 0.012]} />
           <meshStandardMaterial map={cards} roughness={0.75} />
         </mesh>
+      </Hot>
+
+      {/* the plate of samples */}
+      <Hot id="samples" onOpen={onOpen} position={[0.62, COUNTER_TOP, 0.12]}>
+        <mesh castShadow position={[0, 0.012, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.15, 0.15, 0.018, 40]} />
+          <meshStandardMaterial color="#f6f2e8" roughness={0.5} />
+        </mesh>
+        {[[-0.06, 0.03], [0.05, 0.05], [0.0, -0.05], [0.07, -0.03], [-0.05, -0.02]].map(([dx, dz], i) => (
+          <mesh key={i} castShadow position={[dx, 0.028, dz]} rotation={[0, i * 0.7, 0]}>
+            <boxGeometry args={[0.045, 0.014, 0.045]} />
+            <meshStandardMaterial color={i % 2 ? "#4a3527" : "#2f2118"} roughness={0.55} />
+          </mesh>
+        ))}
       </Hot>
 
       {/* cash box */}

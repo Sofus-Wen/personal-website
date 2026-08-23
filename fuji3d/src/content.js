@@ -25,10 +25,12 @@ export const CONTENT = {
     kicker: "the brand", title: "FUJI · japanese chocolates",
     html: `<p class="lede">Japanese flavours, made in India. The name was the
       mountain, and everything else followed from that.</p>
-      <p>The packaging went through two full generations before we were happy —
-      the first carried a FUJI wordmark in gold, the second dropped it for a
-      kamon crest and the flavour written in Japanese.</p>`,
-    two: [["img/old-matcha.jpg","first generation"],["img/bar-matcha.jpg","second"]]
+      <p>Navy, gold and white, with the flavour set in a serif down the front.
+      That's the one that shipped and the one on the table.</p>
+      <p>We designed a second generation later — a kamon crest, the flavour in
+      Japanese — and never released it. It's here as a curiosity, not as the
+      product.</p>`,
+    two: [["img/old-matcha.jpg","what we sold"],["img/bar-matcha.jpg","the redesign, never released"]]
   },
   supply: {
     kicker: "inventory", title: "made outside Delhi",
@@ -39,18 +41,25 @@ export const CONTENT = {
       <p>Stock lived in cardboard boxes under and behind the table, and we
       counted it by hand at the end of every day.</p>`
   },
-  matcha: { kicker:"抹茶 · matcha", title:"Matcha Chocolate", img:"img/bar-matcha.jpg",
+  matcha: { kicker:"抹茶 · matcha", title:"Matcha Chocolate", img:"img/old-matcha.jpg",
     html:`<p class="lede">Uji matcha in white chocolate. The one that sold first,
       every time.</p>`,
-    two:[["img/old-matcha.jpg","first design"],["img/bar-matcha.jpg","final"]] },
-  sesame: { kicker:"黒ごま · kuro goma", title:"Black Sesame Chocolate", img:"img/bar-sesame.jpg",
+    two:[["img/old-matcha.jpg","what we sold"],["img/bar-matcha.jpg","unreleased redesign"]] },
+  sesame: { kicker:"黒ごま · kuro goma", title:"Black Sesame Chocolate", img:"img/old-sesame.jpg",
     html:`<p class="lede">Roasted black sesame paste in milk chocolate. The one
       people hesitated over and then came back for.</p>`,
-    two:[["img/old-sesame.jpg","first design"],["img/bar-sesame.jpg","final"]] },
-  yuzu: { kicker:"ゆず · yuzu", title:"Japanese Lemon Chocolate", img:"img/bar-yuzu.jpg",
+    two:[["img/old-sesame.jpg","what we sold"],["img/bar-sesame.jpg","unreleased redesign"]] },
+  yuzu: { kicker:"ゆず · yuzu", title:"Japanese Lemon Chocolate", img:"img/old-yuzu.jpg",
     html:`<p class="lede">Yuzu against a sweet couverture. The brightest of the
       three.</p>`,
-    two:[["img/old-yuzu.jpg","first design"],["img/bar-yuzu.jpg","final"]] },
+    two:[["img/old-yuzu.jpg","what we sold"],["img/bar-yuzu.jpg","unreleased redesign"]] },
+  samples: {
+    kicker: "on the counter", title: "a plate of samples",
+    html: `<p class="lede">There was always a plate out so people could taste
+      everything before buying.</p>
+      <p>It did more work than any of our five sales pitches. Black sesame in
+      particular — nobody bought it until they'd tried it.</p>`
+  },
   cards: {
     kicker: "inside every bar", title: "ten places, one at a time",
     html: `<p class="lede">Every bar carried a collectable card — a place in

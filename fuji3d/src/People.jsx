@@ -8,32 +8,32 @@ export const TEAM = [
   {
     id: "sofus", name: "Sofus", where: "behind",
     position: [-0.55, 0, -0.75], rotation: [0, 0.12, 0],
-    coat: "#2b2c26",
-    line: "Japanese chocolate — but we make it here. Matcha, yuzu, black sesame.",
+    coat: "#242a38",
+    line: "While I was living in Japan I met an old craftsman making chocolate with a view of Mount Fuji. I came back to India wanting to make something inspired by that. Hence Fuji.",
   },
   {
     id: "pablo", name: "Pablo", where: "behind",
     position: [0.55, 0, -0.8], rotation: [0, -0.16, 0],
-    coat: "#3a3b32",
-    line: "Try a piece first. Nobody buys black sesame until they've tasted it.",
+    coat: "#2b3244",
+    line: "You won't believe this. This morning I personally climbed Mount Fuji and picked every ingredient fresh off the mountain — the black sesame, the yuzu, the leaves for the matcha. Then I flew straight back so we could make these fresh this morning.",
   },
   {
     id: "leo", name: "Leo", where: "front",
     position: [-1.72, 0, 1.3], rotation: [0, 0.7, 0], scale: 0.9,
-    coat: "#4a4b40",
-    line: "There's a collectable card in every bar. Ten of them. You can't pick which.",
+    coat: "#333c50",
+    line: "Not only do we have someone from Japan — you also get my genius French chocolate recipes. Japan gave us the inspiration. France gave us the chocolate.",
   },
   {
     id: "krishna", name: "Krishna", where: "front",
     position: [-1.2, 0, 1.95], rotation: [0, 0.42, 0], scale: 0.88,
-    coat: "#33342c",
-    line: "₹400. It's the only Japanese chocolate you'll find on a shelf in Delhi.",
+    coat: "#242a38",
+    line: "It's inspired by Japan, but we made it for what Indians actually love — Cadbury, Royce, that kind of chocolate. You should really try it. We have a special deal going today.",
   },
   {
     id: "steve", name: "Steve", where: "front",
     position: [1.72, 0, 1.35], rotation: [0, -0.7, 0], scale: 0.9,
-    coat: "#404136",
-    line: "We made these ourselves — recipe, packaging, all of it. Come have a look.",
+    coat: "#2b3244",
+    line: "The cacao is from Costa Rica — where I'm from. I made sure myself we were getting insanely high quality beans from back home.",
   },
 ];
 
@@ -62,11 +62,11 @@ function Figure({ person, speaking, onSpeak }) {
     >
       <mesh castShadow position={[0, 1.52 + (lit ? 0.03 : 0), 0]}>
         <sphereGeometry args={[0.115, 24, 20]} />
-        <meshStandardMaterial color={lit ? "#3f6b46" : coat} roughness={0.8} />
+        <meshStandardMaterial color={lit ? "#c9a227" : coat} roughness={0.8} />
       </mesh>
       <mesh castShadow position={[0, 1.0, 0]}>
         <capsuleGeometry args={[0.16, 0.52, 6, 16]} />
-        <meshStandardMaterial color={lit ? "#3f6b46" : coat} roughness={0.85} />
+        <meshStandardMaterial color={lit ? "#c9a227" : coat} roughness={0.85} />
       </mesh>
       <mesh castShadow position={[0, 0.38, 0]}>
         <capsuleGeometry args={[0.13, 0.42, 6, 16]} />
