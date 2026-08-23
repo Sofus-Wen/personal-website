@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Html, useTexture } from "@react-three/drei";
 import * as THREE from "three";
+import Glow from "./Glow.jsx";
 import Mii from "./Mii.jsx";
 
 /* The five of us. Two worked behind the counter, three worked the front.
@@ -13,13 +14,13 @@ export const TEAM = [
   {
     id: "sofus", name: "Sofus", where: "behind",
     position: [-0.55, 0, -0.75], rotation: [0, 0.12, 0], scale: 1.16, scale: 1,
-    look: { skin: "#f0c8a8", hair: "#3a2b21", hairStyle: "curly", glasses: false, shirt: "#1f3b2c", brow: 0.10, mouth: 1.0 },
+    look: { skin: "#f0c8a8", hair: "#3a2b21", hairStyle: "swoop", glasses: false, shirt: "#1f3b2c", brow: 0.10, mouth: 1.0 },
     line: "while i was living in japan, i met this old craftsman making chocolates with a view of mount fuji. i came back to india & thought… we should make them too.",
   },
   {
     id: "pablo", name: "Pablo", where: "behind",
     position: [0.55, 0, -0.8], rotation: [0, -0.16, 0], scale: 1.16, scale: 1,
-    look: { skin: "#e8b98f", hair: "#241a14", hairStyle: "swoop", glasses: false, shirt: "#b8452f", brow: -0.22, mouth: 1.35 },
+    look: { skin: "#e8b98f", hair: "#241a14", hairStyle: "curly", glasses: false, shirt: "#b8452f", brow: -0.22, mouth: 1.35 },
     line: "you won’t believe this. this morning i climbed mount fuji myself & picked the black sesame, yuzu & matcha fresh from the mountain. then i flew straight back here so we could make these today.",
   },
   {
@@ -61,6 +62,7 @@ function Coupon({ onOpen }) {
         <boxGeometry args={[0.34, 0.42, 0.18]} />
         <meshBasicMaterial transparent opacity={0} depthWrite={false} />
       </mesh>
+      <Glow size={0.42} lit={false} position={[0, 0, -0.02]} />
       <mesh castShadow>
         <boxGeometry args={[0.2, 0.285, 0.005]} />
         <meshStandardMaterial color="#f6eef1" roughness={0.85} />
@@ -74,8 +76,10 @@ function Coupon({ onOpen }) {
 }
 
 function Bubble({ name, line }) {
+  // No `center` here: the css anchors the bubble by its bottom edge, so it
+  // always sits above the head instead of across the face.
   return (
-    <Html position={[0, 1.78, 0]} center zIndexRange={[20, 0]}>
+    <Html position={[0, 1.62, 0]} zIndexRange={[20, 0]}>
       <div className="bubble">
         <b>{name}</b>
         <p>{line}</p>
@@ -96,6 +100,7 @@ function Figure({ person, speaking, onSpeak, onOpen }) {
       onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}
       onClick={(e) => { e.stopPropagation(); onSpeak(speaking ? null : person.id); }}
     >
+      <Glow size={1.15} lit={lit} position={[0, 0.9, -0.06]} />
       <group position={[0, lit ? 0.03 : 0, 0]}>
         <Mii look={person.look} lit={lit} />
       </group>

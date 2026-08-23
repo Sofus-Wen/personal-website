@@ -77,7 +77,7 @@ export default function MusicPlayer({ open, onClose, playing, setPlaying }) {
   return (
     <div className="player">
       <div className="player-top">
-        <span className="player-title">♪ at the stand</span>
+        <span className="player-title">♪ music playing at our pop up</span>
         <button className="player-x" onClick={onClose} aria-label="Close">×</button>
       </div>
 

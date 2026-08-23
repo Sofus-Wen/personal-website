@@ -26,7 +26,7 @@ export default function Loader() {
   return (
     <div className={"loader" + (!active && progress >= 100 ? " gone" : "")}>
       <p>
-        setting up the stall<span className="dots">{dots}</span>
+        setting up the pop up<span className="dots">{dots}</span>
       </p>
     </div>
   );

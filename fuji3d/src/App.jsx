@@ -19,7 +19,7 @@ export default function App() {
   return (
     <>
       <Loader />
-      <p className="nudge">click anything on the stall · drag to look around</p>
+      <p className="nudge">click anything on the pop up · drag to look around</p>
 
       <Canvas
         shadows
@@ -67,7 +67,7 @@ export default function App() {
         />
       </Canvas>
 
-      <p className="foot">the stall · jan–may 2026 · Sofus, Pablo, Leo, Krishna &amp; Steve</p>
+      <p className="foot">the pop up · jan–may 2026 · Sofus, Pablo, Leo, Krishna &amp; Steve</p>
 
       <Panel openKey={open} onClose={() => setOpen(null)} />
       <MusicPlayer

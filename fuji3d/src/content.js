@@ -13,16 +13,12 @@ export const CARDS = [
 
 export const CONTENT = {
   stall: {
-    kicker: "the stall", title: "this table, most days",
+    kicker: "the pop up", title: "this table, most days",
     img: "img/stall-cart.jpg",
     html: `<p class="lede">Five of us: two behind the counter, three out front
       stopping people as they walked past.</p>
       <p>The bunting, the board and the folding table went up and came down
-      again every time. This is where almost all of it was sold.</p>
-      <p>Between us we had more than 45,000 subscribers and over 2 million
-      views, so the marketing was founder-led from the start. We never paid
-      for reach — we filmed what we were doing and pointed people at the
-      table.</p>`,
+      again every time. This is where almost all of it was sold.</p>`,
     grid: ["img/popup.jpg","img/stall.jpg"]
   },
   brand: {
@@ -58,7 +54,7 @@ export const CONTENT = {
       three.</p>`,
     two:[["img/old-yuzu.jpg","what we sold"],["img/bar-yuzu.jpg","unreleased redesign"]] },
   poster: {
-    kicker: "outside the stall", title: "いただきます",
+    kicker: "outside the pop up", title: "いただきます",
     img: "img/stall-poster.jpg",
     html: `<p class="lede">This stood on the pavement outside the table —
       torn paper, a slab of matcha chocolate, and one word.</p>
@@ -130,7 +126,7 @@ export const CONTENT = {
   coupon: {
     kicker: "in krishna's hand", title: "₹50 off, valentine's day",
     img: "img/coupon.jpg",
-    html: `<p class="lede">The stall ran over valentine's — the bunting strung
+    html: `<p class="lede">The pop up ran over valentine's — the bunting strung
       above the cart said so — so we printed a coupon. ₹50 off.</p>
       <p>Krishna was the one actually trying to close a sale, so this is the
       right hand for it.</p>`

@@ -65,7 +65,7 @@ function Glasses({ r }) {
   return (
     <group position={[0, r * 0.06, z]}>
       {[-1, 1].map((s) => (
-        <mesh key={s} position={[s * r * 0.36, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
+        <mesh key={s} position={[s * r * 0.36, 0, 0]}>
           <torusGeometry args={[r * 0.26, r * 0.035, 10, 24]} />
           <meshStandardMaterial color="#2b2b28" roughness={0.5} metalness={0.2} />
         </mesh>
