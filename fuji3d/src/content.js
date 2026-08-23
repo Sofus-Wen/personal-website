@@ -73,7 +73,7 @@ export const CONTENT = {
       particular — nobody bought it until they'd tried it.</p>`
   },
   cards: {
-    kicker: "inside every bar", title: "ten places, one at a time",
+    kicker: "inside every bar", title: "collectable cards: ten sacred places",
     html: `<p class="lede">Every bar carried a collectable card — a place in
       Japan, a name we gave it, and a number out of ten. You couldn't pick
       which one you got.</p>
@@ -126,6 +126,14 @@ export const CONTENT = {
       <p>Everyone did everything. Mostly that meant standing behind a folding
       table talking to strangers about chocolate.</p>`,
     grid: ["img/packed.jpg","img/blossoms.jpg"]
+  },
+  coupon: {
+    kicker: "in krishna's hand", title: "₹50 off, valentine's day",
+    img: "img/coupon.jpg",
+    html: `<p class="lede">The stall ran over valentine's — the bunting strung
+      above the cart said so — so we printed a coupon. ₹50 off.</p>
+      <p>Krishna was the one actually trying to close a sale, so this is the
+      right hand for it.</p>`
   },
   ending: {
     kicker: "may 2026", title: "and then we went to Mt. Fuji",

@@ -1,7 +1,6 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, ContactShadows } from "@react-three/drei";
-import { EffectComposer, DepthOfField } from "@react-three/postprocessing";
 import Stall from "./Stall.jsx";
 import City from "./City.jsx";
 import Sky from "./Sky.jsx";
@@ -48,22 +47,11 @@ export default function App() {
           <City />
           <Pedestrians />
           <Stall onOpen={setOpen} onSpeaker={() => setMusic((m) => !m)} playing={playing} />
-          <People speaking={speaking} onSpeak={setSpeaking} />
+          <People speaking={speaking} onSpeak={setSpeaking} onOpen={setOpen} />
           <Environment preset="city" />
         </Suspense>
 
         <ContactShadows position={[0, 0.001, 0]} opacity={0.42} scale={14} blur={2.2} far={4} />
-
-        {/* focus sits on the counter, so whoever walks past in front goes
-            soft and the towers behind fall away */}
-        <EffectComposer disableNormalPass multisampling={4}>
-          <DepthOfField
-            target={[0, 1.1, 0]}
-            focalLength={0.08}
-            bokehScale={1.5}
-            height={480}
-          />
-        </EffectComposer>
 
         <OrbitControls
           target={[0, 1.1, 0]}

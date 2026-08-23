@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Html } from "@react-three/drei";
+import { Html, useTexture } from "@react-three/drei";
+import * as THREE from "three";
 import Mii from "./Mii.jsx";
 
 /* The five of us. Two worked behind the counter, three worked the front.
@@ -28,7 +29,7 @@ export const TEAM = [
     line: "and not only do we have someone from japan. i’m french. these are my genius french chocolate recipes.",
   },
   {
-    id: "krishna", name: "Krishna", where: "front",
+    id: "krishna", name: "Krishna", where: "front", holds: "coupon",
     position: [-0.82, 0, 2.15], rotation: [0, 0.3, 0], scale: 0.88,
     look: { skin: "#c98f62", hair: "#1d1512", hairStyle: "short", glasses: true, shirt: "#2f4a7a", brow: 0.06, mouth: 1.15 },
     line: "and i’m indian. trust me, i know what indians like. cadbury, royce… this is made for us. also, we have a special deal today.",
@@ -40,6 +41,37 @@ export const TEAM = [
     line: "the cacao comes all the way from costa rica, where i’m from. i’ve personally made sure we’re getting the good stuff.",
   },
 ];
+
+/* The valentine's coupon, in whoever's hand. Clicking it opens its own panel
+   rather than the speech bubble, so it stops the event going any further. */
+function Coupon({ onOpen }) {
+  const tex = useTexture("img/coupon.jpg");
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return (
+    <group
+      position={[0.34, 0.66, 0.16]} rotation={[-0.45, 0.42, 0.3]}
+      onPointerOver={(e) => { e.stopPropagation(); document.body.style.cursor = "pointer"; }}
+      onPointerOut={() => (document.body.style.cursor = "auto")}
+      onClick={(e) => { e.stopPropagation(); onOpen("coupon"); }}
+    >
+      {/* A generous target — the card alone is a hard thing to hit. It has to
+          be transparent rather than visible={false}, because three.js skips
+          invisible objects when raycasting. */}
+      <mesh>
+        <boxGeometry args={[0.34, 0.42, 0.18]} />
+        <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+      </mesh>
+      <mesh castShadow>
+        <boxGeometry args={[0.2, 0.285, 0.005]} />
+        <meshStandardMaterial color="#f6eef1" roughness={0.85} />
+      </mesh>
+      <mesh position={[0, 0, 0.004]}>
+        <planeGeometry args={[0.19, 0.275]} />
+        <meshBasicMaterial map={tex} toneMapped={false} />
+      </mesh>
+    </group>
+  );
+}
 
 function Bubble({ name, line }) {
   return (
@@ -53,7 +85,7 @@ function Bubble({ name, line }) {
   );
 }
 
-function Figure({ person, speaking, onSpeak }) {
+function Figure({ person, speaking, onSpeak, onOpen }) {
   const [hover, setHover] = useState(false);
   const { position, rotation = [0, 0, 0], scale = 1 } = person;
   const lit = hover || speaking;
@@ -67,16 +99,17 @@ function Figure({ person, speaking, onSpeak }) {
       <group position={[0, lit ? 0.03 : 0, 0]}>
         <Mii look={person.look} lit={lit} />
       </group>
+      {person.holds === "coupon" && <Coupon onOpen={onOpen} />}
       {speaking && <Bubble name={person.name} line={person.line} />}
     </group>
   );
 }
 
-export default function People({ speaking, onSpeak }) {
+export default function People({ speaking, onSpeak, onOpen }) {
   return (
     <group>
       {TEAM.map((p) => (
-        <Figure key={p.id} person={p} speaking={speaking === p.id} onSpeak={onSpeak} />
+        <Figure key={p.id} person={p} speaking={speaking === p.id} onSpeak={onSpeak} onOpen={onOpen} />
       ))}
     </group>
   );

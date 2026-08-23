@@ -51,10 +51,6 @@ export default function Panel({ openKey, onClose }) {
                     <figcaption>{name}<br />{place}</figcaption>
                   </figure>
                 ))}
-                <figure style={{ margin: 0 }}>
-                  <img src="img/coupon.jpg" alt="Valentine's coupon" />
-                  <figcaption>₹50 off<br />valentine's</figcaption>
-                </figure>
               </div>
             )}
           </div>
