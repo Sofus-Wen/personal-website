@@ -131,7 +131,9 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
   const fuji = useTexture("img/mtfuji.jpg");
   const wallInk = useTexture("img/wall-ink.jpg");
   const poster = useTexture("img/poster-cards.jpg");
-  [cards, fuji, wallInk, poster].forEach((t) => (t.colorSpace = THREE.SRGBColorSpace));
+  const banner = useTexture("img/counter-banner.jpg");
+  const standPoster = useTexture("img/stall-poster.jpg");
+  [cards, fuji, wallInk, poster, banner, standPoster].forEach((t) => (t.colorSpace = THREE.SRGBColorSpace));
 
   const COUNTER_TOP = 0.95;
   const BACK_Z = -1.5;
@@ -203,6 +205,32 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       {/* speaker in the corner — opens the player, and moves while it plays */}
       <Speaker onSpeaker={onSpeaker} playing={playing} z={BACK_Z + 0.2} />
 
+      {/* the poster that stood outside the stall */}
+      <Hot id="poster" onOpen={onOpen} lift={0} position={[-2.26, 0, 0.62]}>
+        <group rotation={[0, 0.62, 0]}>
+          {/* legs and foot */}
+          <mesh castShadow position={[0, 0.03, 0.06]}>
+            <boxGeometry args={[0.42, 0.05, 0.3]} />
+            <meshStandardMaterial color="#2a2c26" roughness={0.7} />
+          </mesh>
+          <mesh castShadow position={[0, 0.42, 0]}>
+            <boxGeometry args={[0.05, 0.8, 0.05]} />
+            <meshStandardMaterial color="#2a2c26" roughness={0.7} />
+          </mesh>
+          {/* the board, leaning back a touch like a real A-frame */}
+          <group position={[0, 1.28, 0.02]} rotation={[-0.07, 0, 0]}>
+            <mesh castShadow>
+              <boxGeometry args={[0.66, 1.12, 0.035]} />
+              <meshStandardMaterial color="#15203a" roughness={0.8} />
+            </mesh>
+            <mesh position={[0, 0, 0.022]}>
+              <planeGeometry args={[0.62, 1.08]} />
+              <meshBasicMaterial map={standPoster} toneMapped={false} />
+            </mesh>
+          </group>
+        </group>
+      </Hot>
+
       {/* the counter */}
       <Hot id="stall" onOpen={onOpen} lift={0} position={[0, 0, 0]}>
         <RoundedBox args={[4.3, COUNTER_TOP, 0.72]} radius={0.012} smoothness={3}
@@ -214,13 +242,10 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
           <planeGeometry args={[4.3, 0.72]} />
           <meshStandardMaterial color="#efe9dc" roughness={0.85} />
         </mesh>
-        <Text position={[0, 0.52, 0.371]} fontSize={0.2} color="#f0e7cd"
-              anchorX="center" anchorY="middle">
-          Fuji Chocolates
-        </Text>
-        <mesh position={[0, 0.3, 0.371]}>
-          <planeGeometry args={[1.9, 0.006]} />
-          <meshBasicMaterial color="#c9a227" />
+        {/* the banner that actually hung on the front of the table */}
+        <mesh position={[0, COUNTER_TOP * 0.52, 0.3705]}>
+          <planeGeometry args={[4.12, 4.12 / 8.56]} />
+          <meshBasicMaterial map={banner} toneMapped={false} />
         </mesh>
       </Hot>
 

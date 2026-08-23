@@ -57,6 +57,14 @@ export const CONTENT = {
     html:`<p class="lede">Yuzu against a sweet couverture. The brightest of the
       three.</p>`,
     two:[["img/old-yuzu.jpg","what we sold"],["img/bar-yuzu.jpg","unreleased redesign"]] },
+  poster: {
+    kicker: "outside the stall", title: "いただきます",
+    img: "img/stall-poster.jpg",
+    html: `<p class="lede">This stood on the pavement outside the table —
+      torn paper, a slab of matcha chocolate, and one word.</p>
+      <p>Itadakimasu: what you say in Japan before you eat. There was a second
+      version reading omiyage, a souvenir to bring home.</p>`
+  },
   samples: {
     kicker: "on the counter", title: "a plate of samples",
     html: `<p class="lede">There was always a plate out so people could taste
