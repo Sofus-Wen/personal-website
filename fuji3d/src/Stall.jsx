@@ -45,7 +45,7 @@ function Crate({ position, rotation = [0, 0, 0] }) {
   return (
     <mesh castShadow receiveShadow position={position} rotation={rotation}>
       <boxGeometry args={[0.34, 0.22, 0.26]} />
-      <meshStandardMaterial color="#c1a06a" roughness={0.95} />
+      <meshStandardMaterial color="#b98d4e" roughness={0.95} />
     </mesh>
   );
 }
@@ -88,8 +88,9 @@ function Bunting({ y, z, halfWidth, count = 19 }) {
 export default function Stall({ onOpen }) {
   const cards = useTexture("img/card-01.jpg");
   const fuji = useTexture("img/mtfuji.jpg");
-  cards.colorSpace = THREE.SRGBColorSpace;
-  fuji.colorSpace = THREE.SRGBColorSpace;
+  const wallInk = useTexture("img/wall-ink.jpg");
+  const poster = useTexture("img/poster-cards.jpg");
+  [cards, fuji, wallInk, poster].forEach((t) => (t.colorSpace = THREE.SRGBColorSpace));
 
   const COUNTER_TOP = 0.95;
   const BACK_Z = -1.5;
@@ -99,22 +100,34 @@ export default function Stall({ onOpen }) {
       {/* floor */}
       <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
         <planeGeometry args={[24, 24]} />
-        <meshStandardMaterial color="#cfc7b8" roughness={1} />
+        <meshStandardMaterial color="#b8a58c" roughness={1} />
       </mesh>
 
-      {/* back wall of the booth */}
+      {/* back wall, carrying the ink drawing from the deck */}
       <mesh receiveShadow position={[0, 1.35, BACK_Z]}>
         <boxGeometry args={[4.3, 2.7, 0.08]} />
-        <meshStandardMaterial color="#eae5db" roughness={0.95} />
+        <meshStandardMaterial color="#f2eee6" roughness={0.95} />
+      </mesh>
+      <mesh position={[0, 1.42, BACK_Z + 0.045]}>
+        <planeGeometry args={[4.16, 1.72]} />
+        <meshStandardMaterial map={wallInk} roughness={0.95} />
       </mesh>
 
       {/* side returns */}
       {[-2.15, 2.15].map((x) => (
         <mesh key={x} receiveShadow castShadow position={[x, 1.35, BACK_Z / 2]}>
           <boxGeometry args={[0.08, 2.7, 1.5]} />
-          <meshStandardMaterial color="#e2ddd2" roughness={0.95} />
+          <meshStandardMaterial color="#33553c" roughness={0.9} />
         </mesh>
       ))}
+
+      {/* the card poster, pinned on the left return */}
+      <Hot id="cards" onOpen={onOpen} lift={0} position={[-2.1, 1.5, BACK_Z / 2]}>
+        <mesh rotation={[0, Math.PI / 2, 0]}>
+          <planeGeometry args={[1.15, 0.84]} />
+          <meshStandardMaterial map={poster} roughness={0.9} />
+        </mesh>
+      </Hot>
 
       {/* the dark header board */}
       <Hot id="brand" onOpen={onOpen} lift={0} position={[0, 2.35, BACK_Z + 0.07]}>
@@ -124,8 +137,12 @@ export default function Stall({ onOpen }) {
         </mesh>
         <Text position={[0, 0.04, 0.04]} fontSize={0.17} letterSpacing={0.32} color="#f4f1e9"
               anchorX="center" anchorY="middle">FUJI</Text>
-        <Text position={[0, -0.12, 0.04]} fontSize={0.045} letterSpacing={0.28} color="#c8c3b6"
+        <Text position={[0, -0.12, 0.04]} fontSize={0.045} letterSpacing={0.28} color="#c9a227"
               anchorX="center" anchorY="middle">JAPANESE CHOCOLATES</Text>
+        <mesh position={[0, 0, 0.035]}>
+          <planeGeometry args={[3.02, 0.34]} />
+          <meshBasicMaterial color="#23241f" />
+        </mesh>
       </Hot>
 
       <Bunting y={1.95} z={BACK_Z + 0.5} halfWidth={2.0} />
@@ -158,12 +175,21 @@ export default function Stall({ onOpen }) {
       <Hot id="stall" onOpen={onOpen} lift={0} position={[0, 0, 0]}>
         <RoundedBox args={[4.3, COUNTER_TOP, 0.72]} radius={0.012} smoothness={3}
                     castShadow receiveShadow position={[0, COUNTER_TOP / 2, 0]}>
-          <meshStandardMaterial color="#efeade" roughness={0.9} />
+          <meshStandardMaterial color="#2f5237" roughness={0.94} />
         </RoundedBox>
-        <Text position={[0, 0.52, 0.37]} fontSize={0.2} color="#1d1e1c"
-              anchorX="center" anchorY="middle" font={undefined}>
+        {/* pale counter top, so the products sit on light */}
+        <mesh receiveShadow position={[0, COUNTER_TOP + 0.005, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[4.3, 0.72]} />
+          <meshStandardMaterial color="#efe9dc" roughness={0.85} />
+        </mesh>
+        <Text position={[0, 0.52, 0.371]} fontSize={0.2} color="#f0e7cd"
+              anchorX="center" anchorY="middle">
           Fuji Chocolates
         </Text>
+        <mesh position={[0, 0.3, 0.371]}>
+          <planeGeometry args={[1.9, 0.006]} />
+          <meshBasicMaterial color="#c9a227" />
+        </mesh>
       </Hot>
 
       {/* things standing on the counter */}

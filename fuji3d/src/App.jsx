@@ -11,6 +11,7 @@ function Loading() {
 
 export default function App() {
   const [open, setOpen] = useState(null);
+  const [speaking, setSpeaking] = useState(null);
 
   return (
     <>
@@ -19,10 +20,13 @@ export default function App() {
       <Canvas
         shadows
         dpr={[1, 2]}
-        camera={{ position: [0, 1.85, 4.6], fov: 42 }}
+        camera={{ position: [0, 1.9, 5.3], fov: 44 }}
         gl={{ antialias: true }}
       >
         <color attach="background" args={["#efeae1"]} />
+        <mesh position={[0, 2, -6]} onClick={() => setSpeaking(null)} visible={false}>
+          <planeGeometry args={[60, 40]} />
+        </mesh>
         <fog attach="fog" args={["#efeae1", 9, 20]} />
 
         <hemisphereLight intensity={0.55} groundColor="#c9c1b2" />
@@ -36,7 +40,7 @@ export default function App() {
 
         <Suspense fallback={<Loading />}>
           <Stall onOpen={setOpen} />
-          <People onOpen={setOpen} />
+          <People speaking={speaking} onSpeak={setSpeaking} />
           <Environment preset="city" />
         </Suspense>
 
