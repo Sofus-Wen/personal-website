@@ -41,6 +41,62 @@ function facadeTexture(tint) {
   return t;
 }
 
+/* An autorickshaw — the clearest way to say India without a caption. */
+function Rickshaw({ position, rotation = 0, scale = 1 }) {
+  return (
+    <group position={position} rotation={[0, rotation, 0]} scale={scale}>
+      {/* cabin */}
+      <mesh position={[0, 0.52, 0]}>
+        <boxGeometry args={[1.05, 0.62, 1.5]} />
+        <meshStandardMaterial color="#e8c024" roughness={0.55} />
+      </mesh>
+      {/* canopy */}
+      <mesh position={[0, 0.98, -0.1]}>
+        <boxGeometry args={[1.08, 0.34, 1.15]} />
+        <meshStandardMaterial color="#2f6b3f" roughness={0.7} />
+      </mesh>
+      {/* nose */}
+      <mesh position={[0, 0.52, 0.86]}>
+        <sphereGeometry args={[0.3, 14, 12]} />
+        <meshStandardMaterial color="#e8c024" roughness={0.55} />
+      </mesh>
+      {/* wheels: one at the front, two at the back */}
+      <mesh position={[0, 0.2, 0.92]} rotation={[0, 0, Math.PI / 2]}>
+        <cylinderGeometry args={[0.2, 0.2, 0.13, 14]} />
+        <meshStandardMaterial color="#20211f" roughness={0.85} />
+      </mesh>
+      {[-0.5, 0.5].map((x) => (
+        <mesh key={x} position={[x, 0.2, -0.55]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.2, 0.2, 0.13, 14]} />
+          <meshStandardMaterial color="#20211f" roughness={0.85} />
+        </mesh>
+      ))}
+    </group>
+  );
+}
+
+/* Palms, which the plaza was full of. */
+function Palm({ position, h = 3.1, turn = 0 }) {
+  return (
+    <group position={position} rotation={[0, turn, 0]}>
+      <mesh position={[0, h / 2, 0]} rotation={[0, 0, 0.05]}>
+        <cylinderGeometry args={[0.09, 0.14, h, 9]} />
+        <meshStandardMaterial color="#7a6a52" roughness={0.95} />
+      </mesh>
+      {Array.from({ length: 7 }).map((_, i) => {
+        const a = (i / 7) * Math.PI * 2;
+        return (
+          <mesh key={i} position={[Math.sin(a) * 0.62, h + 0.05, Math.cos(a) * 0.62]}
+                rotation={[0.62, -a, 0]}>
+            <boxGeometry args={[0.16, 0.035, 1.5]} />
+            <meshStandardMaterial color="#4c7040" roughness={0.9} />
+          </mesh>
+        );
+      })}
+    </group>
+  );
+}
+
 export default function City() {
   const { towers, skins } = useMemo(() => {
     const tints = ["#7d8ea3", "#8a99ab", "#6f8195", "#94a3b2", "#7f8fa1"];
@@ -86,6 +142,17 @@ export default function City() {
           </mesh>
         );
       })}
+
+      {/* autorickshaws waiting at the edge of the plaza */}
+      <Rickshaw position={[-5.6, 0, -8.5]} rotation={0.5} scale={1.15} />
+      <Rickshaw position={[6.2, 0, -9.5]} rotation={-0.55} scale={1.15} />
+      <Rickshaw position={[-11.8, 0, -14]} rotation={0.15} scale={1.15} />
+
+      {/* palms */}
+      <Palm position={[-6.2, 0, -4.4]} h={3.3} turn={0.4} />
+      <Palm position={[6.6, 0, -4.8]} h={3.0} turn={1.1} />
+      <Palm position={[-11.5, 0, -6.6]} h={3.6} turn={2.0} />
+      <Palm position={[12.2, 0, -6.2]} h={3.2} turn={0.8} />
 
       {/* a line of trees along the plaza, like the planting outside */}
       {Array.from({ length: 14 }).map((_, i) => {

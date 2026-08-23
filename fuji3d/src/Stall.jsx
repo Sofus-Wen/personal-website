@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useTexture, RoundedBox, Text } from "@react-three/drei";
 import * as THREE from "three";
@@ -169,7 +169,39 @@ function RollUp({ id, onOpen, map, x, z = -0.1, turn }) {
   );
 }
 
+function pavingTexture() {
+  const c = document.createElement("canvas");
+  c.width = c.height = 256;
+  const g = c.getContext("2d");
+  let seed = 4242;
+  const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+  g.fillStyle = "#7d766a";
+  g.fillRect(0, 0, 256, 256);
+  // slabs, each very slightly its own shade
+  const n = 4, size = 256 / n;
+  for (let y = 0; y < n; y++) {
+    for (let x = 0; x < n; x++) {
+      const v = 118 + Math.floor(rnd() * 24);
+      g.fillStyle = `rgb(${v},${v - 4},${v - 12})`;
+      g.fillRect(x * size + 1.5, y * size + 1.5, size - 3, size - 3);
+    }
+  }
+  // joints
+  g.strokeStyle = "rgba(58,54,48,.7)";
+  g.lineWidth = 2;
+  for (let i = 0; i <= n; i++) {
+    g.beginPath(); g.moveTo(i * size, 0); g.lineTo(i * size, 256); g.stroke();
+    g.beginPath(); g.moveTo(0, i * size); g.lineTo(256, i * size); g.stroke();
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.repeat.set(26, 26);
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+
 export default function Stall({ onOpen, onSpeaker, playing }) {
+  const paving = useMemo(pavingTexture, []);
   const cards = useTexture("img/card-01.jpg");
   const fuji = useTexture("img/mtfuji.jpg");
   const wallInk = useTexture("img/wall-ink.jpg");
@@ -190,7 +222,7 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       {/* floor */}
       <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
         <planeGeometry args={[160, 160]} />
-        <meshStandardMaterial color="#9c9a94" roughness={0.95} />
+        <meshStandardMaterial map={paving} roughness={0.92} />
       </mesh>
 
       {/* back wall, carrying the ink drawing from the deck */}
@@ -241,22 +273,22 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       <Speaker onSpeaker={onSpeaker} playing={playing} z={BACK_Z + 0.2} />
 
       {/* the roll-up banner, standing to the right of the stall */}
-      <RollUp id="poster" onOpen={onOpen} map={standPoster} x={2.62} z={0.35} turn={-0.42} />
+      <RollUp id="poster" onOpen={onOpen} map={standPoster} x={3.35} z={0.5} turn={-0.5} />
 
-      {/* the four photos pinned on the back wall */}
+      {/* the four photos, one row across the wall */}
       {[
-        ["mtfuji", fuji, -1.86, 1.2, 0.5],
-        ["jp-lawson", jpLawson, -1.3, 1.2, 0.5],
-        ["jp-falls", jpFalls, -1.86, 1.63, 0.5],
-        ["jp-akihabara", jpAkiba, -1.3, 1.63, 0.5],
-      ].map(([key, tex, x, y, w]) => (
-        <Hot key={key} id="ending" onOpen={onOpen} lift={0} position={[x, y, BACK_Z + 0.06]}>
+        ["mtfuji", fuji, -1.62],
+        ["jp-lawson", jpLawson, -0.88],
+        ["jp-falls", jpFalls, -0.14],
+        ["jp-akihabara", jpAkiba, 0.60],
+      ].map(([key, tex, x]) => (
+        <Hot key={key} id="ending" onOpen={onOpen} lift={0} position={[x, 1.46, BACK_Z + 0.06]}>
           <mesh castShadow>
-            <boxGeometry args={[w + 0.05, w / 1.5 + 0.05, 0.025]} />
+            <boxGeometry args={[0.62, 0.44, 0.022]} />
             <meshStandardMaterial color="#fffdf8" roughness={0.9} />
           </mesh>
-          <mesh position={[0, 0, 0.016]}>
-            <planeGeometry args={[w, w / 1.5]} />
+          <mesh position={[0, 0, 0.014]}>
+            <planeGeometry args={[0.56, 0.38]} />
             <meshBasicMaterial map={tex} toneMapped={false} />
           </mesh>
         </Hot>
@@ -281,7 +313,7 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       </Hot>
 
       {/* things standing on the counter */}
-      <Hot id="supply" onOpen={onOpen} position={[-1.72, COUNTER_TOP, 0.02]}>
+      <Hot id="supply" onOpen={onOpen} position={[-1.95, COUNTER_TOP, 0.06]}>
         <Crate position={[0, 0.11, 0]} />
         <Crate position={[0.06, 0.33, -0.03]} rotation={[0, 0.22, 0]} />
       </Hot>

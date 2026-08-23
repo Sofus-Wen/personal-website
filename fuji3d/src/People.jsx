@@ -11,13 +11,13 @@ import Mii from "./Mii.jsx";
 export const TEAM = [
   {
     id: "sofus", name: "Sofus", where: "behind",
-    position: [-0.55, 0, -0.75], rotation: [0, 0.12, 0], scale: 1,
+    position: [-0.55, 0, -0.75], rotation: [0, 0.12, 0], scale: 1.16, scale: 1,
     look: { skin: "#f0c8a8", hair: "#3a2b21", hairStyle: "curly", glasses: false, shirt: "#1f3b2c", brow: 0.10, mouth: 1.0 },
     line: "while i was living in japan, i met this old craftsman making chocolates with a view of mount fuji. i came back to india & thought… we should make them too.",
   },
   {
     id: "pablo", name: "Pablo", where: "behind",
-    position: [0.55, 0, -0.8], rotation: [0, -0.16, 0], scale: 1,
+    position: [0.55, 0, -0.8], rotation: [0, -0.16, 0], scale: 1.16, scale: 1,
     look: { skin: "#e8b98f", hair: "#241a14", hairStyle: "swoop", glasses: false, shirt: "#b8452f", brow: -0.22, mouth: 1.35 },
     line: "you won’t believe this. this morning i climbed mount fuji myself & picked the black sesame, yuzu & matcha fresh from the mountain. then i flew straight back here so we could make these today.",
   },
