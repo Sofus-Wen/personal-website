@@ -1,30 +1,17 @@
 export const OPENING =
   "basically learning to read & rewrite the software running in your head.";
 
-/* Grouped like the AI page: the context sentence stands on its own, then the
-   names sit tight together underneath. The stack puts the air between them. */
-export const INTRO = [
+/* One block, same as the projects block on /ai: the lead-in sits tight
+   against the names it introduces. */
+export const BODY = [
+  { key: "spring", name: "in spring 2023, I went deep into it." },
+  { key: "lead-in", name: "I met three crazy people:" },
   {
-    key: "spring",
-    name: "in spring 2023, I went pretty deep into it and met three crazy people:",
-  },
-];
-
-export const PEOPLE = [
-  {
-    name: "Richard Bandler",
-    desc: "co-created NLP.",
-  },
-  {
-    key: "bandler-more",
-    name: "learned persuasion engineering & neuro-hypnotic repatterning from him.",
-  },
-  {
-    name: "John La Valle",
-    desc: "Bandler’s longtime collaborator.",
+    name: "Richard Bandler & John La Valle",
+    desc: "learned hypnosis & how to sell.",
   },
   {
     name: "Joseph Riggio",
-    desc: "spent part of that summer learning from him.",
+    desc: "learned you can rewrite the story you’re living in.",
   },
 ];
