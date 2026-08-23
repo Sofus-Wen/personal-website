@@ -16,7 +16,11 @@ export const BODY = [
         text: "Richard Bandler",
         href: "https://www.youtube.com/watch?v=MPw1An3fWkQ&list=PLDC3160AC8732D4D7",
       },
-      " & John La Valle",
+      " & ",
+      {
+        text: "John La Valle",
+        href: "https://www.youtube.com/watch?v=dOcWFCeM6CI",
+      },
     ],
     desc: "learned hypnosis & how to sell.",
   },
