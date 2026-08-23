@@ -23,7 +23,7 @@ export const CONTENT = {
       views, so the marketing was founder-led from the start. We never paid
       for reach — we filmed what we were doing and pointed people at the
       table.</p>`,
-    grid: ["img/popup.jpg","img/stand-rack.jpg","img/stall.jpg","img/shelf-real.jpg"]
+    grid: ["img/popup.jpg","img/stall.jpg"]
   },
   brand: {
     kicker: "the brand", title: "FUJI · japanese chocolates",
@@ -101,11 +101,12 @@ export const CONTENT = {
   },
   retail: {
     kicker: "distribution", title: "getting on a shelf",
-    img: "img/shelf.jpg",
+    img: "img/shelf-real.jpg",
     html: `<p class="lede">We walked into stores and pitched until somebody said
       yes.</p>
       <p>That's Fuji sitting between Lindt and Cadbury — three facings, in a
-      store that had never stocked a Japanese chocolate before.</p>`
+      store that had never stocked a Japanese chocolate before.</p>`,
+    grid: ["img/shelf.jpg","img/stand-rack.jpg"]
   },
   pitch: {
     kicker: "the pitch", title: "₹1,70,000, declined",

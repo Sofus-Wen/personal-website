@@ -1,6 +1,7 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, ContactShadows } from "@react-three/drei";
+import { EffectComposer, DepthOfField } from "@react-three/postprocessing";
 import Stall from "./Stall.jsx";
 import City from "./City.jsx";
 import Sky from "./Sky.jsx";
@@ -53,11 +54,22 @@ export default function App() {
 
         <ContactShadows position={[0, 0.001, 0]} opacity={0.42} scale={14} blur={2.2} far={4} />
 
+        {/* focus sits on the counter, so whoever walks past in front goes
+            soft and the towers behind fall away */}
+        <EffectComposer disableNormalPass multisampling={4}>
+          <DepthOfField
+            target={[0, 1.1, 0]}
+            focalLength={0.022}
+            bokehScale={3.4}
+            height={640}
+          />
+        </EffectComposer>
+
         <OrbitControls
           target={[0, 1.1, 0]}
           enablePan={false}
-          minDistance={2.6}
-          maxDistance={11}
+          minDistance={1.3}
+          maxDistance={24}
           minPolarAngle={0.5}
           maxPolarAngle={Math.PI / 2.12}
           minAzimuthAngle={-Math.PI / 2.6}

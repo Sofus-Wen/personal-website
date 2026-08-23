@@ -25,9 +25,12 @@ function Walker({ z, speed, from, look, scale = 1 }) {
     const range = SPAN * 2;
     x = ((((x + SPAN) % range) + range) % range) - SPAN;
     g.current.position.x = x;
-    // a small bob and sway, so they read as walking rather than sliding
-    g.current.position.y = Math.abs(Math.sin(t * speed * 6)) * 0.035;
-    g.current.rotation.z = Math.sin(t * speed * 6) * 0.02;
+    // Gait tied to |speed| so direction doesn't invert the rhythm, and a
+    // smooth sine rather than an abs() — that kink was the jerk in the walk.
+    const gait = t * Math.abs(speed) * 5.2;
+    g.current.position.y = 0.022 + Math.sin(gait) * 0.022;
+    g.current.rotation.z = Math.sin(gait * 0.5) * 0.022;
+    g.current.rotation.x = Math.sin(gait) * 0.012;
   });
   return (
     <group ref={g} position={[from, 0, z]} scale={scale}

@@ -332,7 +332,7 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
 
       {/* the plate of samples */}
       <Hot id="samples" onOpen={onOpen} position={[0.62, COUNTER_TOP, 0.12]}>
-        <mesh castShadow position={[0, 0.012, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <mesh castShadow position={[0, 0.012, 0]}>
           <cylinderGeometry args={[0.15, 0.15, 0.018, 40]} />
           <meshStandardMaterial color="#f6f2e8" roughness={0.5} />
         </mesh>
