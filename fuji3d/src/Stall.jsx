@@ -189,8 +189,8 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
     <group>
       {/* floor */}
       <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
-        <planeGeometry args={[24, 24]} />
-        <meshStandardMaterial color="#b8a58c" roughness={1} />
+        <planeGeometry args={[160, 160]} />
+        <meshStandardMaterial color="#9c9a94" roughness={0.95} />
       </mesh>
 
       {/* back wall, carrying the ink drawing from the deck */}

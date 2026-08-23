@@ -2,6 +2,8 @@ import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, ContactShadows, Html } from "@react-three/drei";
 import Stall from "./Stall.jsx";
+import City from "./City.jsx";
+import Sky from "./Sky.jsx";
 import People from "./People.jsx";
 import Panel from "./Panel.jsx";
 import MusicPlayer from "./MusicPlayer.jsx";
@@ -26,11 +28,11 @@ export default function App() {
         camera={{ position: [0, 1.9, 5.8], fov: 44 }}
         gl={{ antialias: true }}
       >
-        <color attach="background" args={["#efeae1"]} />
+        <color attach="background" args={["#cdd8e2"]} />
         <mesh position={[0, 2, -6]} onClick={() => setSpeaking(null)} visible={false}>
           <planeGeometry args={[60, 40]} />
         </mesh>
-        <fog attach="fog" args={["#efeae1", 9, 20]} />
+        <fog attach="fog" args={["#d6dfe6", 20, 95]} />
 
         <hemisphereLight intensity={0.55} groundColor="#c9c1b2" />
         <directionalLight
@@ -42,6 +44,8 @@ export default function App() {
         <directionalLight position={[-4, 3, -2]} intensity={0.35} />
 
         <Suspense fallback={<Loading />}>
+          <Sky />
+          <City />
           <Stall onOpen={setOpen} onSpeaker={() => setMusic((m) => !m)} playing={playing} />
           <People speaking={speaking} onSpeak={setSpeaking} />
           <Environment preset="city" />

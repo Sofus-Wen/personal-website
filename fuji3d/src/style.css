@@ -10,11 +10,13 @@ body{background:var(--paper);color:var(--ink);
 canvas{display:block;touch-action:none}
 
 .nudge{position:fixed;top:0;left:0;right:0;z-index:3;text-align:center;
-  color:var(--muted);font-size:12.5px;letter-spacing:.14em;padding:22px 16px 0;margin:0;
-  pointer-events:none}
+  color:#2b3038;font-size:12.5px;letter-spacing:.14em;padding:22px 16px 0;margin:0;
+  pointer-events:none;
+  text-shadow:0 1px 10px rgba(255,255,255,.9), 0 0 3px rgba(255,255,255,.95)}
 .foot{position:fixed;bottom:0;left:0;right:0;z-index:3;text-align:center;
-  color:var(--muted);font-size:12px;letter-spacing:.05em;padding:0 16px 18px;margin:0;
-  pointer-events:none}
+  color:#2b3038;font-size:12px;letter-spacing:.05em;padding:0 16px 18px;margin:0;
+  pointer-events:none;
+  text-shadow:0 1px 10px rgba(255,255,255,.9), 0 0 3px rgba(255,255,255,.95)}
 .loading{color:var(--muted);font-size:13px;letter-spacing:.1em;white-space:nowrap}
 
 .scrim{position:fixed;inset:0;background:rgba(20,20,18,.36);opacity:0;pointer-events:none;
