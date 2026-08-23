@@ -1,9 +1,18 @@
 import { useMemo } from "react";
 import * as THREE from "three";
 
-/* A soft white halo behind a clickable thing, so you can tell what's live.
-   Faint at rest, brighter under the cursor. A sprite rather than an outline
-   shell, because the things it sits behind are all different shapes. */
+/* A soft white halo marking something clickable.
+
+   Two modes, and the distinction matters:
+
+   - `flat` renders a plane that sits in the same plane as the thing it backs,
+     so it stays aligned however the object is turned. Use it for anything
+     flat: the posters, the board, the counter front, the photos.
+   - the default renders a billboard sprite, always square, for things with
+     volume like the people. A sprite is the wrong tool for a flat object —
+     it always faces the camera, so once the object is angled the halo reads
+     as pointing the wrong way, and stretching it makes that worse. */
+
 let shared = null;
 function haloTexture() {
   if (shared) return shared;
@@ -21,15 +30,41 @@ function haloTexture() {
   return shared;
 }
 
-export default function Glow({ size = 0.6, height, lit = false, position = [0, 0, 0] }) {
+export default function Glow({
+  size = 0.6,
+  height,
+  lit = false,
+  position = [0, 0, 0],
+  rotation = [0, 0, 0],
+  flat = false,
+}) {
   const tex = useMemo(haloTexture, []);
+  const opacity = lit ? 0.75 : 0.15;
+
+  if (flat) {
+    return (
+      <mesh position={position} rotation={rotation} renderOrder={-1}>
+        <planeGeometry args={[size, height ?? size]} />
+        <meshBasicMaterial
+          map={tex}
+          transparent
+          depthWrite={false}
+          opacity={opacity}
+          blending={THREE.AdditiveBlending}
+          side={THREE.DoubleSide}
+        />
+      </mesh>
+    );
+  }
+
+  // billboard: kept square, so it never skews
   return (
-    <sprite position={position} scale={[size, height ?? size, 1]} renderOrder={-1}>
+    <sprite position={position} scale={[size, size, 1]} renderOrder={-1}>
       <spriteMaterial
         map={tex}
         transparent
         depthWrite={false}
-        opacity={lit ? 0.75 : 0.15}
+        opacity={opacity}
         blending={THREE.AdditiveBlending}
       />
     </sprite>

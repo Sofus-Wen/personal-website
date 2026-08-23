@@ -48,11 +48,13 @@ export const TEAM = [
 function Coupon({ onOpen }) {
   const tex = useTexture("img/coupon.jpg");
   tex.colorSpace = THREE.SRGBColorSpace;
+  const [hover, setHover] = useState(false);
   return (
     <group
-      position={[0.34, 0.66, 0.16]} rotation={[-0.45, 0.42, 0.3]}
-      onPointerOver={(e) => { e.stopPropagation(); document.body.style.cursor = "pointer"; }}
-      onPointerOut={() => (document.body.style.cursor = "auto")}
+      position={[0.34, 0.66 + (hover ? 0.035 : 0), 0.16]}
+      rotation={[-0.45, 0.42, 0.3]}
+      onPointerOver={(e) => { e.stopPropagation(); setHover(true); document.body.style.cursor = "pointer"; }}
+      onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}
       onClick={(e) => { e.stopPropagation(); onOpen("coupon"); }}
     >
       {/* A generous target — the card alone is a hard thing to hit. It has to
@@ -62,7 +64,8 @@ function Coupon({ onOpen }) {
         <boxGeometry args={[0.34, 0.42, 0.18]} />
         <meshBasicMaterial transparent opacity={0} depthWrite={false} />
       </mesh>
-      <Glow size={0.42} lit={false} position={[0, 0, -0.02]} />
+      {/* flat and inside the card's own rotated group, so it stays square on */}
+      <Glow size={0.3} height={0.4} lit={hover} flat position={[0, 0, -0.012]} />
       <mesh castShadow>
         <boxGeometry args={[0.2, 0.285, 0.005]} />
         <meshStandardMaterial color="#f6eef1" roughness={0.85} />

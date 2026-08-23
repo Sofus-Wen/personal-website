@@ -7,7 +7,7 @@ import Glow from "./Glow.jsx";
 /* Every clickable thing in the scene wraps in this: it handles the hover
    lift, the pointer cursor and firing the panel open. */
 function Hot({ id, onOpen, children, lift = 0.03, position = [0, 0, 0],
-              glow = 0.62, glowH, glowAt }) {
+              glow = 0.62, glowH, glowAt, glowFlat = false, glowRot }) {
   const [hover, setHover] = useState(false);
   const g = useRef();
   return (
@@ -19,7 +19,8 @@ function Hot({ id, onOpen, children, lift = 0.03, position = [0, 0, 0],
       onClick={(e) => { e.stopPropagation(); onOpen(id); }}
     >
       {glow > 0 && (
-        <Glow size={glow} height={glowH} lit={hover}
+        <Glow size={glow} height={glowH} lit={hover} flat={glowFlat}
+              rotation={glowRot ?? [0, 0, 0]}
               position={glowAt ?? [0, glow * 0.28, -0.02]} />
       )}
       {children}
@@ -118,7 +119,7 @@ function Speaker({ onSpeaker, playing, x, z }) {
         <boxGeometry args={[0.035, 0.42, 0.035]} />
         <meshStandardMaterial color="#3a3d42" roughness={0.5} metalness={0.4} />
       </mesh>
-      <Glow size={0.62} lit={hover} position={[0, 0, 0.14]} />
+      <Glow size={0.5} height={0.62} lit={hover} flat position={[0, 0, 0.13]} />
       <mesh castShadow onClick={(e) => { e.stopPropagation(); onSpeaker(); }}
             onPointerOver={(e) => { e.stopPropagation(); setHover(true); document.body.style.cursor = "pointer"; }}
             onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}>
@@ -148,7 +149,7 @@ function RollUp({ id, onOpen, map, x, z = -0.1, turn }) {
       onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}
       onClick={(e) => { e.stopPropagation(); onOpen(id); }}
     >
-      <Glow size={1.5} height={2.3} lit={hover} position={[0, 0.95, 0.06]} />
+      <Glow size={1.18} height={1.95} lit={hover} flat position={[0, 0.95, 0.02]} />
       {/* cassette base with feet */}
       <mesh castShadow receiveShadow position={[0, 0.055, 0]}>
         <boxGeometry args={[1.0, 0.11, 0.26]} />
@@ -236,7 +237,7 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       {/* floor */}
       <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
         <planeGeometry args={[160, 160]} />
-        <meshStandardMaterial map={paving} roughness={0.92} />
+        <meshStandardMaterial color="#eeece6" roughness={0.95} />
       </mesh>
 
       {/* back wall, carrying the ink drawing from the deck */}
@@ -259,7 +260,8 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
 
       {/* the card poster, pinned on the left return */}
       <Hot id="cards" onOpen={onOpen} lift={0} position={[-2.1, 1.5, BACK_Z / 2]}
-           glow={1.5} glowH={1.15} glowAt={[0.05, 0, 0]}>
+           glow={1.45} glowH={1.1} glowAt={[0.04, 0, 0]} glowFlat
+           glowRot={[0, Math.PI / 2, 0]}>
         <mesh rotation={[0, Math.PI / 2, 0]}>
           <planeGeometry args={[1.15, 0.84]} />
           <meshStandardMaterial map={poster} roughness={0.9} />
@@ -268,7 +270,7 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
 
       {/* the dark header board */}
       <Hot id="brand" onOpen={onOpen} lift={0} position={[0, 2.35, BACK_Z + 0.07]}
-           glow={3.5} glowH={1.0} glowAt={[0, 0, -0.05]}>
+           glow={3.7} glowH={0.95} glowAt={[0, 0, -0.04]} glowFlat>
         <mesh castShadow>
           <boxGeometry args={[3.1, 0.42, 0.06]} />
           <meshStandardMaterial color="#23241f" roughness={0.7} />
@@ -296,7 +298,8 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
         ["jp-falls", jpFalls, -0.14],
         ["jp-akihabara", jpAkiba, 0.60],
       ].map(([key, tex, x]) => (
-        <Hot key={key} id="ending" onOpen={onOpen} lift={0} position={[x, 1.46, BACK_Z + 0.06]}>
+        <Hot key={key} id="ending" onOpen={onOpen} lift={0} position={[x, 1.46, BACK_Z + 0.06]}
+             glow={0.84} glowH={0.66} glowAt={[0, 0, -0.03]} glowFlat>
           <mesh castShadow>
             <boxGeometry args={[0.62, 0.44, 0.022]} />
             <meshStandardMaterial color="#fffdf8" roughness={0.9} />
@@ -310,7 +313,7 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
 
       {/* the counter */}
       <Hot id="stall" onOpen={onOpen} lift={0} position={[0, 0, 0]}
-           glow={4.6} glowH={1.5} glowAt={[0, 0.5, 0.4]}>
+           glow={3.6} glowH={0.78} glowAt={[0, 0.44, 0.375]} glowFlat>
         <RoundedBox args={[4.3, COUNTER_TOP, 0.72]} radius={0.012} smoothness={3}
                     castShadow receiveShadow position={[0, COUNTER_TOP / 2, 0]}>
           <meshStandardMaterial color="#1e2a44" roughness={0.94} />
