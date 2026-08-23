@@ -9,7 +9,7 @@ import * as THREE from "three";
      so it stays aligned however the object is turned. Use it for anything
      flat: the posters, the board, the counter front, the photos.
    - the default renders a billboard sprite, always square, for things with
-     volume like the people. A sprite is the wrong tool for a flat object —
+     volume like the people. A sprite is the wrong tool for a flat object,
      it always faces the camera, so once the object is angled the halo reads
      as pointing the wrong way, and stretching it makes that worse. */
 

@@ -44,7 +44,7 @@ function lines(html) {
 
 const files = htmlFiles(DIST);
 if (!files.length) {
-  console.error("no built pages found — run `npm run build:check` first");
+  console.error("no built pages found, run `npm run build:check` first");
   process.exit(1);
 }
 
@@ -57,11 +57,11 @@ for (const file of files) {
 }
 
 if (tooLong.length) {
-  console.error(`\n${tooLong.length} line(s) over ${MAX_CHARS} chars — these wrap on desktop:\n`);
+  console.error(`\n${tooLong.length} line(s) over ${MAX_CHARS} chars, these wrap on desktop:\n`);
   for (const { route, len, line } of tooLong) {
     console.error(`  ${route}  (${len})\n    ${line}\n`);
   }
   process.exit(1);
 }
 
-console.log(`lines ok — ${files.length} pages, none over ${MAX_CHARS} chars`);
+console.log(`lines ok, ${files.length} pages, none over ${MAX_CHARS} chars`);

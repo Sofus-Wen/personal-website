@@ -1,5 +1,5 @@
 /* The stall. Click a thing, read what it was. Everything here is drawn from
-   the deck, the packaging files and the photos — nothing invented. */
+   the deck, the packaging files and the photos, nothing invented. */
 
 const CARDS = [
   ["card-01","Tokyo Tower","Metal Of Tanks"],
@@ -28,7 +28,7 @@ const CONTENT = {
     kicker: "the brand", title: "FUJI · japanese chocolates",
     html: `<p class="lede">Japanese flavours, made in India. The name was the
       mountain, and everything else followed from that.</p>
-      <p>The packaging went through two full generations before we were happy —
+      <p>The packaging went through two full generations before we were happy,
       the first carried a FUJI wordmark in gold, the second dropped it for a
       kamon crest and the flavour written in Japanese.</p>`,
     two: [["img/old-matcha.jpg","first generation"],["img/bar-matcha.jpg","second"]]
@@ -56,7 +56,7 @@ const CONTENT = {
     two:[["img/old-yuzu.jpg","first design"],["img/bar-yuzu.jpg","final"]] },
   cards: {
     kicker: "inside every bar", title: "ten places, one at a time",
-    html: `<p class="lede">Every bar carried a collectable card — a place in
+    html: `<p class="lede">Every bar carried a collectable card, a place in
       Japan, a name we gave it, and a number out of ten. You couldn't pick
       which one you got.</p>
       <p>Cheapest thing we made, and the reason people bought a second bar.</p>`,
@@ -76,7 +76,7 @@ const CONTENT = {
   popups: {
     kicker: "out front", title: "stopping people",
     img: "img/popup.jpg",
-    html: `<p class="lede">Three of us worked the front — handing out samples,
+    html: `<p class="lede">Three of us worked the front, handing out samples,
       explaining what yuzu was, and getting people to stand still long enough
       to try one.</p>
       <p>Pop-ups and direct sales carried the business before any shop did.</p>`
@@ -86,7 +86,7 @@ const CONTENT = {
     img: "img/shelf.jpg",
     html: `<p class="lede">We walked into stores and pitched until somebody said
       yes.</p>
-      <p>That's Fuji sitting between Lindt and Cadbury — three facings, in a
+      <p>That's Fuji sitting between Lindt and Cadbury, three facings, in a
       store that had never stocked a Japanese chocolate before.</p>`
   },
   pitch: {
@@ -94,8 +94,8 @@ const CONTENT = {
     img: "img/cheque.jpg",
     html: `<p class="lede">We pitched Fuji at the Brand Wars grand final and were
       offered ₹1,70,000 to keep going.</p>
-      <p>We didn't take it. The business worked — the numbers were there, the
-      shelf was there — but my heart wasn't in it, and taking someone's money to
+      <p>We didn't take it. The business worked, the numbers were there, the
+      shelf was there, but my heart wasn't in it, and taking someone's money to
       run a thing I didn't want to run seemed like the wrong trade.</p>
       <p>We stopped at the end of the semester.</p>`
   },

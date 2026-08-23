@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import * as THREE from "three";
 
-/* Glass towers behind the stall — the DLF Cyber Park sort of view. Built from
+/* Glass towers behind the stall, the DLF Cyber Park sort of view. Built from
    boxes like everything else here, so it costs nothing and gives real parallax
    when you orbit. Layout is seeded, not random, so it looks the same every
    load. */
@@ -41,7 +41,7 @@ function facadeTexture(tint) {
   return t;
 }
 
-/* An autorickshaw — the clearest way to say India without a caption. */
+/* An autorickshaw, the clearest way to say India without a caption. */
 function Rickshaw({ position, rotation = 0, scale = 1 }) {
   return (
     <group position={position} rotation={[0, rotation, 0]} scale={scale}>

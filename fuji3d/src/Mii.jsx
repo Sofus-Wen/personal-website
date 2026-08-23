@@ -6,7 +6,7 @@ import { RoundedBox } from "@react-three/drei";
 
 function Hair({ style, colour, r }) {
   if (style === "curly") {
-    /* Lumps placed on the surface of the skull rather than offset by hand —
+    /* Lumps placed on the surface of the skull rather than offset by hand,
        the earlier version sat them inside the head, so it read as bald.
        Each entry is [azimuth, elevation, size]. */
     const dirs = [
@@ -45,7 +45,7 @@ function Hair({ style, colour, r }) {
       </group>
     );
   }
-  // "short" — a neat cap that clearly reads as hair
+  // "short", a neat cap that clearly reads as hair
   return (
     <group>
       <mesh castShadow position={[0, r * 0.1, -r * 0.02]} scale={[1.06, 0.95, 1.06]}>
@@ -89,7 +89,7 @@ function Face({ r, brow, mouth }) {
           <meshStandardMaterial color="#241f1c" roughness={0.4} />
         </mesh>
       ))}
-      {/* eyebrows — angle carries most of the expression */}
+      {/* eyebrows, angle carries most of the expression */}
       {[-1, 1].map((s) => (
         <mesh key={s} position={[s * r * 0.34, r * 0.28, z * 0.99]}
               rotation={[0, 0, s * brow]}>

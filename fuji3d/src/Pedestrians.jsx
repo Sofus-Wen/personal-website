@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import Mii from "./Mii.jsx";
 
-/* People crossing the plaza in front of the stall. Not clickable — they're
+/* People crossing the plaza in front of the stall. Not clickable, they're
    passers-by, and the stall's own five are the ones with something to say. */
 const WALKERS = [
   { z: 2.75, speed: 0.5,  from: -5, scale: 0.8,
@@ -26,7 +26,7 @@ function Walker({ z, speed, from, look, scale = 1 }) {
     x = ((((x + SPAN) % range) + range) % range) - SPAN;
     g.current.position.x = x;
     // Gait tied to |speed| so direction doesn't invert the rhythm, and a
-    // smooth sine rather than an abs() — that kink was the jerk in the walk.
+    // smooth sine rather than an abs(), that kink was the jerk in the walk.
     const gait = t * Math.abs(speed) * 5.2;
     g.current.position.y = 0.022 + Math.sin(gait) * 0.022;
     g.current.rotation.z = Math.sin(gait * 0.5) * 0.022;

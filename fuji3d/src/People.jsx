@@ -6,7 +6,7 @@ import Mii from "./Mii.jsx";
 
 /* The five of us. Two worked behind the counter, three worked the front.
    Clicking someone pops their line above their head rather than opening the
-   side panel — the pitch was a spoken thing, so it reads better spoken.
+   side panel, the pitch was a spoken thing, so it reads better spoken.
 
    The looks are my guesses from the photos: hair, glasses and shirt colour
    are placeholders until Sofus says who actually looked like what. */
@@ -57,7 +57,7 @@ function Coupon({ onOpen }) {
       onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}
       onClick={(e) => { e.stopPropagation(); onOpen("coupon"); }}
     >
-      {/* A generous target — the card alone is a hard thing to hit. It has to
+      {/* A generous target, the card alone is a hard thing to hit. It has to
           be transparent rather than visible={false}, because three.js skips
           invisible objects when raycasting. */}
       <mesh>

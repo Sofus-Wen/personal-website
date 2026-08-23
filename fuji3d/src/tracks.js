@@ -1,6 +1,6 @@
 /* What played at the stand, in the order the files were downloaded.
 
-   Titles come from the filenames — none of these had ID3 tags, so an artist
+   Titles come from the filenames, none of these had ID3 tags, so an artist
    is only listed where the filename actually named one. Audio is 96kbps and
    only fetched when you press play, never on page load.
 */

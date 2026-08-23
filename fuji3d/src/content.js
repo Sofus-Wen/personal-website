@@ -19,7 +19,7 @@ export const CONTENT = {
       stopping people as they walked past.</p>
       <p>The bunting, the board and the folding table went up and came down
       again every time. This is where almost all of it was sold.</p>`,
-    grid: ["img/popup.jpg","img/stall.jpg","img/popup-counter.jpg"]
+    grid: ["img/popup.jpg","img/popup-counter.jpg","img/stall.jpg"]
   },
   brand: {
     kicker: "the brand", title: "FUJI · japanese chocolates",
@@ -27,13 +27,13 @@ export const CONTENT = {
       mountain, and everything else followed from that.</p>
       <p>Navy, gold and white, with the flavour set in a serif down the front.
       That's the one that shipped and the one on the table.</p>
-      <p>We designed a second generation later — a kamon crest, the flavour in
-      Japanese — and never released it. It's here as a curiosity, not as the
+      <p>We designed a second generation later: a kamon crest, the flavour in
+      Japanese. We never released it. It's here as a curiosity, not as the
       product.</p>`,
     two: [["img/old-matcha.jpg","what we sold"],["img/bar-matcha.jpg","the redesign, never released"]]
   },
   supply: {
-    kicker: "inventory", title: "made outside Delhi",
+    kicker: "inventory", title: "ingredients from Japan, made in Delhi",
     img: "img/packed.jpg",
     html: `<p class="lede">We wrote the recipes ourselves and found a small
       manufacturer in India to produce them, importing the matcha, yuzu and
@@ -56,7 +56,7 @@ export const CONTENT = {
   poster: {
     kicker: "outside the pop up", title: "いただきます",
     img: "img/stall-poster.jpg",
-    html: `<p class="lede">This stood on the pavement outside the table —
+    html: `<p class="lede">This stood on the pavement outside the table:
       torn paper, a slab of matcha chocolate, and one word.</p>
       <p>Itadakimasu: what you say in Japan before you eat. There was a second
       version reading omiyage, a souvenir to bring home.</p>`
@@ -66,11 +66,11 @@ export const CONTENT = {
     html: `<p class="lede">There was always a plate out so people could taste
       everything before buying.</p>
       <p>It did more work than any of our five sales pitches. Black sesame in
-      particular — nobody bought it until they'd tried it.</p>`
+      particular: nobody bought it until they'd tried it.</p>`
   },
   cards: {
     kicker: "inside every bar", title: "collectable cards: ten sacred places",
-    html: `<p class="lede">Every bar carried a collectable card — a place in
+    html: `<p class="lede">Every bar carried a collectable card: a place in
       Japan, a name we gave it, and a number out of ten. You couldn't pick
       which one you got.</p>
       <p>Cheapest thing we made, and the reason people bought a second bar.</p>`,
@@ -82,15 +82,14 @@ export const CONTENT = {
     figs: [["₹5,08,800","revenue"],["₹2,07,053","net profit"],
            ["54.6%","gross margin"],["43%","net margin"],
            ["₹400","selling price"],["₹185","average COGS"]],
-    after: `<p>Highest-revenue team in our TETR cohort, over about two months.
-      The market we were aiming at was ₹2,700 CR of premium chocolate in India,
+    after: `<p>The market we were aiming at was ₹2,700 CR of premium chocolate in India,
       projected to ₹3,990 CR by 2031, with Japanese food imports up 400%
       between 2020 and 2024.</p>`
   },
   popups: {
     kicker: "out front", title: "stopping people",
     img: "img/popup.jpg",
-    html: `<p class="lede">Three of us worked the front — handing out samples,
+    html: `<p class="lede">Three of us worked the front, handing out samples,
       explaining what yuzu was, and getting people to stand still long enough
       to try one.</p>
       <p>Pop-ups and direct sales carried the business before any shop did.</p>`
@@ -100,7 +99,7 @@ export const CONTENT = {
     img: "img/shelf-real.jpg",
     html: `<p class="lede">We walked into stores and pitched until somebody said
       yes.</p>
-      <p>That's Fuji sitting between Lindt and Cadbury — three facings, in a
+      <p>That's Fuji sitting between Lindt and Cadbury: three facings, in a
       store that had never stocked a Japanese chocolate before.</p>`,
     grid: ["img/shelf.jpg","img/stand-rack.jpg"]
   },
@@ -109,8 +108,8 @@ export const CONTENT = {
     img: "img/cheque.jpg",
     html: `<p class="lede">We pitched Fuji at the Brand Wars grand final and were
       offered ₹1,70,000 to keep going.</p>
-      <p>We didn't take it. The business worked — the numbers were there, the
-      shelf was there — but my heart wasn't in it, and taking someone's money to
+      <p>We didn't take it. The business worked. The numbers were there and the
+      shelf was there. But my heart wasn't in it, and taking someone's money to
       run a thing I didn't want to run seemed like the wrong trade.</p>
       <p>We stopped at the end of the semester.</p>`
   },
@@ -126,8 +125,8 @@ export const CONTENT = {
   coupon: {
     kicker: "in krishna's hand", title: "₹50 off, valentine's day",
     img: "img/coupon.jpg",
-    html: `<p class="lede">The pop up ran over valentine's — the bunting strung
-      above the cart said so — so we printed a coupon. ₹50 off.</p>
+    html: `<p class="lede">The pop up ran over valentine's. The bunting strung
+      above the cart said so. So we printed a coupon. ₹50 off.</p>
       <p>Krishna was the one actually trying to close a sale, so this is the
       right hand for it.</p>`
   },

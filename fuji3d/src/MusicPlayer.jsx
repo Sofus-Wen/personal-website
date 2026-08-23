@@ -77,13 +77,13 @@ export default function MusicPlayer({ open, onClose, playing, setPlaying }) {
   return (
     <div className="player">
       <div className="player-top">
-        <span className="player-title">♪ music playing at our pop up</span>
+        <span className="player-title">♪ music at our pop up</span>
         <button className="player-x" onClick={onClose} aria-label="Close">×</button>
       </div>
 
       {TRACKS.length === 0 ? (
         <p className="player-empty">
-          the speaker worked. the playlist hasn’t been loaded in yet —
+          the speaker worked. the playlist hasn’t been loaded in yet,
           tell me what we played.
         </p>
       ) : (
@@ -102,7 +102,7 @@ export default function MusicPlayer({ open, onClose, playing, setPlaying }) {
           </div>
 
           <p className="player-now">
-            {track ? <><b>{track.title}</b>{track.artist ? ` · ${track.artist}` : ""}</> : "—"}
+            {track ? <><b>{track.title}</b>{track.artist ? ` · ${track.artist}` : ""}</> : "···"}
           </p>
 
           <ol className="player-list">

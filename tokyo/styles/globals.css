@@ -233,7 +233,7 @@ section nav {
 }
 
 /* Each arrow is a half-width hit area over the picture, so clicking anywhere
-   on that side moves. No box or fill — just the mark. */
+   on that side moves. No box or fill, just the mark. */
 .carousel-arrow {
   position: absolute;
   top: 0;

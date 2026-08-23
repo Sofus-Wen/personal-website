@@ -17,7 +17,7 @@ export default function ThemeToggle() {
     try {
       window.localStorage.setItem(STORAGE_KEY, next);
     } catch (e) {
-      // private browsing — the theme still applies for this page view
+      // private browsing, the theme still applies for this page view
     }
   }
 

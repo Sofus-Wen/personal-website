@@ -9,7 +9,7 @@ export default function Document() {
     <Html lang="en" data-theme="light">
       <Head>
         <meta charSet="UTF-8" />
-        <meta name="description" content="Sofus Wenøe — making videos :)" />
+        <meta name="description" content="Sofus Wenøe, making videos :)" />
         <link rel="icon" href="/assets/img/favicon/favicon.png" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </Head>
