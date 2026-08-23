@@ -126,6 +126,49 @@ function Speaker({ onSpeaker, playing, z }) {
   );
 }
 
+function RollUp({ id, onOpen, map, x, turn }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <group
+      position={[x, 0, -0.1]} rotation={[0, turn, 0]}
+      onPointerOver={(e) => { e.stopPropagation(); setHover(true); document.body.style.cursor = "pointer"; }}
+      onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}
+      onClick={(e) => { e.stopPropagation(); onOpen(id); }}
+    >
+      {/* cassette base with feet */}
+      <mesh castShadow receiveShadow position={[0, 0.055, 0]}>
+        <boxGeometry args={[1.0, 0.11, 0.26]} />
+        <meshStandardMaterial color={hover ? "#c9a227" : "#9a9ea6"} roughness={0.42} metalness={0.55} />
+      </mesh>
+      {[-1, 1].map((k) => (
+        <mesh key={k} castShadow position={[k * 0.42, 0.015, 0.03]}>
+          <boxGeometry args={[0.1, 0.03, 0.4]} />
+          <meshStandardMaterial color="#3a3d42" roughness={0.5} metalness={0.3} />
+        </mesh>
+      ))}
+      {/* pole up the back */}
+      <mesh castShadow position={[0, 0.92, -0.08]}>
+        <cylinderGeometry args={[0.014, 0.014, 1.62, 10]} />
+        <meshStandardMaterial color="#9a9ea6" roughness={0.4} metalness={0.6} />
+      </mesh>
+      <group position={[0, 0.92, 0.005]}>
+        <mesh castShadow>
+          <boxGeometry args={[0.92, 1.61, 0.012]} />
+          <meshStandardMaterial color="#15203a" roughness={0.85} />
+        </mesh>
+        <mesh position={[0, 0, 0.008]}>
+          <planeGeometry args={[0.92, 1.61]} />
+          <meshBasicMaterial map={map} toneMapped={false} />
+        </mesh>
+        <mesh castShadow position={[0, 0.83, 0]}>
+          <boxGeometry args={[0.95, 0.035, 0.035]} />
+          <meshStandardMaterial color="#9a9ea6" roughness={0.4} metalness={0.6} />
+        </mesh>
+      </group>
+    </group>
+  );
+}
+
 export default function Stall({ onOpen, onSpeaker, playing }) {
   const cards = useTexture("img/card-01.jpg");
   const fuji = useTexture("img/mtfuji.jpg");
@@ -133,7 +176,11 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
   const poster = useTexture("img/poster-cards.jpg");
   const banner = useTexture("img/counter-banner.jpg");
   const standPoster = useTexture("img/stall-poster.jpg");
-  [cards, fuji, wallInk, poster, banner, standPoster].forEach((t) => (t.colorSpace = THREE.SRGBColorSpace));
+  const jpLawson = useTexture("img/jp-lawson.jpg");
+  const jpFalls = useTexture("img/jp-falls.jpg");
+  const jpAkiba = useTexture("img/jp-akihabara.jpg");
+  [cards, fuji, wallInk, poster, banner, standPoster,
+   jpLawson, jpFalls, jpAkiba].forEach((t) => (t.colorSpace = THREE.SRGBColorSpace));
 
   const COUNTER_TOP = 0.95;
   const BACK_Z = -1.5;
@@ -190,58 +237,30 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
 
       <Bunting y={1.95} z={BACK_Z + 0.5} halfWidth={2.0} />
 
-      {/* the photo pinned on the back wall */}
-      <Hot id="ending" onOpen={onOpen} lift={0} position={[-1.35, 1.35, BACK_Z + 0.06]}>
-        <mesh castShadow>
-          <boxGeometry args={[0.62, 0.44, 0.03]} />
-          <meshStandardMaterial color="#fffdf8" roughness={0.9} />
-        </mesh>
-        <mesh position={[0, 0, 0.02]}>
-          <planeGeometry args={[0.55, 0.37]} />
-          <meshBasicMaterial map={fuji} />
-        </mesh>
-      </Hot>
-
       {/* speaker in the corner — opens the player, and moves while it plays */}
       <Speaker onSpeaker={onSpeaker} playing={playing} z={BACK_Z + 0.2} />
 
-      {/* the roll-up banner that stood on the left of the stall */}
-      <Hot id="poster" onOpen={onOpen} lift={0} position={[-2.52, 0, -0.1]}>
-        <group rotation={[0, 0.5, 0]}>
-          {/* cassette base, wider than the banner, with little feet */}
-          <mesh castShadow receiveShadow position={[0, 0.055, 0]}>
-            <boxGeometry args={[1.0, 0.11, 0.26]} />
-            <meshStandardMaterial color="#9a9ea6" roughness={0.42} metalness={0.55} />
+      {/* the roll-up banner, standing to the right of the stall */}
+      <RollUp id="poster" onOpen={onOpen} map={standPoster} x={2.52} turn={-0.5} />
+
+      {/* the four photos pinned on the back wall */}
+      {[
+        ["mtfuji", fuji, -1.86, 1.2, 0.5],
+        ["jp-lawson", jpLawson, -1.3, 1.2, 0.5],
+        ["jp-falls", jpFalls, -1.86, 1.63, 0.5],
+        ["jp-akihabara", jpAkiba, -1.3, 1.63, 0.5],
+      ].map(([key, tex, x, y, w]) => (
+        <Hot key={key} id="ending" onOpen={onOpen} lift={0} position={[x, y, BACK_Z + 0.06]}>
+          <mesh castShadow>
+            <boxGeometry args={[w + 0.05, w / 1.5 + 0.05, 0.025]} />
+            <meshStandardMaterial color="#fffdf8" roughness={0.9} />
           </mesh>
-          {[-1, 1].map((k) => (
-            <mesh key={k} castShadow position={[k * 0.42, 0.015, 0.03]}>
-              <boxGeometry args={[0.1, 0.03, 0.4]} />
-              <meshStandardMaterial color="#3a3d42" roughness={0.5} metalness={0.3} />
-            </mesh>
-          ))}
-          {/* the support pole up the back */}
-          <mesh castShadow position={[0, 0.92, -0.08]}>
-            <cylinderGeometry args={[0.014, 0.014, 1.62, 10]} />
-            <meshStandardMaterial color="#9a9ea6" roughness={0.4} metalness={0.6} />
+          <mesh position={[0, 0, 0.016]}>
+            <planeGeometry args={[w, w / 1.5]} />
+            <meshBasicMaterial map={tex} toneMapped={false} />
           </mesh>
-          {/* the printed banner — kept at the artwork's own proportions */}
-          <group position={[0, 0.92, 0.005]}>
-            <mesh castShadow>
-              <boxGeometry args={[0.92, 1.61, 0.012]} />
-              <meshStandardMaterial color="#15203a" roughness={0.85} />
-            </mesh>
-            <mesh position={[0, 0, 0.008]}>
-              <planeGeometry args={[0.92, 1.61]} />
-              <meshBasicMaterial map={standPoster} toneMapped={false} />
-            </mesh>
-            {/* top rail */}
-            <mesh castShadow position={[0, 0.83, 0]}>
-              <boxGeometry args={[0.95, 0.035, 0.035]} />
-              <meshStandardMaterial color="#9a9ea6" roughness={0.4} metalness={0.6} />
-            </mesh>
-          </group>
-        </group>
-      </Hot>
+        </Hot>
+      ))}
 
       {/* the counter */}
       <Hot id="stall" onOpen={onOpen} lift={0} position={[0, 0, 0]}>

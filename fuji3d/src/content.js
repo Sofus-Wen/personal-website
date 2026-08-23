@@ -129,8 +129,11 @@ export const CONTENT = {
   ending: {
     kicker: "may 2026", title: "and then we went to Mt. Fuji",
     img: "img/mtfuji.jpg",
-    html: `<p class="lede">We took some of what we made and spent it on the five
+    html: `<p class="lede">We took some of what we made and spent it on the four
       of us standing in a field in front of the mountain the whole thing was
-      named after.</p><p>Good place to stop.</p>`
+      named after.</p>
+      <p>A Lawson with the mountain behind it. Shiraito falls. Walking across
+      Akihabara. Good place to stop.</p>`,
+    grid: ["img/jp-lawson.jpg","img/jp-falls.jpg","img/jp-akihabara.jpg","img/sakura.jpg"]
   }
 };
