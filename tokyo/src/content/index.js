@@ -80,7 +80,8 @@ export const TIMELINE = [
         key: "2022",
         name: [
           { text: "Taiyo / fashion school", href: "/taiyo" },
-          " \u00b7 hypnosis / NLP",
+          " \u00b7 ",
+          { text: "hypnosis / NLP", href: "/hypnosis" },
         ],
         desc: "took a year off school and tried a bunch of things",
       },
