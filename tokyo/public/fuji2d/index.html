@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FUJI — the stall</title>
+<meta name="description" content="Fuji Chocolates: the pop-up stall we sold from in India. Click anything.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<p class="nudge" id="nudge">click anything on the stall</p>
+
+<div class="scroller">
+<main class="scene" id="scene">
+  <div class="booth">
+
+    <!-- back wall of the booth -->
+    <div class="wall" aria-hidden="true"></div>
+
+    <!-- the header board that hung over the stall -->
+    <button class="hot board" data-key="brand">
+      <span class="board-mark">FUJI</span>
+      <span class="board-sub">japanese chocolates</span>
+    </button>
+
+    <!-- green and white bunting, strung under the board -->
+    <div class="bunting" id="bunting" aria-hidden="true"></div>
+
+    <!-- the photo we pinned up afterwards -->
+    <button class="hot frame" data-key="ending">
+      <img src="img/mtfuji.jpg" alt="The five of us at Mount Fuji">
+    </button>
+
+    <!-- speaker in the corner -->
+    <button class="hot speaker" data-key="reach">
+      <span class="cone"></span>
+      <span class="waves"></span>
+    </button>
+
+    <!-- the two of us working behind the counter -->
+    <button class="hot person behind p-a" data-key="team"><span class="head"></span><span class="body"></span></button>
+    <button class="hot person behind p-b" data-key="team"><span class="head"></span><span class="body"></span></button>
+
+    <!-- counter -->
+    <div class="counter">
+      <div class="top" aria-hidden="true"></div>
+      <button class="hot front" data-key="stall">
+        <span class="signtext">Fuji Chocolates</span>
+      </button>
+    </div>
+
+    <!-- things standing on the counter -->
+    <button class="hot stock" data-key="supply" style="--x:15%">
+      <span class="crate"></span><span class="crate c2"></span>
+    </button>
+
+    <button class="hot bar" data-key="matcha" style="--x:36%"><img src="img/bar-matcha.jpg" alt="Matcha bar"></button>
+    <button class="hot bar" data-key="sesame" style="--x:44%"><img src="img/bar-sesame.jpg" alt="Black sesame bar"></button>
+    <button class="hot bar" data-key="yuzu"   style="--x:52%"><img src="img/bar-yuzu.jpg"   alt="Yuzu bar"></button>
+
+    <button class="hot deck-cards" data-key="cards" style="--x:64%">
+      <img src="img/card-01.jpg" alt="Collectable cards">
+    </button>
+
+    <button class="hot cashbox" data-key="numbers" style="--x:80%">
+      <span class="lid"></span><span class="rupee">₹</span>
+    </button>
+
+    <!-- three of us out front -->
+    <button class="hot person front-l" data-key="popups"><span class="head"></span><span class="body"></span></button>
+    <button class="hot person front-c" data-key="retail"><span class="head"></span><span class="body"></span></button>
+    <button class="hot person front-r" data-key="pitch">
+      <span class="head"></span><span class="body"></span>
+      <span class="tag">click to see<br>the sales pitch</span>
+    </button>
+
+  </div>
+</main>
+</div>
+
+<p class="foot">the stall · jan–may 2026 · Sofus, Pablo, Leo, Krishna &amp; Steve</p>
+
+<aside class="panel" id="panel" aria-live="polite" aria-hidden="true">
+  <button class="close" id="close" aria-label="Close">×</button>
+  <div class="panel-in" id="panelIn"></div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
