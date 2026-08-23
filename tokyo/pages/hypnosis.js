@@ -1,6 +1,6 @@
 import List from "@/src/components/List";
 import Page from "@/src/components/Page";
-import { BODY, INTRO, OPENING } from "@/src/content/hypnosis";
+import { OPENING, PEOPLE, WHAT_IT_IS } from "@/src/content/hypnosis";
 
 export default function Hypnosis() {
   return (
@@ -9,8 +9,8 @@ export default function Hypnosis() {
           the block whose lead-in sits tight against the names. */}
       <p className="line">{OPENING}</p>
       <div className="stack">
-        <List groups={[{ items: INTRO }]} />
-        <List groups={[{ items: BODY }]} />
+        <List groups={[{ items: WHAT_IT_IS }]} />
+        <List groups={[{ items: PEOPLE }]} />
       </div>
     </Page>
   );

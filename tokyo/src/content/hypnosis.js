@@ -1,14 +1,18 @@
 export const OPENING =
-  "basically learning to read & rewrite the software running in your head.";
+  "in spring 2023, I learned NLP and got pretty deep into it.";
 
-export const INTRO = [
-  { key: "spring", name: "in spring 2023, I went deep into it." },
+export const WHAT_IT_IS = [
+  {
+    key: "explain",
+    name:
+      "the easiest way to explain NLP is learning to read & rewrite the software running in your head.",
+  },
 ];
 
 /* Lead-in stays in the same group as the names, so the colon is tight
    against them; the gap above comes from the group break, as on /ai. */
-export const BODY = [
-  { key: "lead-in", name: "I met three crazy people:" },
+export const PEOPLE = [
+  { key: "lead-in", name: "three crazy people I met:" },
   {
     key: "bandler",
     name: [
