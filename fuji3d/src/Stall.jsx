@@ -126,11 +126,11 @@ function Speaker({ onSpeaker, playing, z }) {
   );
 }
 
-function RollUp({ id, onOpen, map, x, turn }) {
+function RollUp({ id, onOpen, map, x, z = -0.1, turn }) {
   const [hover, setHover] = useState(false);
   return (
     <group
-      position={[x, 0, -0.1]} rotation={[0, turn, 0]}
+      position={[x, 0, z]} rotation={[0, turn, 0]}
       onPointerOver={(e) => { e.stopPropagation(); setHover(true); document.body.style.cursor = "pointer"; }}
       onPointerOut={() => { setHover(false); document.body.style.cursor = "auto"; }}
       onClick={(e) => { e.stopPropagation(); onOpen(id); }}
@@ -241,7 +241,7 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
       <Speaker onSpeaker={onSpeaker} playing={playing} z={BACK_Z + 0.2} />
 
       {/* the roll-up banner, standing to the right of the stall */}
-      <RollUp id="poster" onOpen={onOpen} map={standPoster} x={2.52} turn={-0.5} />
+      <RollUp id="poster" onOpen={onOpen} map={standPoster} x={2.62} z={0.35} turn={-0.42} />
 
       {/* the four photos pinned on the back wall */}
       {[
