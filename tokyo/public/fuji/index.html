@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FUJI — the stand</title>
+<meta name="description" content="Fuji Chocolates: a Japanese-inspired chocolate brand built in India. Walk the pop-up stand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<p class="nudge" id="nudge">tap anything on the table</p>
+
+<div class="scroller"><main class="stage" id="stage">
+  <div class="backdrop" aria-hidden="true">
+    <img src="img/banner.jpg" alt="">
+  </div>
+  <div class="hills" aria-hidden="true"></div>
+  <div class="table" aria-hidden="true"></div>
+
+  <button class="obj box" data-key="pivot" style="--x:11%; --y:70%; --w:17%">
+    <span class="ghost"><em>?</em>the box we started with</span>
+  </button>
+
+  <button class="obj bar" data-key="matcha" style="--x:30%; --y:62%; --w:8.6%">
+    <img src="img/bar-matcha.jpg" alt="Matcha chocolate bar">
+  </button>
+  <button class="obj bar" data-key="sesame" style="--x:38.6%; --y:62%; --w:8.6%">
+    <img src="img/bar-sesame.jpg" alt="Black sesame chocolate bar">
+  </button>
+  <button class="obj bar" data-key="yuzu" style="--x:47%; --y:62%; --w:8%">
+    <img src="img/bar-yuzu.jpg" alt="Yuzu chocolate bar">
+  </button>
+
+  <button class="obj cards" data-key="cards" style="--x:59%; --y:64%; --w:14%">
+    <img src="img/card-10.jpg" alt="Collectable cards" class="c3">
+    <img src="img/card-06.jpg" alt="" class="c2" aria-hidden="true">
+    <img src="img/card-01.jpg" alt="" class="c1" aria-hidden="true">
+  </button>
+
+  <button class="obj sign" data-key="numbers" style="--x:22%; --y:84%; --w:15%">
+    <span class="price">₹400</span>
+    <span class="pricesub">per bar</span>
+  </button>
+
+  <button class="obj photo" data-key="retail" style="--x:74%; --y:62%; --w:15%">
+    <img src="img/shelf.jpg" alt="Fuji bars on a retail shelf">
+  </button>
+
+  <button class="obj photo" data-key="funding" style="--x:40%; --y:88%; --w:16%">
+    <img src="img/cheque.jpg" alt="The investment cheque">
+  </button>
+
+  <button class="obj photo" data-key="team" style="--x:58%; --y:90%; --w:16%">
+    <img src="img/stall.jpg" alt="The team behind the stall">
+  </button>
+
+  <button class="obj photo tall" data-key="ending" style="--x:89%; --y:70%; --w:12%">
+    <img src="img/mtfuji.jpg" alt="The team at Mount Fuji">
+  </button>
+</main></div>
+
+<p class="foot">
+  built with Pablo, Leo, Krishna &amp; Steve · jan–may 2026
+</p>
+
+<aside class="panel" id="panel" aria-live="polite" aria-hidden="true">
+  <button class="close" id="close" aria-label="Close">×</button>
+  <div class="panel-in" id="panelIn"></div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
