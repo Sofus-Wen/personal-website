@@ -135,6 +135,6 @@ export const CONTENT = {
       named after.</p>
       <p>A Lawson with the mountain behind it. Shiraito falls. Walking across
       Akihabara. Good place to stop.</p>`,
-    grid: ["img/jp-lawson.jpg","img/jp-falls.jpg","img/jp-akihabara.jpg","img/sakura.jpg"]
+    grid: ["img/jp-lawson.jpg","img/jp-falls.jpg","img/jp-akihabara.jpg"]
   }
 };

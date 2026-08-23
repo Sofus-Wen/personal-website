@@ -59,9 +59,9 @@ export default function App() {
         <EffectComposer disableNormalPass multisampling={4}>
           <DepthOfField
             target={[0, 1.1, 0]}
-            focalLength={0.022}
-            bokehScale={3.4}
-            height={640}
+            focalLength={0.08}
+            bokehScale={1.5}
+            height={480}
           />
         </EffectComposer>
 

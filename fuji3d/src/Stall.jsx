@@ -330,18 +330,34 @@ export default function Stall({ onOpen, onSpeaker, playing }) {
         </mesh>
       </Hot>
 
-      {/* the plate of samples */}
+      {/* the samples, on a wooden board */}
       <Hot id="samples" onOpen={onOpen} position={[0.62, COUNTER_TOP, 0.12]}>
-        <mesh castShadow position={[0, 0.012, 0]}>
-          <cylinderGeometry args={[0.15, 0.15, 0.018, 40]} />
-          <meshStandardMaterial color="#f6f2e8" roughness={0.5} />
-        </mesh>
-        {[[-0.06, 0.03], [0.05, 0.05], [0.0, -0.05], [0.07, -0.03], [-0.05, -0.02]].map(([dx, dz], i) => (
-          <mesh key={i} castShadow position={[dx, 0.028, dz]} rotation={[0, i * 0.7, 0]}>
-            <boxGeometry args={[0.045, 0.014, 0.045]} />
-            <meshStandardMaterial color={i % 2 ? "#4a3527" : "#2f2118"} roughness={0.55} />
-          </mesh>
-        ))}
+        <group rotation={[0, -0.18, 0]}>
+          <RoundedBox args={[0.42, 0.022, 0.28]} radius={0.008} smoothness={3}
+                      castShadow position={[0, 0.011, 0]}>
+            <meshStandardMaterial color="#a8763f" roughness={0.72} />
+          </RoundedBox>
+          {/* the little handle end */}
+          <RoundedBox args={[0.1, 0.02, 0.1]} radius={0.006} smoothness={3}
+                      castShadow position={[0.25, 0.011, 0]}>
+            <meshStandardMaterial color="#a8763f" roughness={0.72} />
+          </RoundedBox>
+          {/* a darker grain line or two */}
+          {[-0.06, 0.05].map((z, i) => (
+            <mesh key={i} position={[0, 0.023, z]} rotation={[-Math.PI / 2, 0, 0]}>
+              <planeGeometry args={[0.38, 0.006]} />
+              <meshBasicMaterial color="#8c5f30" />
+            </mesh>
+          ))}
+          {/* pieces broken off, laid out on the board */}
+          {[[-0.13, 0.04], [-0.03, 0.07], [0.06, -0.02], [-0.07, -0.06], [0.03, 0.02]]
+            .map(([dx, dz], i) => (
+            <mesh key={i} castShadow position={[dx, 0.032, dz]} rotation={[0, i * 0.6, 0]}>
+              <boxGeometry args={[0.05, 0.014, 0.05]} />
+              <meshStandardMaterial color={i % 2 ? "#4a3527" : "#2f2118"} roughness={0.5} />
+            </mesh>
+          ))}
+        </group>
       </Hot>
 
       {/* cash box */}
