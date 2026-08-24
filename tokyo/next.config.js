@@ -10,12 +10,18 @@ const nextConfig = {
   // relative, so the browser has to be sitting on a URL inside that folder.
   // Redirecting (not rewriting) to index.html moves the address bar there;
   // a rewrite would leave it on /taiyo2049 and every asset would resolve
-  // against the site root instead.
+  // against the site root instead. The Fuji pop up is a built Vite app in
+  // the same position, so it gets the same treatment.
   async redirects() {
     return [
       {
         source: "/taiyo2049",
         destination: "/taiyo2049/index.html",
+        permanent: false,
+      },
+      {
+        source: "/fuji",
+        destination: "/fuji/index.html",
         permanent: false,
       },
     ];

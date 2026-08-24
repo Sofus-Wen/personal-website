@@ -20,7 +20,7 @@ export const STEPS = [
   "idea",
   "making the chocolates",
   "first sales",
-  "retail + pop ups",
+  { text: "retail + pop ups", href: "/fuji" },
   "$5k+",
   "mt. fuji :)",
 ];
