@@ -149,7 +149,9 @@ body{user-select:none;-webkit-user-select:none}
   margin-top:-16px;
   animation:pop .2s cubic-bezier(.18,1.1,.32,1.5);
 }
-.bubble b{display:block;font:400 8px/1.7 var(--pixel);color:#b8860b;margin-bottom:6px}
+.bubble b{display:flex;align-items:baseline;gap:7px;
+  font:400 8px/1.7 var(--pixel);color:#b8860b;margin-bottom:6px}
+.bubble b span{color:var(--muted);opacity:.75;font-size:6.5px}
 .bubble p{margin:0;font:400 15px/1.55 var(--round)}
 .bubble .tail{
   position:absolute;left:50%;bottom:-11px;width:14px;height:14px;

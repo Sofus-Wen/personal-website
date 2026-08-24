@@ -84,7 +84,7 @@ function Bubble({ name, line }) {
   return (
     <Html position={[0, 1.62, 0]} zIndexRange={[20, 0]}>
       <div className="bubble">
-        <b>{name}</b>
+        <b>{name}<span>sales pitch</span></b>
         <p>{line}</p>
         <i className="tail" />
       </div>
