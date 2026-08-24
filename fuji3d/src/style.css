@@ -26,15 +26,15 @@ body{user-select:none;-webkit-user-select:none}
   text-shadow:0 2px 0 rgba(255,255,255,.95), 0 0 8px rgba(255,255,255,.9)}
 .loading{color:var(--muted);font:400 10px/1.8 var(--pixel);white-space:nowrap}
 
-/* the way back out, as a pressable game button */
+/* the way back out. No box: it sits in the same quiet register as the hint
+   and the footer, so it doesn't pull the eye off the stall. */
 .back{
-  position:fixed; top:14px; left:14px; z-index:7; text-decoration:none;
-  padding:8px 11px 9px; border:3px solid var(--navy); border-radius:10px;
-  background:var(--panelbg); color:var(--navy);
-  font:400 8px/1 var(--pixel); box-shadow:0 4px 0 var(--navy-dk);
+  position:fixed; top:20px; left:18px; z-index:7; text-decoration:none;
+  color:#2b3038; opacity:.5; font:400 7px/1 var(--pixel);
+  text-shadow:0 2px 0 rgba(255,255,255,.95), 0 0 8px rgba(255,255,255,.9);
+  transition:opacity .16s;
 }
-.back:hover{background:#fff}
-.back:active{transform:translateY(4px);box-shadow:none}
+.back:hover{opacity:.9}
 
 .scrim{position:fixed;inset:0;background:rgba(18,22,30,.5);opacity:0;pointer-events:none;
   transition:opacity .22s;z-index:8;backdrop-filter:blur(2px)}
@@ -134,9 +134,9 @@ body{user-select:none;-webkit-user-select:none}
   .panel-in{padding:16px 16px 30px}
   .panel h2{font-size:23px}
   .panel p{font-size:16px}
-  .nudge{font-size:7.5px;padding-top:52px}
+  .nudge{font-size:7.5px;padding-top:42px}
   .foot{font-size:6.5px}
-  .back{top:10px;left:10px;font-size:7px;padding:7px 9px 8px}
+  .back{top:16px;left:14px;font-size:6.5px}
 }
 
 /* ---- the speech bubble that pops above whoever you clicked ---- */
