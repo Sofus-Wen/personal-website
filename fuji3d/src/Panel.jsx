@@ -14,10 +14,12 @@ export default function Panel({ openKey, onClose }) {
     <>
       <div className={"scrim" + (c ? " on" : "")} onClick={onClose} />
       <aside className={"panel" + (c ? " on" : "")} aria-hidden={!c}>
-        <button className="close" onClick={onClose} aria-label="Close">×</button>
+        <div className="panel-bar">
+          <span className="bar-label">{c ? c.kicker : ""}</span>
+          <button className="close" onClick={onClose} aria-label="Close">X</button>
+        </div>
         {c && (
           <div className="panel-in">
-            <p className="kicker">{c.kicker}</p>
             <h2>{c.title}</h2>
             {c.img && <img className="hero" src={c.img} alt="" />}
             <div dangerouslySetInnerHTML={{ __html: c.html }} />
@@ -54,6 +56,9 @@ export default function Panel({ openKey, onClose }) {
               </div>
             )}
           </div>
+        )}
+        {c && (
+          <button className="panel-next" onClick={onClose} aria-label="Close">▼</button>
         )}
       </aside>
     </>
