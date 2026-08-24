@@ -19,6 +19,7 @@ export default function App() {
   return (
     <>
       <Loader />
+      <a className="back" href="/">&lt; sofuswenoee.com</a>
       <p className="nudge">click anything on the pop up · drag to look around</p>
 
       <Canvas
