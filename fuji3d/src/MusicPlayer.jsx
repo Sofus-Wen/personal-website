@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { TRACKS } from "./tracks.js";
+import { SPEAKERS, makeOutputStage, makeSpeaker, registerContext } from "./audio.js";
 
 /* The little player that opens when you click the speaker. Deliberately
    small: play/pause, skip, and tap a row to jump to it. */
@@ -38,11 +39,22 @@ export default function MusicPlayer({ open, onClose, playing, setPlaying }) {
       }
       shaper.curve = curve;
 
+      // halved, because the same signal leaves both speakers
       const out = ctx.createGain();
-      out.gain.value = 0.92;
+      out.gain.value = 0.5;
 
       src.connect(hp); hp.connect(mid); mid.connect(lp);
-      lp.connect(shaper); shaper.connect(out); out.connect(ctx.destination);
+      lp.connect(shaper); shaper.connect(out);
+
+      // out through the two cones on the stand rather than straight to the
+      // card, so the scene's camera decides the level and the pan
+      const master = makeOutputStage(ctx);
+      SPEAKERS.forEach((at) => {
+        const cone = makeSpeaker(ctx, at);
+        out.connect(cone);
+        cone.connect(master);
+      });
+      registerContext(ctx);
       chain.current = { ctx };
     } catch (e) {
       chain.current = { ctx: null };   // fall back to plain playback

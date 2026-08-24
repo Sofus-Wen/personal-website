@@ -9,6 +9,7 @@ import Panel from "./Panel.jsx";
 import MusicPlayer from "./MusicPlayer.jsx";
 import Loader from "./Loader.jsx";
 import Pedestrians from "./Pedestrians.jsx";
+import Listener from "./Listener.jsx";
 
 export default function App() {
   const [open, setOpen] = useState(null);
@@ -53,6 +54,8 @@ export default function App() {
         </Suspense>
 
         <ContactShadows position={[0, 0.001, 0]} opacity={0.42} scale={14} blur={2.2} far={4} />
+
+        <Listener />
 
         <OrbitControls
           target={[0, 1.1, 0]}
